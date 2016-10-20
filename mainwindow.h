@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-#include "computer.h"
-
 namespace Ui {
 class MainWindow;
 }
