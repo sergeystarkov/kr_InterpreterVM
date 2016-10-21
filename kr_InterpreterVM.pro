@@ -15,7 +15,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     computer.cpp \
-    interpreter.cpp
+    interpreter.cpp \
+    command.cpp
 
 HEADERS  += mainwindow.h \
     command.h \

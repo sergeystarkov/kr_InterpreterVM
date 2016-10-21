@@ -1,8 +1,12 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-class Computer;
-#include <QMessageBox>
+#include "computer.h"
+
+
+class CPUCommands;
+class Command;
+class _op_1;
 
 //Класс реализует выполнение опкодов
 class CPUCommands
@@ -16,13 +20,13 @@ public:
     static int op_3(){return 1;}//..
 };
 
+
 //Базовый абстрактный класс для паттерна "Комманда"
 class Command
 {
 public:
-    Command(){}
-    ~Command(){}
-    virtual int operator()() const = 0;   //Перегрузка оператора ()
+    friend class Computer;
+    virtual int operator()(Computer *) const = 0;   //Перегрузка оператора ()
 protected:
     CPUCommands *cmd;
 };
@@ -30,14 +34,11 @@ protected:
 class _op_1 : public Command
 {
 public:
-    int operator()() const
-    {
-
-        //cmd->op_1();
-        return 1;
-    }
+    friend class Computer;
+    int operator()(Computer *VM) const;
 };
 
-
 #endif // COMMAND_H
+
+
 
