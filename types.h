@@ -3,41 +3,20 @@
 
 //Типы данных
 
-typedef signed char Byte;
-typedef unsigned char uByte;
-typedef short Short;
-typedef unsigned short uShort;
-typedef int Word;
-typedef unsigned int uWord;
-typedef long long Long;
-typedef unsigned long long uLong;
-typedef float Float;
-typedef double Double;
+//typedef signed char Byte;
+typedef unsigned char byte;
+//typedef unsigned short uShort;
+//typedef int Word;
+//typedef unsigned int uWord;
+//typedef long long Long;
+//typedef unsigned long long uLong;
+//typedef float Float;
+//typedef double Double;
 
-typedef unsigned int address;
+typedef unsigned short address;
 
 struct Registers
 {
-    // регистры общего назначения
-    union POH
-    {
-        Byte    b[256]; // байтовые знаковые целые
-        uByte   ub[256]; // байтовые беззнаковые целые
-        Short   s[128]; // двухбайтовые знаковые целые
-        uShort  us[128]; // двухбайтовые беззнаковые целые
-        Word    w[64]; // четырехбайтовые знаковые целые
-        uWord   uw[64]; // четырехбайтовые беззнаковые целые
-        Float   f[64]; // короткие вещественные
-        Long    l[32]; // восьмибайтовые знаковые целые
-        uLong   ul[32]; // восьмибайтовые беззнаковые целые
-        Double  d[32]; // длинные вещественные
-    };
-
-    //Системные регистры
-    address PC; // счетчик адреса команды;
-    address SP; // указатель стека;
-    address RI; // регистр адреса таблицы прерываний.
-
     //PSW (Cостояние процессора)
     struct bits
     {
