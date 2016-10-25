@@ -3,11 +3,12 @@
 
 #include <QMessageBox>
 
+#include <QFile>
+
 
 #include "operation.h"
 #include "types.h"
 #include "command.h"
-
 
 class Computer
 {
@@ -18,6 +19,7 @@ public:
     Computer();
     ~Computer();
 
+    void load(QString path);
     void start();
     void run();
 

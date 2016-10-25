@@ -16,6 +16,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
+    VM->load("D:/testProg.vm");
     VM->test();
 }

@@ -19,6 +19,21 @@ Computer::~Computer()
 {
 
 }
+//Загрузка программы в массив ОЗУ
+void Computer::load(QString path)
+{
+    QByteArray barr;
+    QFile file(path);
+    if(file.open(QIODevice::ReadOnly)){
+        barr = file.readAll();
+        memcpy(MEM,barr,barr.length());
+    }else {
+        QMessageBox b;
+        b.setText("Файл программы не загружен");
+        b.exec();
+    }
+    file.close();
+}
 
 void Computer::start()
 {
@@ -33,27 +48,26 @@ void Computer::run()
             QMessageBox b;
             b.setText("Программа завершилась с кодом 0");
             b.exec();
+            break;
         }
     }
 }
 
 void Computer::test()
 {
+    CMD.addr = 0x05;
+    CMD.b = 0;
+
+    this->start();
+
+    this->run();
 
 
-    int i = 0x42F17FB3;
-    MEM[0] = 0;
-    MEM[1] = 0x28;
-    MEM[2] = 0x03;
-    memcpy(&MEM[3],&i,4);
-    MEM[7] = 0x00;
 
 
-
-    CMD.code = MEM[1];
-    CMD.addr = MEM[2];
-
-    memcpy(&RS.I,&MEM[CMD.addr],4);
+    QMessageBox b;
+    b.setText(QString::number(RS.I));
+    b.exec();
 
     //pCMD[CMD.code]->operator ()(this);
 
