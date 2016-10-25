@@ -5,7 +5,7 @@
 
 
 class CPU;
-class Command;
+class CPUCommand;
 class Computer;
 
 //Класс процессора реализует выполнение опкодов
@@ -32,13 +32,19 @@ private:
 
     friend class cImod;
     static int IMOD(Computer *);
+
+    friend class cLoad;
+    static int LOAD(Computer *);
+
+    friend class cStore;
+    static int STORE(Computer *);
 };
 
 
 
 
 //Базовый абстрактный класс для паттерна "Комманда"
-class Command
+class CPUCommand
 {
 public:
     virtual int operator()(Computer *) = 0;   //Перегрузка оператора ()
@@ -50,16 +56,16 @@ protected:
 //Объявление  комманд процессора*********************
 
 //СТОП
-class cSTOP : public Command {
+class cSTOP : public CPUCommand {
 public:
     int operator()(Computer *COMP){
-       cmd.STOP(COMP);
-       return 1;
+       //cmd.STOP(COMP);
+       return 0;
     }
 };
 
 //Сложение целых чисел
-class cIadd : public Command {
+class cIadd : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.IADD(COMP);
@@ -68,7 +74,7 @@ public:
 };
 
 //Вычитание целых чисел
-class cIsub : public Command {
+class cIsub : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.ISUB(COMP);
@@ -77,7 +83,7 @@ public:
 };
 
 //Умножение целых чисел
-class cImul : public Command {
+class cImul : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.IMUL(COMP);
@@ -86,7 +92,7 @@ public:
 };
 
 //Деление целых чисел
-class cIdiv : public Command {
+class cIdiv : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.IDIV(COMP);
@@ -95,10 +101,28 @@ public:
 };
 
 //Остаток от деления целых чисел
-class cImod : public Command {
+class cImod : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.IMOD(COMP);
+       return 1;
+    }
+};
+
+//Остаток от деления целых чисел
+class cLoad : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.LOAD(COMP);
+       return 1;
+    }
+};
+
+//Остаток от деления целых чисел
+class cStore : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.STORE(COMP);
        return 1;
     }
 };

@@ -12,6 +12,9 @@ enum Operations {
     Imul = 0x03, // – умножение целых чисел
     Idiv = 0x04, // – деление целых чисел
     Imod = 0x05, // – остаток от деления целых чисел
+
+    Load = 0x28,
+    Store = 0x3c
 };
 
 #endif // OPERATION_H
