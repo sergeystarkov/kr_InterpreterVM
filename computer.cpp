@@ -38,40 +38,37 @@ void Computer::load(QString path)
 void Computer::start()
 {
     PSW.IP = 0x01;
+    RA = 0x00;
 }
 
 void Computer::run()
 {
     while(true)
     {
-        if( pCMD[ MEM[PSW.IP] ]->operator ()(this) == 0)        {
-            QMessageBox b;
-            b.setText("Программа завершилась с кодом 0");
-            b.exec();
+        //Загрузка команды в структуру
+        if(MEM[PSW.IP]&1<<7){       //Проверяем флаг типа адреса CMD.b
+            MEM[PSW.IP]&=~(1<<7);
+            CMD.b = 1;              //Принудительно очищаем код от флага
+        }
+        CMD.code = MEM[ PSW.IP ];   //Записываем код операции
+        address tmp;//К битовому полу нельзя получить адрес, поэтому нужна переменная
+        memcpy(&tmp,&MEM[ PSW.IP + 1 ],2);
+        CMD.addr = tmp;
+        //*************************************
+
+        if( pCMD[ CMD.code ]->operator ()(this) == 0){
+            QMessageBox b; b.setText("Программ завершилась с кодом 0"); b.exec();
             break;
         }
+        else {
+            QMessageBox b; b.setText(QString::number(CMD.code)); b.exec(); //Временно, выводит текущий ОПкод в 10сч.
+        }
+        PSW.IP += 3; //Переход на сл команду
     }
 }
 
 void Computer::test()
 {
-    CMD.addr = 0x05;
-    CMD.b = 0;
-
     this->start();
-
     this->run();
-
-
-
-
-    QMessageBox b;
-    b.setText(QString::number(RS.I));
-    b.exec();
-
-    //pCMD[CMD.code]->operator ()(this);
-
-
-
-
 }
