@@ -38,6 +38,9 @@ private:
 
     friend class cStore;
     static int STORE(Computer *);
+
+    friend class cRadr;
+    static int RADR(Computer *);
 };
 
 
@@ -109,7 +112,7 @@ public:
     }
 };
 
-//Остаток от деления целых чисел
+//Загрузка сумматора
 class cLoad : public CPUCommand {
 public:
     int operator()(Computer *COMP){
@@ -118,7 +121,7 @@ public:
     }
 };
 
-//Остаток от деления целых чисел
+//Выгрузка сумматора
 class cStore : public CPUCommand {
 public:
     int operator()(Computer *COMP){
@@ -127,6 +130,14 @@ public:
     }
 };
 
+//Загрузка адрессного регистра
+class cRadr : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.RADR(COMP);
+       return 1;
+    }
+};
 #endif // COMMAND_H
 
 

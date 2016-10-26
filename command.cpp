@@ -55,3 +55,13 @@ int CPU::STORE(Computer *COMP)
     }
     return 1;
 }
+
+int CPU::RADR(Computer * COMP)
+{
+    if(COMP->CMD.b == 0){//При абсолютной адресации
+        COMP->RA = COMP->CMD.addr;
+    }else{//При относительно адресации
+        COMP->RA += COMP->CMD.addr;
+    }
+    return 1;
+}
