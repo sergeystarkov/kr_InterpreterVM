@@ -20,6 +20,7 @@ int CPU::IADD(Computer *COMP)
 
 int CPU::ISUB(Computer *COMP)
 {
+    if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
     //else Относит адресация
     COMP->RS.I -= COMP->R1.I;
