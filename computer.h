@@ -41,12 +41,10 @@ public:
     struct bits
     {
         unsigned int IP:16; //Instruction Pointer
-        //unsigned int CF:1; // бит переноса
-        //unsigned int OF:1; // переполнение знаковое целое
-        //unsigned int OV:1; // переполнение плавающей арифметики
-        //unsigned int UV:1; // антипереполнение плавающей арифметики
-        //unsigned int TF:1; // флаг трассировки
-        unsigned int:16; // пока не используется
+        unsigned int SF:1;  //Sign flag результат положительный - 1
+        unsigned int ZF:1;  //Zero flag Резульат равен нулю - 1
+        unsigned int OF:1;  //Overflow flag переполнение
+        unsigned int:13;    // пока не используется
     }PSW;
 #pragma pack(pop)
 
@@ -57,7 +55,13 @@ private:        //Регистры, память и т.п.
     data        RS;     //Сумматор 4 байта
     address     RA;     //Адресный регистр 2 байта
 
+    data        R1;     //Внутренний регистр
+    data        R2;     //Внутренний регистр
+
     byte *MEM = new byte[0xffff];  //оперативная память 1 байтовая
+
+    void flagI();
+    void flagR();
 
 public:
     void test(); //Временная функция для отладки

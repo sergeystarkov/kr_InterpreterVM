@@ -10,27 +10,50 @@ int CPU::STOP(Computer * COMP)
 
 int CPU::IADD(Computer *COMP)
 {
-    //COMP->R1 = C
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.I += COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
 int CPU::ISUB(Computer *COMP)
 {
+        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.I -= COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
 int CPU::IMUL(Computer *COMP)
 {
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.I *= COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
 int CPU::IDIV(Computer *COMP)
 {
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.I /= COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
 int CPU::IMOD(Computer *COMP)
 {
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.I %= COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
