@@ -58,6 +58,46 @@ int CPU::IMOD(Computer *COMP)
     return 1;
 }
 
+int CPU::RADD(Computer *COMP)
+{
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.R += COMP->R1.R;
+    COMP->flagR(); //Установка флага результата
+    return 1;
+}
+
+int CPU::RSUB(Computer *COMP)
+{
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.R -= COMP->R1.R;
+    COMP->flagR(); //Установка флага результата
+    return 1;
+}
+
+int CPU::RMUL(Computer *COMP)
+{
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.R *= COMP->R1.R;
+    COMP->flagR(); //Установка флага результата
+    return 1;
+}
+
+int CPU::RDIV(Computer *COMP)
+{
+    if(COMP->CMD.b = 0)
+        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+    //else Относит адресация
+    COMP->RS.R /= COMP->R1.R;
+    COMP->flagR(); //Установка флага результата
+    return 1;
+}
+
 //Загрузка сумматора из ОЗУ
 int CPU::LOAD(Computer *COMP)
 {

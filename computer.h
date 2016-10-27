@@ -9,6 +9,7 @@
 #include "types.h"
 #include "command.h"
 
+#include "assert.h"
 class Computer
 {
 public:
@@ -34,7 +35,7 @@ public:
     //Объединение данные
     union data{
         int I;  //Либо целые
-        int R;  //Либо вещественные
+        float R;  //Либо вещественные
     }DATA;
 
     //PSW (Cостояние процессора)

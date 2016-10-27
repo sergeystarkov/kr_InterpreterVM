@@ -18,6 +18,7 @@ private:
     friend class cSTOP;
     static int STOP(Computer *);
 
+    //Целая арифметика
     friend class cIadd;
     static int IADD(Computer *);
 
@@ -33,12 +34,27 @@ private:
     friend class cImod;
     static int IMOD(Computer *);
 
+    //Дровная арифметика
+    friend class cRadd;
+    static int RADD(Computer *);
+
+    friend class cRsub;
+    static int RSUB(Computer *);
+
+    friend class cRmul;
+    static int RMUL(Computer *);
+
+    friend class cRdiv;
+    static int RDIV(Computer *);
+
+    //Операции с сумматором
     friend class cLoad;
     static int LOAD(Computer *);
 
     friend class cStore;
     static int STORE(Computer *);
 
+    //Адресный регистр
     friend class cRadr;
     static int RADR(Computer *);
 };
@@ -61,8 +77,7 @@ protected:
 //СТОП
 class cSTOP : public CPUCommand {
 public:
-    int operator()(Computer *COMP){
-       //cmd.STOP(COMP);
+    int operator()(Computer *){
        return 0;
     }
 };
@@ -108,6 +123,42 @@ class cImod : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.IMOD(COMP);
+       return 1;
+    }
+};
+
+//Сложение дробных чисел
+class cRadd : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.RADD(COMP);
+       return 1;
+    }
+};
+
+//Вычитание дробных чисел
+class cRsub : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.RSUB(COMP);
+       return 1;
+    }
+};
+
+//Умножение дробных чисел
+class cRmul : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.RMUL(COMP);
+       return 1;
+    }
+};
+
+//Деление дробных чисел
+class cRdiv : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.RDIV(COMP);
        return 1;
     }
 };

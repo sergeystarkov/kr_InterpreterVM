@@ -10,6 +10,12 @@ Computer::Computer()
     pCMD[Idiv]  =   new cIdiv();
     pCMD[Imod]  =   new cImod();
 
+    //Дробная арифметика
+    pCMD[Radd]  =   new cRadd();
+    pCMD[Rsub]  =   new cRsub();
+    pCMD[Rmul]  =   new cRmul();
+    pCMD[Rdiv]  =   new cRdiv();
+
     //Операции с сумматором
     pCMD[Load]  =   new cLoad();    //Загрузка сумматора
     pCMD[Store] =   new cStore();   //Сохранение сумматора
@@ -22,6 +28,12 @@ Computer::~Computer()
 //Загрузка программы в массив ОЗУ
 void Computer::load(QString path)
 {
+    [](){ //Проверка, что размеры целых и вещественных равны 4 байтам
+        int SizeInteger; SizeInteger = 0;
+        float SizeFloat; SizeFloat = 0;
+        assert(sizeof SizeInteger == 4 || sizeof SizeFloat == 4);
+    }();
+
     QByteArray barr;
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)){
