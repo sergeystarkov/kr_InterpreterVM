@@ -129,3 +129,14 @@ int CPU::RADR(Computer * COMP)
     }
     return 1;
 }
+
+//Безусловный переход
+int CPU::JMP(Computer *COMP)
+{
+    if(COMP->CMD.b == 0){//При абсолютной адресации
+        COMP->PSW.IP = COMP->CMD.addr;
+    }else{//При относительно адресации
+        COMP->PSW.IP = COMP->RA + COMP->CMD.addr;
+    }
+    return 1;
+}

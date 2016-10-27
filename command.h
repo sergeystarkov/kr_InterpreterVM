@@ -57,6 +57,10 @@ private:
     //Адресный регистр
     friend class cRadr;
     static int RADR(Computer *);
+
+    //Переходы
+    friend class cJmp;
+    static int JMP(Computer *);
 };
 
 
@@ -186,6 +190,15 @@ class cRadr : public CPUCommand {
 public:
     int operator()(Computer *COMP){
        cmd.RADR(COMP);
+       return 1;
+    }
+};
+
+//Безусловный переход
+class cJmp : public CPUCommand {
+public:
+    int operator()(Computer *COMP){
+       cmd.JMP(COMP);
        return 1;
     }
 };
