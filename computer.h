@@ -4,6 +4,7 @@
 #include <QMessageBox>
 
 #include <QFile>
+#include <QStringList>
 
 #include "operation.h"
 #include "types.h"
@@ -37,12 +38,17 @@ public:
     void run();
 
 #pragma pack(push,1) //Выравнивание по 1 байту
+    union code{
+
+
+        byte Code:7;
+        bool b[8];
+        byte COM;
+    };
     //структура команды процессора
     struct command{
-        byte code:7;        //Код операции
-        byte b:1;           //Флаг адреса b = 0 – адрес (абсолютная адресация)
-                            //b = 1 – адрес + регистр (индексная или базовая)
-        address addr:16;    //Адрес аргумента
+        code CODE;
+        address addr;    //Адрес аргумента
     }CMD;
 
     //Объединение данные
