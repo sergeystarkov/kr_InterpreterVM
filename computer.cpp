@@ -49,7 +49,7 @@ void Computer::load(QString path)
 
 void Computer::start()
 {
-    PSW.IP = 0x01;
+    PSW.IP = 0x0000;
     RA = 0x00;
 }
 

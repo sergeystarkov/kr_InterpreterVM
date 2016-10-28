@@ -3,12 +3,12 @@
 
 
 
-int CPU::STOP(Computer * COMP)
+int cSTOP::operator()(Computer *)
 {
-    return 1;
+    return 0;
 }
 
-int CPU::IADD(Computer *COMP)
+int cIadd::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
@@ -18,7 +18,7 @@ int CPU::IADD(Computer *COMP)
     return 1;
 }
 
-int CPU::ISUB(Computer *COMP)
+int cIsub::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
@@ -28,7 +28,7 @@ int CPU::ISUB(Computer *COMP)
     return 1;
 }
 
-int CPU::IMUL(Computer *COMP)
+int cImul::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
@@ -38,7 +38,7 @@ int CPU::IMUL(Computer *COMP)
     return 1;
 }
 
-int CPU::IDIV(Computer *COMP)
+int cIdiv::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
@@ -48,7 +48,7 @@ int CPU::IDIV(Computer *COMP)
     return 1;
 }
 
-int CPU::IMOD(Computer *COMP)
+int cImod::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
@@ -58,7 +58,7 @@ int CPU::IMOD(Computer *COMP)
     return 1;
 }
 
-int CPU::RADD(Computer *COMP)
+int cRadd::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
@@ -68,7 +68,7 @@ int CPU::RADD(Computer *COMP)
     return 1;
 }
 
-int CPU::RSUB(Computer *COMP)
+int cRsub::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
@@ -78,7 +78,7 @@ int CPU::RSUB(Computer *COMP)
     return 1;
 }
 
-int CPU::RMUL(Computer *COMP)
+int cRmul::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
@@ -88,7 +88,7 @@ int CPU::RMUL(Computer *COMP)
     return 1;
 }
 
-int CPU::RDIV(Computer *COMP)
+int cRdiv::operator()(Computer *COMP)
 {
     if(COMP->CMD.b = 0)
         memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
@@ -99,7 +99,7 @@ int CPU::RDIV(Computer *COMP)
 }
 
 //Загрузка сумматора из ОЗУ
-int CPU::LOAD(Computer *COMP)
+int cLoad::operator()(Computer *COMP)
 {
     if(COMP->CMD.b == 0){//При абсолютной адресации
         memcpy( &COMP->RS.I , &COMP->MEM[COMP->CMD.addr] , 4 );
@@ -110,7 +110,7 @@ int CPU::LOAD(Computer *COMP)
 }
 
 //Выгрузка сумматора в ОЗУ
-int CPU::STORE(Computer *COMP)
+int cStore::operator()(Computer *COMP)
 {
     if(COMP->CMD.b == 0){//При абсолютной адресации
         memcpy( &COMP->MEM[COMP->CMD.addr] , &COMP->RS.I , 4 );
@@ -120,7 +120,7 @@ int CPU::STORE(Computer *COMP)
     return 1;
 }
 
-int CPU::RADR(Computer * COMP)
+int cRadr::operator()(Computer *COMP)
 {
     if(COMP->CMD.b == 0){//При абсолютной адресации
         COMP->RA = COMP->CMD.addr;
@@ -131,7 +131,7 @@ int CPU::RADR(Computer * COMP)
 }
 
 //Безусловный переход
-int CPU::JMP(Computer *COMP)
+int cJmp::operator()(Computer *COMP)
 {
     if(COMP->CMD.b == 0){//При абсолютной адресации
         COMP->PSW.IP = COMP->CMD.addr;

@@ -4,203 +4,102 @@
 #include "computer.h"
 
 
-class CPU;
-class CPUCommand;
+
 class Computer;
 
-//Класс процессора реализует выполнение опкодов
-class CPU
-{
-public:
-    CPU(){}
-    ~CPU(){}
-private:
-    friend class cSTOP;
-    static int STOP(Computer *);
-
-    //Целая арифметика
-    friend class cIadd;
-    static int IADD(Computer *);
-
-    friend class cIsub;
-    static int ISUB(Computer *);
-
-    friend class cImul;
-    static int IMUL(Computer *);
-
-    friend class cIdiv;
-    static int IDIV(Computer *);
-
-    friend class cImod;
-    static int IMOD(Computer *);
-
-    //Дровная арифметика
-    friend class cRadd;
-    static int RADD(Computer *);
-
-    friend class cRsub;
-    static int RSUB(Computer *);
-
-    friend class cRmul;
-    static int RMUL(Computer *);
-
-    friend class cRdiv;
-    static int RDIV(Computer *);
-
-    //Операции с сумматором
-    friend class cLoad;
-    static int LOAD(Computer *);
-
-    friend class cStore;
-    static int STORE(Computer *);
-
-    //Адресный регистр
-    friend class cRadr;
-    static int RADR(Computer *);
-
-    //Переходы
-    friend class cJmp;
-    static int JMP(Computer *);
-};
-
-
-
-
 //Базовый абстрактный класс для паттерна "Комманда"
-class CPUCommand
+class Command
 {
 public:
     virtual int operator()(Computer *) = 0;   //Перегрузка оператора ()
-protected:
-    CPU cmd;
 };
 /////////////////////////////////////////////////////
 
 //Объявление  комманд процессора*********************
 
 //СТОП
-class cSTOP : public CPUCommand {
+class cSTOP : public Command {
 public:
-    int operator()(Computer *){
-       return 0;
-    }
+    int operator()(Computer *);
 };
 
 //Сложение целых чисел
-class cIadd : public CPUCommand {
+class cIadd : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.IADD(COMP);
-       return 1;
-    }
+    friend class Computer;
+    int operator()(Computer *COMP);
 };
 
 //Вычитание целых чисел
-class cIsub : public CPUCommand {
+class cIsub : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.ISUB(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Умножение целых чисел
-class cImul : public CPUCommand {
+class cImul : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.IMUL(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Деление целых чисел
-class cIdiv : public CPUCommand {
+class cIdiv : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.IDIV(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Остаток от деления целых чисел
-class cImod : public CPUCommand {
+class cImod : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.IMOD(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Сложение дробных чисел
-class cRadd : public CPUCommand {
+class cRadd : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.RADD(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Вычитание дробных чисел
-class cRsub : public CPUCommand {
+class cRsub : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.RSUB(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Умножение дробных чисел
-class cRmul : public CPUCommand {
+class cRmul : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.RMUL(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Деление дробных чисел
-class cRdiv : public CPUCommand {
+class cRdiv : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.RDIV(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Загрузка сумматора
-class cLoad : public CPUCommand {
+class cLoad : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.LOAD(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Выгрузка сумматора
-class cStore : public CPUCommand {
+class cStore : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.STORE(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Загрузка адрессного регистра
-class cRadr : public CPUCommand {
+class cRadr : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.RADR(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 
 //Безусловный переход
-class cJmp : public CPUCommand {
+class cJmp : public Command {
 public:
-    int operator()(Computer *COMP){
-       cmd.JMP(COMP);
-       return 1;
-    }
+    int operator()(Computer *COMP);
 };
 #endif // COMMAND_H
 

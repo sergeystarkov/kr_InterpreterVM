@@ -14,8 +14,21 @@ class Computer
 {
 public:
 
-    friend class CPUCommand;
-    friend class CPU;
+    friend class Command;
+    friend class cIadd;
+    friend class cRadd;
+    friend class cIsub;
+    friend class cRsub;
+    friend class cImul;
+    friend class cRmul;
+    friend class cIdiv;
+    friend class cRdiv;
+    friend class cImod;
+    friend class cRadr;
+    friend class cLoad;
+    friend class cStore;
+    friend class cJmp;
+
     Computer();
     ~Computer();
 
@@ -41,7 +54,7 @@ public:
     //PSW (Cостояние процессора)
     struct bits
     {
-        unsigned int IP:16; //Instruction Pointer
+        unsigned int IP; //Instruction Pointer
         unsigned int SF:1;  //Sign flag результат положительный - 1
         unsigned int ZF:1;  //Zero flag Резульат равен нулю - 1
         unsigned int OF:1;  //Overflow flag переполнение
@@ -51,7 +64,7 @@ public:
 
 private:        //Регистры, память и т.п.
 
-    CPUCommand *pCMD[128]; //набор команд процессора
+    Command *pCMD[128]; //набор команд процессора
 
     data        RS;     //Сумматор 4 байта
     address     RA;     //Адресный регистр 2 байта
