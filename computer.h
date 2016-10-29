@@ -35,20 +35,27 @@ public:
 
     void load(QString path);
     void start();
-    void run();
+
 
 #pragma pack(push,1) //Выравнивание по 1 байту
-    union code{
 
-
-        byte Code:7;
-        bool b[8];
-        byte COM;
-    };
     //структура команды процессора
     struct command{
-        code CODE;
-        address addr;    //Адрес аргумента
+        union {
+            byte Cmd;               //код операции 1 байт в флагом адресации на старшем бите
+            struct{
+                unsigned OP:7;      //Код операции
+                unsigned B:1;       //Флаг адресации
+            };
+        };
+        union{
+            address Addr;               //Адрес аргумента
+            struct {
+                byte H_Addr;
+                byte L_Addr;
+            };
+        };
+
     }CMD;
 
     //Объединение данные
@@ -60,11 +67,11 @@ public:
     //PSW (Cостояние процессора)
     struct bits
     {
-        unsigned int IP; //Instruction Pointer
+        unsigned int IP;    //Instruction Pointer
         unsigned int SF:1;  //Sign flag результат положительный - 1
         unsigned int ZF:1;  //Zero flag Резульат равен нулю - 1
         unsigned int OF:1;  //Overflow flag переполнение
-        unsigned int:13;    // пока не используется
+        unsigned int:13;    //пока не используется
     }PSW;
 #pragma pack(pop)
 
@@ -76,14 +83,15 @@ private:        //Регистры, память и т.п.
     address     RA;     //Адресный регистр 2 байта
 
     data        R1;     //Внутренний регистр
-    data        R2;     //Внутренний регистр
 
     byte *MEM = new byte[0xffff];  //оперативная память 1 байтовая
 
     void flagI();
     void flagR();
 
+    void run();     //Основной цикл процессора
+
 public:
-    void test(); //Временная функция для отладки
+    void test();    //Временная функция для отладки
 };
 #endif // COMPUTER_H

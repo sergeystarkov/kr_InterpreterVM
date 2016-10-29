@@ -27,31 +27,22 @@ Computer::~Computer()
         delete pCMD[i];
     }
     delete[] &pCMD;
-
     delete[] &MEM;
 }
 //Загрузка программы в массив ОЗУ
 void Computer::load(QString path)
 {
-//    QByteArray barr;
-//    QFile file(path);
-//    if(file.open(QIODevice::ReadOnly)){
-//        barr = file.readAll();
-//        memcpy(MEM,barr,barr.length());
-//    }else {
-//        QMessageBox b;
-//        b.setText("Файл программы не загружен");
-//        b.exec();
-//    }
-//    file.close();
-
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)){
+        int curByte = 0;
         while(!file.atEnd()){
             QStringList strline = QString(file.readLine()).split(" ");
             if(!strline.isEmpty()){
-                CMD.CODE.COM = (char)strline[0].toInt();
-                CMD.addr = (address)strline[1].toInt();
+                CMD.Cmd = (byte)strline[0].toUInt();
+                CMD.Addr = (address)strline[1].toUInt();
+                MEM[curByte] = CMD.Cmd; ++curByte;
+                MEM[curByte] = CMD.H_Addr; ++curByte;
+                MEM[curByte] = CMD.L_Addr; ++curByte;
             }
         }
 
@@ -60,7 +51,7 @@ void Computer::load(QString path)
         b.setText("Файл программы не загружен");
         b.exec();
     }
-    file.close();
+    if(file.isOpen()) file.close();
 
 }
 
@@ -72,28 +63,19 @@ void Computer::start()
 
 void Computer::run()
 {
-//    while(true)
-//    {
-//        //Загрузка команды в структуру
-//        if(MEM[PSW.IP]&1<<7){       //Проверяем флаг типа адреса CMD.b
-//            MEM[PSW.IP]&=~(1<<7);
-//            CMD.b = 1;              //Принудительно очищаем код от флага
-//        }
-//        CMD.code = MEM[ PSW.IP ];   //Записываем код операции
-//        address tmp;//К битовому полу нельзя получить адрес, поэтому нужна переменная
-//        memcpy(&tmp,&MEM[ PSW.IP + 1 ],2);
-//        CMD.addr = tmp;
-//        //*************************************
+    while(true)
+    {
+        //Загрузка команды в структуру
+        CMD.Cmd     =   MEM[ PSW.IP++ ];   //Формируем структуру 3 байта из памяти
+        CMD.H_Addr  =   MEM[ PSW.IP++ ];
+        CMD.L_Addr  =   MEM[ PSW.IP++ ];
+        //*************************************
 
-//        if( pCMD[ CMD.code ]->operator ()(this) == 0){
-//            QMessageBox b; b.setText("Программ завершилась с кодом 0"); b.exec();
-//            break;
-//        }
-//        else {
-//            QMessageBox b; b.setText(QString::number(CMD.code)); b.exec(); //Временно, выводит текущий ОПкод в 10сч.
-//        }
-//        PSW.IP += 3; //Переход на сл команду
-//    }
+        if( pCMD[ CMD.OP ]->operator ()(this) == 0){
+            QMessageBox b; b.setText("Программ завершилась с кодом 0"); b.exec();
+            break;
+        }
+    }
 }
 
 void Computer::flagI()
@@ -117,20 +99,6 @@ void Computer::flagR()
 
 void Computer::test()
 {
-    //this->start();
-    //this->run();
-
-
-
-    QString s;
-
-    for(int j = 0 ; j<8 ; j++)
-    {
-        if(CMD.CODE.b[j] == 1)
-            s.append("1");
-        else s.append("0");
-    }
-
-    {QMessageBox b; b.setText(s); b.exec();}
-
+    this->start();
+    this->run();
 }
