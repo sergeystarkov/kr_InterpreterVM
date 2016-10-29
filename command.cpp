@@ -3,140 +3,140 @@
 
 
 
-int CPU::STOP(Computer * COMP)
+int cSTOP::operator()(Computer *)
 {
+    return 0;
+}
+
+int cIadd::operator()(Computer *COMP)
+{
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.I += COMP->R1.I;
+//    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
-int CPU::IADD(Computer *COMP)
+int cIsub::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.I += COMP->R1.I;
-    COMP->flagI(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.I -= COMP->R1.I;
+//    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
-int CPU::ISUB(Computer *COMP)
+int cImul::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.I -= COMP->R1.I;
-    COMP->flagI(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.I *= COMP->R1.I;
+//    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
-int CPU::IMUL(Computer *COMP)
+int cIdiv::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.I *= COMP->R1.I;
-    COMP->flagI(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.I /= COMP->R1.I;
+//    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
-int CPU::IDIV(Computer *COMP)
+int cImod::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.I /= COMP->R1.I;
-    COMP->flagI(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.I %= COMP->R1.I;
+//    COMP->flagI(); //Установка флага результата
     return 1;
 }
 
-int CPU::IMOD(Computer *COMP)
+int cRadd::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.I,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.I %= COMP->R1.I;
-    COMP->flagI(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.R += COMP->R1.R;
+//    COMP->flagR(); //Установка флага результата
     return 1;
 }
 
-int CPU::RADD(Computer *COMP)
+int cRsub::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.R += COMP->R1.R;
-    COMP->flagR(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.R -= COMP->R1.R;
+//    COMP->flagR(); //Установка флага результата
     return 1;
 }
 
-int CPU::RSUB(Computer *COMP)
+int cRmul::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.R -= COMP->R1.R;
-    COMP->flagR(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.R *= COMP->R1.R;
+//    COMP->flagR(); //Установка флага результата
     return 1;
 }
 
-int CPU::RMUL(Computer *COMP)
+int cRdiv::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.R *= COMP->R1.R;
-    COMP->flagR(); //Установка флага результата
-    return 1;
-}
-
-int CPU::RDIV(Computer *COMP)
-{
-    if(COMP->CMD.b = 0)
-        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
-    //else Относит адресация
-    COMP->RS.R /= COMP->R1.R;
-    COMP->flagR(); //Установка флага результата
+//    if(COMP->CMD.b = 0)
+//        memcpy(&COMP->R1.R,&COMP->MEM[COMP->CMD.addr],4);
+//    //else Относит адресация
+//    COMP->RS.R /= COMP->R1.R;
+//    COMP->flagR(); //Установка флага результата
     return 1;
 }
 
 //Загрузка сумматора из ОЗУ
-int CPU::LOAD(Computer *COMP)
+int cLoad::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b == 0){//При абсолютной адресации
-        memcpy( &COMP->RS.I , &COMP->MEM[COMP->CMD.addr] , 4 );
-    }else{//Доработать!!!
-        //memcpy( &COMP->RS.I , &COMP->MEM[ COMP->RA + COMP->CMD.addr ] , 4 );
-    }
+//    if(COMP->CMD.b == 0){//При абсолютной адресации
+//        memcpy( &COMP->RS.I , &COMP->MEM[COMP->CMD.addr] , 4 );
+//    }else{//Доработать!!!
+//        //memcpy( &COMP->RS.I , &COMP->MEM[ COMP->RA + COMP->CMD.addr ] , 4 );
+//    }
     return 1;
 }
 
 //Выгрузка сумматора в ОЗУ
-int CPU::STORE(Computer *COMP)
+int cStore::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b == 0){//При абсолютной адресации
-        memcpy( &COMP->MEM[COMP->CMD.addr] , &COMP->RS.I , 4 );
-    }else{//ДОРАБОТАТЬ!!!
-        //memcpy( &COMP->MEM[ COMP->RA + COMP->CMD.addr ] , &COMP->RS.I , 4 );
-    }
+//    if(COMP->CMD.b == 0){//При абсолютной адресации
+//        memcpy( &COMP->MEM[COMP->CMD.addr] , &COMP->RS.I , 4 );
+//    }else{//ДОРАБОТАТЬ!!!
+//        //memcpy( &COMP->MEM[ COMP->RA + COMP->CMD.addr ] , &COMP->RS.I , 4 );
+//    }
     return 1;
 }
 
-int CPU::RADR(Computer * COMP)
+int cRadr::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b == 0){//При абсолютной адресации
-        COMP->RA = COMP->CMD.addr;
-    }else{//При относительно адресации
-        COMP->RA += COMP->CMD.addr;
-    }
+//    if(COMP->CMD.b == 0){//При абсолютной адресации
+//        COMP->RA = COMP->CMD.addr;
+//    }else{//При относительно адресации
+//        COMP->RA += COMP->CMD.addr;
+//    }
     return 1;
 }
 
 //Безусловный переход
-int CPU::JMP(Computer *COMP)
+int cJmp::operator()(Computer *COMP)
 {
-    if(COMP->CMD.b == 0){//При абсолютной адресации
-        COMP->PSW.IP = COMP->CMD.addr;
-    }else{//При относительно адресации
-        COMP->PSW.IP = COMP->RA + COMP->CMD.addr;
-    }
+//    if(COMP->CMD.b == 0){//При абсолютной адресации
+//        COMP->PSW.IP = COMP->CMD.addr;
+//    }else{//При относительно адресации
+//        COMP->PSW.IP = COMP->RA + COMP->CMD.addr;
+//    }
     return 1;
 }
