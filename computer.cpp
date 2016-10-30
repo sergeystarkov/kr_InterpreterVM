@@ -1,7 +1,9 @@
 #include "computer.h"
 
-Computer::Computer()
+Computer::Computer(QString PATH)
 {
+    programPath = PATH;
+
     //Целая арифметика
     pCMD[STOP]  =   new cSTOP();
     pCMD[Iadd]  =   new cIadd();
@@ -23,16 +25,16 @@ Computer::Computer()
 
 Computer::~Computer()
 {
-    for( int i = 0 ; i < 128 ; i++ ) {
-        delete pCMD[i];
-    }
-    delete[] &pCMD;
-    delete[] &MEM;
+//    for( int i = 0 ; i < 128 ; i++ ) {
+//        delete &pCMD[i];
+//    }
+//    delete[] pCMD;
+//    delete[] &MEM;
 }
 //Загрузка программы в массив ОЗУ
-void Computer::load(QString path)
+bool Computer::load()
 {
-    QFile file(path);
+    QFile file(programPath);
     if(file.open(QIODevice::ReadOnly)){
         int curByte = 0;
         while(!file.atEnd()){
@@ -45,23 +47,20 @@ void Computer::load(QString path)
                 MEM[curByte] = CMD.L_Addr; ++curByte;
             }
         }
-
     }else {
-        QMessageBox b;
-        b.setText("Файл программы не загружен");
-        b.exec();
+        return false;
     }
     if(file.isOpen()) file.close();
-
+    return true;
 }
 
-void Computer::start()
+void Computer::reset()
 {
     PSW.IP = 0x0000;
     RA = 0x0000;
 }
 
-void Computer::run()
+int Computer::run()
 {
     while(true)
     {
@@ -71,11 +70,9 @@ void Computer::run()
         CMD.L_Addr  =   MEM[ PSW.IP++ ];
         //*************************************
 
-        if( pCMD[ CMD.OP ]->operator ()(this) == 0){
-            QMessageBox b; b.setText("Программ завершилась с кодом 0"); b.exec();
-            break;
-        }
+        if( pCMD[ CMD.OP ]->operator ()(this) == 0) return 0;
     }
+    return 0;
 }
 
 void Computer::flagI()
@@ -97,8 +94,15 @@ void Computer::flagR()
 //Установка флага результата
 
 
-void Computer::test()
+int Computer::execute()
 {
-    this->start();
-    this->run();
+    this->reset();
+    if(!this->load())
+    {
+        QMessageBox b;
+        b.setText("Файл программы не загружен");
+        b.exec();
+        return 2;
+    }
+    return this->run();
 }

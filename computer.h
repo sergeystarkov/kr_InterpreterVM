@@ -30,12 +30,18 @@ public:
     friend class cStore;
     friend class cJmp;
 
-    Computer();
+    Computer(QString PATH);
     ~Computer();
 
-    void load(QString path);
-    void start();
+    int execute();
+private:
+    QString programPath;
+    void reset();
+    bool load();
+    int run();     //Основной цикл процессора
 
+    void flagI();
+    void flagR();
 
 #pragma pack(push,1) //Выравнивание по 1 байту
 
@@ -55,7 +61,6 @@ public:
                 byte L_Addr;
             };
         };
-
     }CMD;
 
     //Объединение данные
@@ -75,7 +80,7 @@ public:
     }PSW;
 #pragma pack(pop)
 
-private:        //Регистры, память и т.п.
+        //Регистры, память и т.п.
 
     Command *pCMD[128]; //набор команд процессора
 
@@ -85,13 +90,5 @@ private:        //Регистры, память и т.п.
     data        R1;     //Внутренний регистр
 
     byte *MEM = new byte[0xffff];  //оперативная память 1 байтовая
-
-    void flagI();
-    void flagR();
-
-    void run();     //Основной цикл процессора
-
-public:
-    void test();    //Временная функция для отладки
 };
 #endif // COMPUTER_H

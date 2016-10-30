@@ -16,6 +16,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    VM->load("D:/testProg.txt");
-    VM->test();
+    VM = new Computer("D:/testProg.txt");
+    int res = VM->execute();
+
+    delete VM;
 }

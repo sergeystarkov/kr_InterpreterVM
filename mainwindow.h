@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    Computer *VM = new Computer();
+    Computer *VM;
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
