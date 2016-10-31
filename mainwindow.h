@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QThread>
 
-#include "computer.h"
+#include "interpreter.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,14 +15,21 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    Computer *VM;
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void loadFile();
+
 private slots:
-    void on_pushButton_clicked();
+    void on_startInterpereter_clicked();
+
+    void on_save_clicked();
 
 private:
+    QThread *VMThread;
+    interpreter *Interpreter;
+
     Ui::MainWindow *ui;
 };
 

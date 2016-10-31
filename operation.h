@@ -31,3 +31,7 @@ enum Operations {
 };
 
 #endif // OPERATION_H
+
+
+
+

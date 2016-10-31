@@ -10,7 +10,7 @@
 #include "types.h"
 #include "command.h"
 
-#include "assert.h"
+//#include "assert.h"
 class Computer
 {
 public:
@@ -82,7 +82,7 @@ private:
 
         //Регистры, память и т.п.
 
-    Command *pCMD[128]; //набор команд процессора
+    Command *pCMD[128] = {NULL}; //набор команд процессора
 
     data        RS;     //Сумматор 4 байта
     address     RA;     //Адресный регистр 2 байта

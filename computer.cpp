@@ -25,28 +25,31 @@ Computer::Computer(QString PATH)
 
 Computer::~Computer()
 {
-//    for( int i = 0 ; i < 128 ; i++ ) {
-//        delete &pCMD[i];
-//    }
-//    delete[] pCMD;
-//    delete[] &MEM;
+    for( int i = 0 ; i < 128 ; i++ ) {
+        delete pCMD[i];
+    }
+    delete[] MEM;
 }
+
 //Загрузка программы в массив ОЗУ
 bool Computer::load()
 {
     QFile file(programPath);
-    if(file.open(QIODevice::ReadOnly)){
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)){
         int curByte = 0;
         while(!file.atEnd()){
+            if(curByte >= 0xfffb) break; //Защита от переполнения ОЗУ
             QStringList strline = QString(file.readLine()).split(" ");
             if(!strline.isEmpty()){
                 CMD.Cmd = (byte)strline[0].toUInt();
                 CMD.Addr = (address)strline[1].toUInt();
+                //Загрузка программы в ОЗУ
                 MEM[curByte] = CMD.Cmd; ++curByte;
                 MEM[curByte] = CMD.H_Addr; ++curByte;
                 MEM[curByte] = CMD.L_Addr; ++curByte;
             }
         }
+        RA += curByte; //Адресный регистр для данных после программы
     }else {
         return false;
     }
@@ -57,7 +60,12 @@ bool Computer::load()
 void Computer::reset()
 {
     PSW.IP = 0x0000;
+    PSW.OF = 0;
+    PSW.SF = 0;
+    PSW.ZF = 0;
     RA = 0x0000;
+    RS.I = 0;
+    R1.I = 0;
 }
 
 int Computer::run()
@@ -70,7 +78,8 @@ int Computer::run()
         CMD.L_Addr  =   MEM[ PSW.IP++ ];
         //*************************************
 
-        if( pCMD[ CMD.OP ]->operator ()(this) == 0) return 0;
+        int execResult = pCMD[ CMD.OP ]->operator ()(this);     //Выполнение
+        if( execResult != 1) return execResult;                 //Результат выполнения
     }
     return 0;
 }
@@ -99,9 +108,6 @@ int Computer::execute()
     this->reset();
     if(!this->load())
     {
-        QMessageBox b;
-        b.setText("Файл программы не загружен");
-        b.exec();
         return 2;
     }
     return this->run();
