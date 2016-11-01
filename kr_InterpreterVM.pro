@@ -16,15 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     computer.cpp \
     interpreter.cpp \
-    command.cpp \
-    test.cpp
+    command.cpp
 
 HEADERS  += mainwindow.h \
     command.h \
     computer.h \
     types.h \
     operation.h \
-    interpreter.h \
-    test.h
+    interpreter.h
 
 FORMS    += mainwindow.ui

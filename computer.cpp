@@ -2,9 +2,10 @@
 
 #include "interpreter.h"
 
-Computer::Computer(QString PATH)
+Computer::Computer(QString PATH,interpreter *INTER)
 {
     programPath = PATH;
+    Interpreter = INTER;
 
     //Целая арифметика
     pCMD[STOP]  =   new cSTOP();
@@ -137,7 +138,6 @@ void Computer::handle(int handleCode)
         DATA.I = interpreter::inputDialog("Введите целое число").toInt();
         break;
     }
-
     case hRin: {
         DATA.R = interpreter::inputDialog("Введите вещественное число").toFloat();
         break;
@@ -153,4 +153,9 @@ void Computer::handle(int handleCode)
         break;
     }
     }
+}
+
+void Computer::debug(QString msg)
+{
+    Interpreter->debug(msg);
 }

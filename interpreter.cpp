@@ -5,12 +5,18 @@ interpreter::interpreter(QString PATH)
     ProgramPath = PATH;
 }
 
-int interpreter::startVM()
+interpreter::~interpreter()
 {
-     VM = new Computer(ProgramPath);
+    delete VM;
+}
+
+void interpreter::startVM()
+{
+     VM = new Computer(ProgramPath,this);
+     emit debugMSG("Запуск программы " + ProgramPath);
      int result = VM->execute();
-     delete VM;
-     return result;
+     emit debugMSG("Программа завершилась с кодом " + QString::number(result));
+     delete this;
 }
 
 QString interpreter::inputDialog(QString text)
@@ -34,5 +40,10 @@ void interpreter::outputDialog(QString str)
     message.setWindowTitle("Сообщение");
     message.setText(str);
     message.exec();
+}
+
+void interpreter::debug(QString  msg)
+{
+    emit debugMSG("Программа#: " + msg);
 }
 

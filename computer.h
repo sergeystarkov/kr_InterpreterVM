@@ -42,7 +42,7 @@ class Computer
 public:
 
 
-    Computer(QString PATH);
+    Computer(QString PATH,interpreter *INTER);
     ~Computer();
 
     int execute();
@@ -51,6 +51,10 @@ public:
 private:
 
     void handle(int handleCode);
+
+    interpreter *Interpreter;
+
+    void debug(QString);
 
     QString programPath;
 

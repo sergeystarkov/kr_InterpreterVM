@@ -12,6 +12,8 @@ void Command::loadRegister(Computer *COMP)
     COMP->R1.b2 = COMP->MEM[ptr++];
     COMP->R1.b3 = COMP->MEM[ptr++];
     COMP->R1.b4 = COMP->MEM[ptr++];
+
+    COMP->debug("R1 = " + QString::number(COMP->R1.I));
 }
 
 int cSTOP::operator()(Computer *)
@@ -105,6 +107,7 @@ int cLoad::operator()(Computer *COMP)
     COMP->RS.b3 = COMP->MEM[ptr++];
     COMP->RS.b4 = COMP->MEM[ptr];
 
+    COMP->debug("Загрука сумматора " + QString::number(COMP->RS.I));
     return 1;
 }
 
@@ -122,6 +125,7 @@ int cStore::operator()(Computer *COMP)
     COMP->MEM[ptr++] = COMP->RS.b3;
     COMP->MEM[ptr] = COMP->RS.b4;
 
+    COMP->debug("Выгрузка сумматора " + QString::number(COMP->RS.I));
     return 1;
 }
 
@@ -201,6 +205,8 @@ int cIin::operator()(Computer *COMP)
 {
     COMP->handle(hIin);
     COMP->RS.I = COMP->DATA.I;
+
+    COMP->debug("Ввод целого числа " + QString::number(COMP->RS.I));
     return 1;
 }
 
@@ -208,17 +214,21 @@ int cRin::operator()(Computer *COMP)
 {
     COMP->handle(hRin);
     COMP->RS.R = COMP->DATA.R;
+
+    COMP->debug("Ввод вещественного числа " + QString::number(COMP->RS.R));
     return 1;
 }
 
 int cIout::operator()(Computer *COMP)
 {
+    COMP->debug("Вывод целого числа " + QString::number(COMP->RS.I));
     COMP->handle(hIout);
     return 1;
 }
 
 int cRout::operator()(Computer *COMP)
 {
+    COMP->debug("Вывод вещественного числа " + QString::number(COMP->RS.I));
     COMP->handle(hRout);
     return 1;
 }

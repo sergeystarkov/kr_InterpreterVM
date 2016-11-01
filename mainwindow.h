@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QThread>
+#include <QtGui>
+#include <QFileDialog>
 
 #include "interpreter.h"
 
@@ -23,8 +25,13 @@ public:
 
 private slots:
     void on_startInterpereter_clicked();
+    void stopInterpreter();
 
     void on_save_clicked();
+
+    void on_openFile_clicked();
+
+    void debugMessage(QString);
 
 private:
     QThread *VMThread;
