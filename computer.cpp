@@ -1,5 +1,7 @@
 #include "computer.h"
 
+#include "interpreter.h"
+
 Computer::Computer(QString PATH)
 {
     programPath = PATH;
@@ -11,16 +13,31 @@ Computer::Computer(QString PATH)
     pCMD[Imul]  =   new cImul();
     pCMD[Idiv]  =   new cIdiv();
     pCMD[Imod]  =   new cImod();
+    pCMD[Iin]   =   new cIin();
+    pCMD[Iout]  =   new cIout();
+
 
     //Дробная арифметика
     pCMD[Radd]  =   new cRadd();
     pCMD[Rsub]  =   new cRsub();
     pCMD[Rmul]  =   new cRmul();
     pCMD[Rdiv]  =   new cRdiv();
+    pCMD[Rin]   =   new cRin();
+    pCMD[Rout]  =   new cRout();
 
     //Операции с сумматором
     pCMD[Load]  =   new cLoad();    //Загрузка сумматора
     pCMD[Store] =   new cStore();   //Сохранение сумматора
+
+    //прыжки
+    pCMD[Jmp]   =   new cJmp();
+    pCMD[JZ]    =   new cJZ();
+    pCMD[JG]    =   new cJG();
+    pCMD[JL]    =   new cJL();
+
+    //сравнение cIcmp
+    pCMD[Icmp]  =   new cIcmp();
+    pCMD[Rcmp]  =   new cRcmp();
 }
 
 Computer::~Computer()
@@ -111,4 +128,29 @@ int Computer::execute()
         return 2;
     }
     return this->run();
+}
+
+void Computer::handle(int handleCode)
+{
+    switch (handleCode){
+    case hIin: {
+        DATA.I = interpreter::inputDialog("Введите целое число").toInt();
+        break;
+    }
+
+    case hRin: {
+        DATA.R = interpreter::inputDialog("Введите вещественное число").toFloat();
+        break;
+    }
+    case hIout:{//Вывод целого значения сумматора на экран
+        QString str = QString::number(RS.I);
+        interpreter::outputDialog(str);
+        break;
+    }
+    case hRout: {//Вывод вещественного значения сумматора на экран
+        QString str = QString::number(RS.R,'f',2);
+        interpreter::outputDialog(str);
+        break;
+    }
+    }
 }

@@ -10,11 +10,12 @@
 #include "types.h"
 #include "command.h"
 
-//#include "assert.h"
+//#include "interpreter.h"
+
+class interpreter;
+
 class Computer
 {
-public:
-
     friend class Command;
     friend class cIadd;
     friend class cRadd;
@@ -34,13 +35,25 @@ public:
     friend class cJZ;
     friend class cJG;
     friend class cJL;
+    friend class cIin;
+    friend class cIout;
+    friend class cRin;
+    friend class cRout;
+public:
+
 
     Computer(QString PATH);
     ~Computer();
 
     int execute();
+
+
 private:
+
+    void handle(int handleCode);
+
     QString programPath;
+
     void reset();
     bool load();
     int run();     //Основной цикл процессора
@@ -72,6 +85,12 @@ private:
     union data{
         int I;  //Либо целые
         float R;  //Либо вещественные
+        struct { //Побайтовое представление
+            byte b1;
+            byte b2;
+            byte b3;
+            byte b4;
+        };
     }DATA;
 
     //PSW (Cостояние процессора)
@@ -83,6 +102,7 @@ private:
         unsigned int OF:1;  //Overflow flag переполнение
         unsigned int:13;    //пока не используется
     }PSW;
+
 #pragma pack(pop)
 
         //Регистры, память и т.п.
@@ -91,9 +111,8 @@ private:
 
     data        RS;     //Сумматор 4 байта
     address     RA;     //Адресный регистр 2 байта
-
     data        R1;     //Внутренний регистр
-
     byte *MEM = new byte[0xffff];  //оперативная память 1 байтовая
 };
+
 #endif // COMPUTER_H

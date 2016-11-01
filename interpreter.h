@@ -5,9 +5,11 @@
 
 #include "computer.h"
 
-
-
 #include <QStringList>
+#include <QLineEdit>
+#include <QInputDialog>
+
+#include "operation.h"
 
 //QString execResultCodes[] = {"0 - Программа удачно завершилась",
 //                              "1 - Операция успешно выполнена",
@@ -27,6 +29,10 @@ public:
 public slots:
     int startVM();
 
+private:
+    friend class Computer;
+    static QString inputDialog(QString text);
+    static void outputDialog(QString str);
 private:
     QString ProgramPath;
 

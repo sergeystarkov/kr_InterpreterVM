@@ -2,6 +2,7 @@
 #define COMMAND_H
 
 #include "computer.h"
+#include "operation.h"
 
 
 
@@ -131,6 +132,30 @@ public:
 
 //переход, если меньше
 class cJL : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//Ввод целого
+class cIin : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//Ввод вещественного
+class cRin : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//вывод целого
+class cIout : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//Вывод вещественного
+class cRout : public Command {
 public:
     int operator()(Computer *COMP);
 };

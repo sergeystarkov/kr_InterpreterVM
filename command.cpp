@@ -97,20 +97,34 @@ int cRdiv::operator()(Computer *COMP)
 //Загрузка сумматора из ОЗУ
 int cLoad::operator()(Computer *COMP)
 {
+    unsigned int ptr;
     if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->RS.I = COMP->MEM[COMP->CMD.Addr];
+        ptr =  COMP->CMD.Addr;
     else //Относит адресация
-        COMP->RS.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+        ptr = COMP->CMD.Addr + COMP->RA;
+
+    COMP->RS.b1 = COMP->MEM[ptr++];
+    COMP->RS.b2 = COMP->MEM[ptr++];
+    COMP->RS.b3 = COMP->MEM[ptr++];
+    COMP->RS.b4 = COMP->MEM[ptr];
+
     return 1;
 }
 
 //Выгрузка сумматора в ОЗУ
 int cStore::operator()(Computer *COMP)
 {
+    unsigned int ptr;
     if(COMP->CMD.B = 0) //Абсолютная адресация
-         COMP->MEM[COMP->CMD.Addr] = COMP->RS.I;
+        ptr =  COMP->CMD.Addr;
     else //Относит адресация
-        COMP->MEM[COMP->CMD.Addr + COMP->RA] = COMP->RS.I;
+        ptr = COMP->CMD.Addr + COMP->RA;
+
+    COMP->MEM[ptr++] = COMP->RS.b1;
+    COMP->MEM[ptr++] = COMP->RS.b2;
+    COMP->MEM[ptr++] = COMP->RS.b3;
+    COMP->MEM[ptr] = COMP->RS.b4;
+
     return 1;
 }
 
@@ -183,5 +197,31 @@ int cJL::operator()(Computer *COMP)
         COMP->PSW.IP = COMP->CMD.Addr;
     else //Относит адресация
         COMP->PSW.IP += COMP->CMD.Addr;
+    return 1;
+}
+
+int cIin::operator()(Computer *COMP)
+{
+    COMP->handle(hIin);
+    COMP->RS.I = COMP->DATA.I;
+    return 1;
+}
+
+int cRin::operator()(Computer *COMP)
+{
+    COMP->handle(hRin);
+    COMP->RS.R = COMP->DATA.R;
+    return 1;
+}
+
+int cIout::operator()(Computer *COMP)
+{
+    COMP->handle(hIout);
+    return 1;
+}
+
+int cRout::operator()(Computer *COMP)
+{
+    COMP->handle(hRout);
     return 1;
 }

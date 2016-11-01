@@ -34,7 +34,6 @@ void MainWindow::on_startInterpereter_clicked()
 {    
     QString tmpPath;
     tmpPath = ui->pathToFile->text() + ".tmp";
-    QMessageBox m; m.setText(tmpPath); m.exec();
     QFile file(tmpPath);
     if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
