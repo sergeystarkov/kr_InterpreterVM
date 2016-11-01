@@ -1,21 +1,18 @@
 #include "command.h"
 
-void Command::loadIntegerRegister(Computer *COMP)
+void Command::loadRegister(Computer *COMP)
 {
+    unsigned int ptr;
     if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
+        ptr = COMP->CMD.Addr;
     else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
-}
+        ptr = COMP->CMD.Addr + COMP->RA;
 
-void Command::loadRealRegister(Computer *COMP)
-{
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    COMP->R1.b1 = COMP->MEM[ptr++];
+    COMP->R1.b2 = COMP->MEM[ptr++];
+    COMP->R1.b3 = COMP->MEM[ptr++];
+    COMP->R1.b4 = COMP->MEM[ptr++];
 }
-
 
 int cSTOP::operator()(Computer *)
 {
@@ -24,7 +21,7 @@ int cSTOP::operator()(Computer *)
 
 int cIadd::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.I += COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -32,7 +29,7 @@ int cIadd::operator()(Computer *COMP)
 
 int cIsub::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.I -= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -40,7 +37,7 @@ int cIsub::operator()(Computer *COMP)
 
 int cImul::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.I *= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -48,7 +45,7 @@ int cImul::operator()(Computer *COMP)
 
 int cIdiv::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.I /= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -56,7 +53,7 @@ int cIdiv::operator()(Computer *COMP)
 
 int cImod::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.I %= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -64,7 +61,7 @@ int cImod::operator()(Computer *COMP)
 
 int cRadd::operator()(Computer *COMP)
 {
-    loadRealRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.R += COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -72,7 +69,7 @@ int cRadd::operator()(Computer *COMP)
 
 int cRsub::operator()(Computer *COMP)
 {
-    loadRealRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.R -= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -80,7 +77,7 @@ int cRsub::operator()(Computer *COMP)
 
 int cRmul::operator()(Computer *COMP)
 {
-    loadRealRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.R *= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -88,7 +85,7 @@ int cRmul::operator()(Computer *COMP)
 
 int cRdiv::operator()(Computer *COMP)
 {
-    loadRealRegister(COMP);
+    loadRegister(COMP);
     COMP->RS.R /= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -141,7 +138,7 @@ int cRadr::operator()(Computer *COMP)
 //Сравнение целых
 int cIcmp::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->DATA.I = COMP->RS.I;
     COMP->RS.I -= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
@@ -152,7 +149,7 @@ int cIcmp::operator()(Computer *COMP)
 //Сравнение вещественных
 int cRcmp::operator()(Computer *COMP)
 {
-    loadIntegerRegister(COMP);
+    loadRegister(COMP);
     COMP->DATA.R = COMP->RS.R;
     COMP->RS.R -= COMP->R1.R;
     COMP->flagR(); //Установка флага результата

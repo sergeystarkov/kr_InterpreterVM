@@ -14,8 +14,7 @@ class Command
 public:
     virtual int operator()(Computer *) = 0;   //Перегрузка оператора ()
 protected:
-    void loadIntegerRegister(Computer *COMP);
-    void loadRealRegister(Computer *COMP);
+    void loadRegister(Computer *COMP);
 };
 /////////////////////////////////////////////////////
 
