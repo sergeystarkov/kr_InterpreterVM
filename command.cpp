@@ -1,6 +1,20 @@
 #include "command.h"
 
+void Command::loadIntegerRegister(Computer *COMP)
+{
+    if(COMP->CMD.B = 0) //Абсолютная адресация
+        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
+    else //Относит адресация
+        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+}
 
+void Command::loadRealRegister(Computer *COMP)
+{
+    if(COMP->CMD.B = 0) //Абсолютная адресация
+        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
+    else //Относит адресация
+        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+}
 
 
 int cSTOP::operator()(Computer *)
@@ -10,10 +24,7 @@ int cSTOP::operator()(Computer *)
 
 int cIadd::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadIntegerRegister(COMP);
     COMP->RS.I += COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -21,10 +32,7 @@ int cIadd::operator()(Computer *COMP)
 
 int cIsub::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadIntegerRegister(COMP);
     COMP->RS.I -= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -32,10 +40,7 @@ int cIsub::operator()(Computer *COMP)
 
 int cImul::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadIntegerRegister(COMP);
     COMP->RS.I *= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -43,10 +48,7 @@ int cImul::operator()(Computer *COMP)
 
 int cIdiv::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadIntegerRegister(COMP);
     COMP->RS.I /= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -54,10 +56,7 @@ int cIdiv::operator()(Computer *COMP)
 
 int cImod::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.I = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadIntegerRegister(COMP);
     COMP->RS.I %= COMP->R1.I;
     COMP->flagI(); //Установка флага результата
     return 1;
@@ -65,10 +64,7 @@ int cImod::operator()(Computer *COMP)
 
 int cRadd::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadRealRegister(COMP);
     COMP->RS.R += COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -76,10 +72,7 @@ int cRadd::operator()(Computer *COMP)
 
 int cRsub::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadRealRegister(COMP);
     COMP->RS.R -= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -87,10 +80,7 @@ int cRsub::operator()(Computer *COMP)
 
 int cRmul::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadRealRegister(COMP);
     COMP->RS.R *= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -98,10 +88,7 @@ int cRmul::operator()(Computer *COMP)
 
 int cRdiv::operator()(Computer *COMP)
 {
-    if(COMP->CMD.B = 0) //Абсолютная адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr];
-    else //Относит адресация
-        COMP->R1.R = COMP->MEM[COMP->CMD.Addr + COMP->RA];
+    loadRealRegister(COMP);
     COMP->RS.R /= COMP->R1.R;
     COMP->flagR(); //Установка флага результата
     return 1;
@@ -127,6 +114,7 @@ int cStore::operator()(Computer *COMP)
     return 1;
 }
 
+//Загрузка адресного регистра
 int cRadr::operator()(Computer *COMP)
 {
     if(COMP->CMD.B = 0) //Абсолютная адресация
@@ -136,9 +124,61 @@ int cRadr::operator()(Computer *COMP)
     return 1;
 }
 
+//Сравнение целых
+int cIcmp::operator()(Computer *COMP)
+{
+    loadIntegerRegister(COMP);
+    COMP->DATA.I = COMP->RS.I;
+    COMP->RS.I -= COMP->R1.I;
+    COMP->flagI(); //Установка флага результата
+    COMP->RS.I = COMP->DATA.I;
+    return 1;
+}
+
+//Сравнение вещественных
+int cRcmp::operator()(Computer *COMP)
+{
+    loadIntegerRegister(COMP);
+    COMP->DATA.R = COMP->RS.R;
+    COMP->RS.R -= COMP->R1.R;
+    COMP->flagR(); //Установка флага результата
+    COMP->RS.R = COMP->DATA.R;
+    return 1;
+}
+
 //Безусловный переход
 int cJmp::operator()(Computer *COMP)
 {
+    if(COMP->CMD.B = 0) //Абсолютная адресация
+        COMP->PSW.IP = COMP->CMD.Addr;
+    else //Относит адресация
+        COMP->PSW.IP += COMP->CMD.Addr;
+    return 1;
+}
+//переход, если равно
+int cJZ::operator()(Computer *COMP)
+{
+    if(COMP->PSW.ZF != 1) return 0;
+    if(COMP->CMD.B = 0) //Абсолютная адресация
+        COMP->PSW.IP = COMP->CMD.Addr;
+    else //Относит адресация
+        COMP->PSW.IP += COMP->CMD.Addr;
+    return 1;
+}
+//переход, если больше
+int cJG::operator()(Computer *COMP)
+{
+    if(COMP->PSW.SF != 1) return 0;
+    if(COMP->CMD.B = 0) //Абсолютная адресация
+        COMP->PSW.IP = COMP->CMD.Addr;
+    else //Относит адресация
+        COMP->PSW.IP += COMP->CMD.Addr;
+    return 1;
+}
+//переход, если меньше
+int cJL::operator()(Computer *COMP)
+{
+    if(COMP->PSW.SF != 0) return 0;
     if(COMP->CMD.B = 0) //Абсолютная адресация
         COMP->PSW.IP = COMP->CMD.Addr;
     else //Относит адресация

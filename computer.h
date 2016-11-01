@@ -29,6 +29,11 @@ public:
     friend class cLoad;
     friend class cStore;
     friend class cJmp;
+    friend class cIcmp;
+    friend class cRcmp;
+    friend class cJZ;
+    friend class cJG;
+    friend class cJL;
 
     Computer(QString PATH);
     ~Computer();

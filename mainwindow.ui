@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>659</width>
-    <height>533</height>
+    <width>663</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QPushButton" name="startInterpereter">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>380</x>
       <y>10</y>
-      <width>151</width>
-      <height>31</height>
+      <width>142</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -30,38 +30,38 @@
    <widget class="QTextBrowser" name="debugLog">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>60</y>
-      <width>241</width>
-      <height>421</height>
+      <x>340</x>
+      <y>40</y>
+      <width>311</width>
+      <height>401</height>
      </rect>
     </property>
    </widget>
    <widget class="QTextEdit" name="programText">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>391</width>
-      <height>371</height>
+      <x>11</x>
+      <y>39</y>
+      <width>321</width>
+      <height>401</height>
      </rect>
     </property>
    </widget>
    <widget class="QLineEdit" name="pathToFile">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>391</width>
-      <height>31</height>
+      <x>11</x>
+      <y>11</y>
+      <width>321</width>
+      <height>22</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="save">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>430</y>
+      <x>11</x>
+      <y>449</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -76,7 +76,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>659</width>
+     <width>663</width>
      <height>20</height>
     </rect>
    </property>

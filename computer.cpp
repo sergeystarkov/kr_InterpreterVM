@@ -89,7 +89,7 @@ void Computer::flagI()
     PSW.ZF = 0;
     PSW.SF = 0;
     if(RS.I == 0) PSW.ZF = 1;
-    else if(RS.I < 0) PSW.SF = 1;
+    else if(RS.I > 0) PSW.SF = 1;
 }
 
 void Computer::flagR()
@@ -97,7 +97,7 @@ void Computer::flagR()
     PSW.ZF = 0;
     PSW.SF = 0;
     if(RS.R == 0) PSW.ZF = 1;
-    else if(RS.R < 0) PSW.SF = 1;
+    else if(RS.R > 0) PSW.SF = 1;
 }
 
 //Установка флага результата

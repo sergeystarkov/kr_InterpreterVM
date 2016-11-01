@@ -12,6 +12,9 @@ class Command
 {
 public:
     virtual int operator()(Computer *) = 0;   //Перегрузка оператора ()
+protected:
+    void loadIntegerRegister(Computer *COMP);
+    void loadRealRegister(Computer *COMP);
 };
 /////////////////////////////////////////////////////
 
@@ -96,11 +99,48 @@ public:
     int operator()(Computer *COMP);
 };
 
+//Сравнение целых
+class cIcmp : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//Сравнение вещественных
+class cRcmp : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
 //Безусловный переход
 class cJmp : public Command {
 public:
     int operator()(Computer *COMP);
 };
+
+//переход, если ноль (равны)
+class cJZ : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//переход, если больше
+class cJG : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+//переход, если меньше
+class cJL : public Command {
+public:
+    int operator()(Computer *COMP);
+};
+
+
+
+
+
+
+
 #endif // COMMAND_H
 
 
