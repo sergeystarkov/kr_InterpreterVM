@@ -200,7 +200,7 @@ int cJmp::operator()(Computer *COMP)
 //переход, если равно
 int cJZ::operator()(Computer *COMP)
 {
-    if(COMP->PSW.ZF != 1) return 0;
+    if(COMP->PSW.ZF != 1) return 1;
     if(COMP->CMD.B == 0) //Абсолютная адресация
         COMP->PSW.IP = COMP->CMD.Addr;
     else //Относит адресация
@@ -212,7 +212,7 @@ int cJZ::operator()(Computer *COMP)
 //переход, если больше
 int cJG::operator()(Computer *COMP)
 {
-    if(COMP->PSW.SF != 1) return 0;
+    if(COMP->PSW.SF != 1) return 1;
     if(COMP->CMD.B == 0) //Абсолютная адресация
         COMP->PSW.IP = COMP->CMD.Addr;
     else //Относит адресация
@@ -224,7 +224,7 @@ int cJG::operator()(Computer *COMP)
 //переход, если меньше
 int cJL::operator()(Computer *COMP)
 {
-    if(COMP->PSW.SF != 0) return 0;
+    if(COMP->PSW.SF != 0) return 1;
     if(COMP->CMD.B == 0) //Абсолютная адресация
         COMP->PSW.IP = COMP->CMD.Addr;
     else //Относит адресация
