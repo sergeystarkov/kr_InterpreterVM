@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -89,7 +90,18 @@ void MainWindow::on_openFile_clicked()
     if(!path.isEmpty()) loadFile();
 }
 
+//Вывод сообщения в лог
 void MainWindow::debugMessage(QString str)
 {
     ui->debugLog->append(str);
+}
+
+void MainWindow::on_SaveAs_clicked()
+{
+    QString path = QFileDialog::getSaveFileName(this,
+                                QString::fromUtf8("Сохранить файл"),
+                                QDir::currentPath(),
+                                "Text (*.txt);");
+    ui->pathToFile->setText(path);
+    on_save_clicked();
 }

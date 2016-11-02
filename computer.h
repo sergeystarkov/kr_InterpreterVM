@@ -2,20 +2,18 @@
 #define COMPUTER_H
 
 #include <QMessageBox>
-
 #include <QFile>
-#include <QStringList>
 
 #include "operation.h"
 #include "types.h"
 #include "command.h"
 
-//#include "interpreter.h"
-
 class interpreter;
 
 class Computer
 {
+    //Дружественные классы
+    //с реализацией команд
     friend class Command;
     friend class cIadd;
     friend class cRadd;
@@ -39,31 +37,26 @@ class Computer
     friend class cIout;
     friend class cRin;
     friend class cRout;
+    //********************
+
 public:
-
-
     Computer(QString PATH,interpreter *INTER);
     ~Computer();
 
-    int execute();
-
-
+    int execute(); //Интерфейс выполнения
 private:
 
-    void handle(int handleCode);
+    void interrupt(int interruptCode);  //Обработчик прерываний
+    interpreter *Interpreter;           //Указатель на объект родитель
+    void debug(QString);                //Вывод сообщения в лог
+    QString programPath;                //Путь до файла
 
-    interpreter *Interpreter;
+    void reset();   //сброс регистров
+    bool load();    //Загрузка программы
+    int run();      //Основной цикл процессора
 
-    void debug(QString);
-
-    QString programPath;
-
-    void reset();
-    bool load();
-    int run();     //Основной цикл процессора
-
-    void flagI();
-    void flagR();
+    void flagI();   //Флаги цел.
+    void flagR();   //Флаги вещ.
 
 #pragma pack(push,1) //Выравнивание по 1 байту
 
@@ -72,15 +65,15 @@ private:
         union {
             byte Cmd;               //код операции 1 байт в флагом адресации на старшем бите
             struct{
-                unsigned OP:7;      //Код операции
-                unsigned B:1;       //Флаг адресации
+                bit OP:7;      //Код операции
+                bit B:1;       //Флаг адресации
             };
         };
         union{
-            address Addr;               //Адрес аргумента
+            address Addr;       //Адрес аргумента
             struct {
-                byte H_Addr;
-                byte L_Addr;
+                byte H_Addr;    //Побайтово
+                byte L_Addr;    //...
             };
         };
     }CMD;
@@ -100,16 +93,16 @@ private:
     //PSW (Cостояние процессора)
     struct bits
     {
-        unsigned int IP;    //Instruction Pointer
-        unsigned int SF:1;  //Sign flag результат положительный - 1
-        unsigned int ZF:1;  //Zero flag Резульат равен нулю - 1
-        unsigned int OF:1;  //Overflow flag переполнение
-        unsigned int:13;    //пока не используется
+        address IP; //Instruction Pointer
+        bit SF:1;   //Sign flag результат положительный - 1
+        bit ZF:1;   //Zero flag Резульат равен нулю - 1
+        bit OF:1;   //Overflow flag переполнение
+        bit :13;    //не используется
     }PSW;
 
 #pragma pack(pop)
 
-        //Регистры, память и т.п.
+    //Регистры, память и т.п.
 
     Command *pCMD[128] = {NULL}; //набор команд процессора
 

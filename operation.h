@@ -42,7 +42,7 @@ enum Operations {
 
 
 // прерывания
-enum Handler{
+enum Interrupt{
     hIin = 1,          // - ввод целого числа
     hRin = 2,          // - ввод вещественного числа
 

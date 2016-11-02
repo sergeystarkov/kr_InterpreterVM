@@ -26,3 +26,5 @@ HEADERS  += mainwindow.h \
     interpreter.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES +=

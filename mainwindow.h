@@ -21,21 +21,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void loadFile();
+    void loadFile();    //Вывод файла в редактор
 
 private slots:
-    void on_startInterpereter_clicked();
-    void stopInterpreter();
-
-    void on_save_clicked();
-
-    void on_openFile_clicked();
-
-    void debugMessage(QString);
+    void on_startInterpereter_clicked();    //Запуск интерпретатора
+    void on_save_clicked();                 //Сохранить
+    void on_openFile_clicked();             //Открыть файл
+    void on_SaveAs_clicked();               //Сохранить как
+    void debugMessage(QString);             //Вывод лога
 
 private:
-    QThread *VMThread;
-    interpreter *Interpreter;
+    QThread *VMThread;          //Поток для интерпретатора
+    interpreter *Interpreter;   //Объект интерпретатора
+    void stopInterpreter();     //Высвобождение ресурсов, закрытие потока
 
     Ui::MainWindow *ui;
 };

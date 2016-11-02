@@ -2,31 +2,33 @@
 #define INTERPRETER_H
 
 #include <QObject>
+#include <QLineEdit>
+#include <QInputDialog>
 
 #include "computer.h"
 #include "operation.h"
 
-#include <QStringList>
-#include <QLineEdit>
-#include <QInputDialog>
+
+
+
 
 class interpreter : public QObject
 {
     Q_OBJECT
     friend class Computer;
 public:
-    interpreter(QString PATH);
+    interpreter(QString PATH) : ProgramPath(PATH){}
     ~interpreter();
-    Computer *VM;
-void debug(QString);
-public slots:
-    void startVM();
+
+    void startVM();         //интерфейс для запуска
 signals:
-    void debugMSG(QString);
+    void debugMSG(QString); //Сигнал для отправки сообщения в поток формы
 private:
-    static QString inputDialog(QString text);
-    static void outputDialog(QString str);
-    QString ProgramPath;
+    Computer *VM;           //Объект компьютер
+    static QString inputDialog(QString text);   //диалоговое окно ввод
+    static void outputDialog(QString str);      //диалоговое окно вывод
+    QString ProgramPath;    //Путь до файла программы
+    void debug(QString);    //Лог
 };
 
 #endif // INTERPRETER_H

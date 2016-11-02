@@ -5,5 +5,6 @@
 
 typedef unsigned char byte;
 typedef unsigned short address;
+typedef unsigned bit;
 
 #endif // TYPES_H

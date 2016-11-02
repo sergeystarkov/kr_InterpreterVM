@@ -4,8 +4,6 @@
 #include "computer.h"
 #include "operation.h"
 
-
-
 class Computer;
 
 //Базовый абстрактный класс для паттерна "Комманда"

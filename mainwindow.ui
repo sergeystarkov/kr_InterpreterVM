@@ -10,8 +10,14 @@
     <height>431</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Интерпретатор ВМ</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -24,16 +30,16 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QPushButton" name="startInterpereter">
+             <widget class="QPushButton" name="SaveAs">
               <property name="text">
-               <string>Запустить интерпретатор</string>
+               <string>Сохранить как</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="save">
               <property name="text">
-               <string>Сохранить программу</string>
+               <string>Сохранить</string>
               </property>
              </widget>
             </item>
@@ -52,6 +58,13 @@
             </property>
            </spacer>
           </item>
+          <item>
+           <widget class="QPushButton" name="startInterpereter">
+            <property name="text">
+             <string>Запустить интерпретатор</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item>
@@ -59,7 +72,7 @@
           <item>
            <widget class="QPushButton" name="openFile">
             <property name="text">
-             <string>...</string>
+             <string>Открыть</string>
             </property>
            </widget>
           </item>
