@@ -53,22 +53,21 @@ bool Computer::load()
     if(file.open(QIODevice::ReadOnly | QIODevice::Text)){
         int curByte = 0;
         while(!file.atEnd()){
-            if(curByte >= 0xfffd) break; //Защита от переполнения ОЗУ
+            if(curByte >= 0xfffd) return false; //Защита от переполнения ОЗУ
             QStringList strline = QString(file.readLine()).simplified().split(' ');
+            if(strline.count() <= 0) break;
 
-            if(!strline[0].isEmpty()){
-                CMD.Cmd = (byte)strline[0].toUInt();
-                if(CMD.Cmd <= 0 || CMD.Cmd > 255) return false;
-                if(strline.count() > 2)
-                    CMD.Addr = (address)strline[1].toUInt();
+            CMD.Cmd = (byte)strline[0].toUInt();
 
-                else CMD.Addr = 0;
+            if(strline.count() >= 2)
+                CMD.Addr = (address)strline[1].toUInt();
+            else CMD.Addr = 0;
 
-                //Загрузка программы в ОЗУ
-                MEM[curByte++] = CMD.Cmd;
-                MEM[curByte++] = CMD.H_Addr;
-                MEM[curByte++] = CMD.L_Addr;
-            }
+            //Загрузка программы в ОЗУ
+            MEM[curByte++] = CMD.Cmd;
+            MEM[curByte++] = CMD.H_Addr;
+            MEM[curByte++] = CMD.L_Addr;
+
         }
         RA += curByte; //Адресный регистр для данных после программы
     }else {
