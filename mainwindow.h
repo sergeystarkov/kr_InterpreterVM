@@ -29,11 +29,11 @@ private slots:
     void on_openFile_clicked();             //Открыть файл
     void on_SaveAs_clicked();               //Сохранить как
     void debugMessage(QString);             //Вывод лога
+    void stopInterpreter();                 //Высвобождение ресурсов, закрытие потока
 
 private:
     QThread *VMThread;          //Поток для интерпретатора
     interpreter *Interpreter;   //Объект интерпретатора
-    void stopInterpreter();     //Высвобождение ресурсов, закрытие потока
 
     Ui::MainWindow *ui;
 };

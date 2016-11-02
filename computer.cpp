@@ -54,11 +54,16 @@ bool Computer::load()
         int curByte = 0;
         while(!file.atEnd()){
             if(curByte >= 0xfffd) break; //Защита от переполнения ОЗУ
-            QStringList strline = QString(file.readLine()).split(" ");
+            QStringList strline = QString(file.readLine()).simplified().split(' ');
+
             if(!strline[0].isEmpty()){
                 CMD.Cmd = (byte)strline[0].toUInt();
-                if(!strline[1].isEmpty())
+                if(CMD.Cmd <= 0 || CMD.Cmd > 255) return false;
+                if(strline.count() > 2)
                     CMD.Addr = (address)strline[1].toUInt();
+
+                else CMD.Addr = 0;
+
                 //Загрузка программы в ОЗУ
                 MEM[curByte++] = CMD.Cmd;
                 MEM[curByte++] = CMD.H_Addr;
@@ -96,7 +101,8 @@ int Computer::run()
         CMD.H_Addr  =   MEM[ PSW.IP++ ];
         CMD.L_Addr  =   MEM[ PSW.IP++ ];
         //*************************************
-
+        if(CMD.OP > 256) continue;  //Защита от некорректной команды
+        if(pCMD[CMD.OP] == NULL) return 3;  //Защита от неизвестной команды
         int execResult = pCMD[ CMD.OP ]->operator ()(this);     //Выполнение
         if( execResult != 1) return execResult;                 //Результат выполнения
     }
