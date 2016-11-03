@@ -8,10 +8,6 @@
 #include "computer.h"
 #include "operation.h"
 
-
-
-
-
 class interpreter : public QObject
 {
     Q_OBJECT
@@ -25,8 +21,8 @@ signals:
     void debugMSG(QString); //Сигнал для отправки сообщения в поток формы
 private:
     Computer *VM;           //Объект компьютер
-    static QString inputDialog(QString text);   //диалоговое окно ввод
-    static void outputDialog(QString str);      //диалоговое окно вывод
+    QString inputDialog(QString text);   //диалоговое окно ввод
+    void outputDialog(QString str);      //диалоговое окно вывод
     QString ProgramPath;    //Путь до файла программы
     void debug(QString);    //Лог
 };

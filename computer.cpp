@@ -1,8 +1,11 @@
 #include "computer.h"
 #include "interpreter.h"
 
-Computer::Computer(QString PATH,interpreter *INTER):programPath(PATH),Interpreter(INTER)
+Computer::Computer(QString PATH,interpreter *INTER)
 {
+    programPath = PATH;     //Путь до программы
+    Interpreter = INTER;    //Указатель на родителя
+
     pCMD[STOP]  =   new cSTOP();    //Остановка
 
     //Целая арифметика
@@ -144,21 +147,21 @@ void Computer::interrupt(int interruptCode)
 {
     switch (interruptCode){
     case hIin: {//Ввод целого значения сумматора
-        DATA.I = interpreter::inputDialog("Введите целое число").toInt();
+        DATA.I = Interpreter->inputDialog("Введите целое число").toInt();
         break;
     }
     case hRin: {//Ввод вещественного значения сумматора
-        DATA.R = interpreter::inputDialog("Введите вещественное число").toFloat();
+        DATA.R = Interpreter->inputDialog("Введите вещественное число").toFloat();
         break;
     }
     case hIout:{//Вывод целого значения сумматора на экран
         QString str = QString::number(RS.I);
-        interpreter::outputDialog(str);
+        Interpreter->outputDialog(str);
         break;
     }
     case hRout: {//Вывод вещественного значения сумматора на экран
         QString str = QString::number(RS.R,'f',2);
-        interpreter::outputDialog(str);
+        Interpreter->outputDialog(str);
         break;
     }
     }

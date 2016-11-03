@@ -1,4 +1,5 @@
 #include "command.h"
+#include "computer.h"
 
 void Command::loadRegister(Computer *COMP)
 {

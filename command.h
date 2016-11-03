@@ -1,7 +1,7 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include "computer.h"
+
 #include "operation.h"
 
 class Computer;
@@ -11,6 +11,7 @@ class Command
 {
 public:
     virtual int operator()(Computer *) = 0;   //Перегрузка оператора ()
+    virtual ~Command(){}
 protected:
     void loadRegister(Computer *COMP);
 };

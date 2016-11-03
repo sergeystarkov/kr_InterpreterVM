@@ -9,6 +9,7 @@
 #include "command.h"
 
 class interpreter;
+class Command;
 
 class Computer
 {
@@ -104,7 +105,7 @@ private:
 
     //Регистры, память и т.п.
 
-    Command *pCMD[128] = {NULL}; //набор команд процессора
+    Command *pCMD[128] = {nullptr}; //набор команд процессора
 
     data        RS;     //Сумматор 4 байта
     address     RA;     //Адресный регистр 2 байта
