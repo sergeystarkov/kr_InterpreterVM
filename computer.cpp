@@ -26,6 +26,8 @@ Computer::Computer(QString PATH,interpreter *INTER):programPath(PATH),Interprete
     pCMD[Load]  =   new cLoad();    //Загрузка сумматора
     pCMD[Store] =   new cStore();   //Сохранение сумматора
 
+    pCMD[Radr]  =   new cRadr();    //Загрузка адресного регистра константой
+
     //прыжки
     pCMD[Jmp]   =   new cJmp();     //Безусловный переход
     pCMD[JZ]    =   new cJZ();      // ==

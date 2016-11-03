@@ -54,6 +54,8 @@ void MainWindow::on_startInterpereter_clicked()
     Interpreter->moveToThread(VMThread);
     VMThread->start();
     Interpreter->startVM();
+
+    QFile(tmpPath).remove();
 }
 
 //Высвобождение ресурсов, закрытие потока
