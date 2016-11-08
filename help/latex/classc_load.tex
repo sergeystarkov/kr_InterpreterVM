@@ -1,0 +1,76 @@
+\hypertarget{classc_load}{}\section{Класс c\+Load}
+\label{classc_load}\index{c\+Load@{c\+Load}}
+
+
+Загрузка сумматора  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Load\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_load}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_load_a5da79e1b1235b32d87e7f3bd8d1bc00b}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Load\+::operator () -\/ Загрузка сумматора \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Загрузка сумматора 
+
+\subsection{Методы}
+\hypertarget{classc_load_a5da79e1b1235b32d87e7f3bd8d1bc00b}{}\label{classc_load_a5da79e1b1235b32d87e7f3bd8d1bc00b} 
+\index{c\+Load@{c\+Load}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Load@{c\+Load}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Load\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Load\+::operator () -\/ Загрузка сумматора 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает сумматор из ОЗУ. Размер загрузки 4 байта 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+217 \{
+218     address ptr;
+219     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B} == 0) \textcolor{comment}{//Абсолютная адресация}
+220         ptr =  COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+221     \textcolor{keywordflow}{else} \textcolor{comment}{//Относит адресация}
+222         ptr = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr} + COMP->\hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA};
+223 
+224     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Загрузка сумматора из адреса "} + QString::number(ptr));
+225 
+226     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a4308eb86abfec2d52028212c599a093b}{b1} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+227     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a87252409c780b1c387883eb027065709}{b2} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+228     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_af9265f845319a83f5877590e7ab2a497}{b3} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+229     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_aca2c60d7da9da79750a6d3a237dae93c}{b4} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr];
+230 
+231     \textcolor{keywordflow}{return} 1;
+232 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{classc_iout}{}\section{Класс c\+Iout}
+\label{classc_iout}\index{c\+Iout@{c\+Iout}}
+
+
+вывод целого  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Iout\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_iout}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_iout_a82536616889a02f99211d79920bad3dd}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Iout\+::operator () -\/ Прерывание\+: вывод целого значения \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+вывод целого 
+
+\subsection{Методы}
+\hypertarget{classc_iout_a82536616889a02f99211d79920bad3dd}{}\label{classc_iout_a82536616889a02f99211d79920bad3dd} 
+\index{c\+Iout@{c\+Iout}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Iout@{c\+Iout}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Iout\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Iout\+::operator () -\/ Прерывание\+: вывод целого значения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Вызывает прерывание для вывода целочисленного значения на экран из сумматора 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+441 \{
+442     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Вывод целого числа "} + QString::number(COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I}));
+443     COMP->\hyperlink{class_computer_aa57b0ed2f3a9b168c2924174ec524bd4}{interrupt}(hIout);
+444     \textcolor{keywordflow}{return} 1;
+445 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

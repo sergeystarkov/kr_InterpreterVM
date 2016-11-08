@@ -1,0 +1,252 @@
+\hypertarget{class_main_window}{}\section{Класс Main\+Window}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+The \hyperlink{class_main_window}{Main\+Window} class -\/ G\+UI форма программы  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Граф наследования\+:Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db} 
+\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Конструктор класса формы QT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a4b11549301823f52f40c90715cc70ec5}{on\+\_\+start\+Interpereter\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Запуск интерпретатора \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a06fb14e8cace4221ee7a721c961934ce}{on\+\_\+save\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Сохранить \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ad157e69c40c80314586029f2a7c5e549}{on\+\_\+open\+File\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Открыть файл \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a55dfc7c049679ca635f6f629d5401d56}{on\+\_\+\+Save\+As\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Сохранить как \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ac29732293ed85bb092764df7b93fefbc}{debug\+Message} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Вывод сообщений на форму \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a123b5275e6bb8411973a2f2be7b8b45f}{stop\+Interpreter} ()
+\begin{DoxyCompactList}\small\item\em Высвобождение ресурсов, закрытие потока \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_abc114bfc2f3b523486d89887e7877aea}{load\+File} ()
+\begin{DoxyCompactList}\small\item\em Вывод файла в редактор \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{}\label{class_main_window_aa16438ee9c972be8c7231f2d376dafb7} 
+Q\+Thread $\ast$ \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{V\+M\+Thread}
+\begin{DoxyCompactList}\small\item\em Поток для интерпретатора \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{}\label{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7} 
+\hyperlink{classinterpreter}{interpreter} $\ast$ \hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter}
+\begin{DoxyCompactList}\small\item\em Объект интерпретатора \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}{}\label{class_main_window_a35466a70ed47252a0191168126a352a5} 
+Ui\+::\+Main\+Window $\ast$ \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}
+\begin{DoxyCompactList}\small\item\em Объект формы QT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{class_main_window}{Main\+Window} class -\/ G\+UI форма программы 
+
+\subsection{Методы}
+\hypertarget{class_main_window_ac29732293ed85bb092764df7b93fefbc}{}\label{class_main_window_ac29732293ed85bb092764df7b93fefbc} 
+\index{Main\+Window@{Main\+Window}!debug\+Message@{debug\+Message}}
+\index{debug\+Message@{debug\+Message}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{debug\+Message}{debugMessage}}
+{\footnotesize\ttfamily void Main\+Window\+::debug\+Message (\begin{DoxyParamCaption}\item[{Q\+String}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Вывод сообщений на форму 
+
+\hyperlink{class_main_window_ac29732293ed85bb092764df7b93fefbc}{Main\+Window\+::debug\+Message} -\/ вывод сообщения на форму
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & -\/ текст сообщения \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+122 \{
+123     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->debugLog->append(str);
+124 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_abc114bfc2f3b523486d89887e7877aea}{}\label{class_main_window_abc114bfc2f3b523486d89887e7877aea} 
+\index{Main\+Window@{Main\+Window}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{load\+File()}{loadFile()}}
+{\footnotesize\ttfamily void Main\+Window\+::load\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Вывод файла в редактор 
+
+\hyperlink{class_main_window_abc114bfc2f3b523486d89887e7877aea}{Main\+Window\+::load\+File} -\/ Загрузка файла
+
+Загружает файл программы для предпросмотра программы 
+\begin{DoxyCode}
+23 \{
+24     QString text, path;
+25     path = \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->pathToFile->text();
+26     QFile file(path);
+27     \textcolor{keywordflow}{if}(file.open(QIODevice::ReadOnly | QIODevice::Text))\{
+28         text = file.readAll();
+29     \}
+30     \textcolor{keywordflow}{else} \{
+31         QMessageBox m; m.setText(\textcolor{stringliteral}{"Не удалось открыть файл: "} + path); m.exec();
+32     \}
+33     \textcolor{keywordflow}{if}(file.isOpen()) file.close();
+34     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->programText->setText(text);
+35 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_ad157e69c40c80314586029f2a7c5e549}{}\label{class_main_window_ad157e69c40c80314586029f2a7c5e549} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+open\+File\+\_\+clicked@{on\+\_\+open\+File\+\_\+clicked}}
+\index{on\+\_\+open\+File\+\_\+clicked@{on\+\_\+open\+File\+\_\+clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+open\+File\+\_\+clicked}{on\_openFile\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+open\+File\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Открыть файл 
+
+\hyperlink{class_main_window_ad157e69c40c80314586029f2a7c5e549}{Main\+Window\+::on\+\_\+open\+File\+\_\+clicked} -\/ форма для выбора файла для открытия 
+\begin{DoxyCode}
+108 \{
+109     QString path = QFileDialog::getOpenFileName(\textcolor{keyword}{this},
+110                                 QString::fromUtf8(\textcolor{stringliteral}{"Открыть файл"}),
+111                                 QDir::currentPath(),
+112                                 \textcolor{stringliteral}{"Text (*.txt);"});
+113     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->pathToFile->setText(path);
+114     \textcolor{keywordflow}{if}(!path.isEmpty()) \hyperlink{class_main_window_abc114bfc2f3b523486d89887e7877aea}{loadFile}();
+115 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_a06fb14e8cace4221ee7a721c961934ce}{}\label{class_main_window_a06fb14e8cace4221ee7a721c961934ce} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+save\+\_\+clicked@{on\+\_\+save\+\_\+clicked}}
+\index{on\+\_\+save\+\_\+clicked@{on\+\_\+save\+\_\+clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+save\+\_\+clicked}{on\_save\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+save\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Сохранить 
+
+\hyperlink{class_main_window_a06fb14e8cace4221ee7a721c961934ce}{Main\+Window\+::on\+\_\+save\+\_\+clicked} Сохранить файл
+
+Сохраняет файл из текстового редактора 
+\begin{DoxyCode}
+91 \{
+92     QString path;
+93     path = \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->pathToFile->text();
+94     QFile file(path);
+95     \textcolor{keywordflow}{if}(file.open(QIODevice::WriteOnly | QIODevice::Text))
+96     \{
+97         QByteArray ba;
+98         ba.append(\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->programText->toPlainText());
+99         file.write(ba);
+100     \}
+101     \textcolor{keywordflow}{if}(file.isOpen()) file.close();
+102 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_a55dfc7c049679ca635f6f629d5401d56}{}\label{class_main_window_a55dfc7c049679ca635f6f629d5401d56} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+\+Save\+As\+\_\+clicked@{on\+\_\+\+Save\+As\+\_\+clicked}}
+\index{on\+\_\+\+Save\+As\+\_\+clicked@{on\+\_\+\+Save\+As\+\_\+clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+\+Save\+As\+\_\+clicked}{on\_SaveAs\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+\+Save\+As\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Сохранить как 
+
+\hyperlink{class_main_window_a55dfc7c049679ca635f6f629d5401d56}{Main\+Window\+::on\+\_\+\+Save\+As\+\_\+clicked} -\/ Сохранить как?
+
+Открытие формы для указания имени файла для сохраниения 
+\begin{DoxyCode}
+132 \{
+133     QString path = QFileDialog::getSaveFileName(\textcolor{keyword}{this},
+134                                 QString::fromUtf8(\textcolor{stringliteral}{"Сохранить файл"}),
+135                                 QDir::currentPath(),
+136                                 \textcolor{stringliteral}{"Text (*.txt);"});
+137     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->pathToFile->setText(path);
+138     \hyperlink{class_main_window_a06fb14e8cace4221ee7a721c961934ce}{on\_save\_clicked}();
+139 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_a4b11549301823f52f40c90715cc70ec5}{}\label{class_main_window_a4b11549301823f52f40c90715cc70ec5} 
+\index{Main\+Window@{Main\+Window}!on\+\_\+start\+Interpereter\+\_\+clicked@{on\+\_\+start\+Interpereter\+\_\+clicked}}
+\index{on\+\_\+start\+Interpereter\+\_\+clicked@{on\+\_\+start\+Interpereter\+\_\+clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{on\+\_\+start\+Interpereter\+\_\+clicked}{on\_startInterpereter\_clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+start\+Interpereter\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Запуск интерпретатора 
+
+\hyperlink{class_main_window_a4b11549301823f52f40c90715cc70ec5}{Main\+Window\+::on\+\_\+start\+Interpereter\+\_\+clicked} -\/ Кнопка запуска инретпретатора
+
+Сохраняет текст программы из редактора во временный файл. Инициализирует поток для интерпретатора. Запскает интерпретатор в отдельном от G\+UI потоке (в качестве файла программы выступает временный $\ast$.tmp файл). По завершении работы интерпретатора удаляет временый файл. 
+\begin{DoxyCode}
+46 \{    
+47     \textcolor{keywordflow}{if}(\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->programText->toPlainText().isEmpty()) \textcolor{keywordflow}{return};
+48     QString tmpPath = \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->pathToFile->text() + \textcolor{stringliteral}{".tmp"};
+49 
+50     QFile file(tmpPath);
+51     \textcolor{keywordflow}{if}(file.open(QIODevice::WriteOnly | QIODevice::Text))
+52     \{
+53         QByteArray ba;
+54         ba.append(\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->programText->toPlainText());
+55         file.write(ba);
+56     \}
+57     \textcolor{keywordflow}{if}(file.isOpen()) file.close();
+58 
+59     \textcolor{comment}{//старт интерпретатора в потоке}
+60     \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread} = \textcolor{keyword}{new} QThread();
+61 
+62     \hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter} = \textcolor{keyword}{new} \hyperlink{classinterpreter}{interpreter}(tmpPath);
+63     connect(\hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter},SIGNAL(destroyed(QObject*)),\textcolor{keyword}{this},SLOT(
+      \hyperlink{class_main_window_a123b5275e6bb8411973a2f2be7b8b45f}{stopInterpreter}()));
+64     connect(\hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter},SIGNAL(debugMSG(QString)),\textcolor{keyword}{this},SLOT(
+      \hyperlink{class_main_window_ac29732293ed85bb092764df7b93fefbc}{debugMessage}(QString)));
+65 
+66     \hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter}->moveToThread(\hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread});
+67     \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread}->start();
+68     \hyperlink{class_main_window_ab42a1f6ee7d167221b9b5078b2ba38a7}{Interpreter}->\hyperlink{classinterpreter_af9ed8afd864c69cfd1ec1e849b2d1542}{startVM}();
+69 
+70     QFile(tmpPath).remove();
+71 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_a123b5275e6bb8411973a2f2be7b8b45f}{}\label{class_main_window_a123b5275e6bb8411973a2f2be7b8b45f} 
+\index{Main\+Window@{Main\+Window}!stop\+Interpreter@{stop\+Interpreter}}
+\index{stop\+Interpreter@{stop\+Interpreter}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{stop\+Interpreter}{stopInterpreter}}
+{\footnotesize\ttfamily void Main\+Window\+::stop\+Interpreter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Высвобождение ресурсов, закрытие потока 
+
+\hyperlink{class_main_window_a123b5275e6bb8411973a2f2be7b8b45f}{Main\+Window\+::stop\+Interpreter} -\/ Завершение работы интерпретатора
+
+Остановка потока, высвобождение ресурсов 
+\begin{DoxyCode}
+79 \{
+80     \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread}->quit();
+81     \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread}->wait(100);
+82     \textcolor{keyword}{delete} \hyperlink{class_main_window_aa16438ee9c972be8c7231f2d376dafb7}{VMThread};
+83 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/mainwindow.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/mainwindow.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\hypertarget{classc_rsub}{}\section{Класс c\+Rsub}
+\label{classc_rsub}\index{c\+Rsub@{c\+Rsub}}
+
+
+Вычитание дробных чисел  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Rsub\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_rsub}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_rsub_a270572d89750986cbb1258f765965875}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Rsub\+::operator () -\/ Вещественная разность \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Вычитание дробных чисел 
+
+\subsection{Методы}
+\hypertarget{classc_rsub_a270572d89750986cbb1258f765965875}{}\label{classc_rsub_a270572d89750986cbb1258f765965875} 
+\index{c\+Rsub@{c\+Rsub}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Rsub@{c\+Rsub}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Rsub\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Rsub\+::operator () -\/ Вещественная разность 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр по адресу. Вичитает из сумматора значение внутреннего регистра. Ставит флаги операции. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+161 \{
+162     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+163     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} -= COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R};
+164     COMP->\hyperlink{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{flagR}(); \textcolor{comment}{//Установка флага результата}
+165 
+166     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Вещественное вычитание. Сумматор = "} + QString::number(COMP->
+      \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R}));
+167     \textcolor{keywordflow}{return} 1;
+168 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

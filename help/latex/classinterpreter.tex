@@ -1,0 +1,195 @@
+\hypertarget{classinterpreter}{}\section{Класс interpreter}
+\label{classinterpreter}\index{interpreter@{interpreter}}
+
+
+The interpreter class.  
+
+
+
+
+{\ttfamily \#include $<$interpreter.\+h$>$}
+
+Граф наследования\+:interpreter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classinterpreter}
+\end{center}
+\end{figure}
+\subsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458}{}\label{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458} 
+void \hyperlink{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458}{debug\+M\+SG} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Сигнал для отправки сообщения в поток G\+UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterpreter_ae7359f1d2aa18579a2797f49835c8671}{interpreter} (Q\+String P\+A\+TH)
+\begin{DoxyCompactList}\small\item\em interpreter -\/ Конструктор класса \end{DoxyCompactList}\item 
+void \hyperlink{classinterpreter_af9ed8afd864c69cfd1ec1e849b2d1542}{start\+VM} ()
+\begin{DoxyCompactList}\small\item\em Интерфейс запуска интерпретатора \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{classinterpreter_a30d9b904383c7b73adceeca002461431}{input\+Dialog} (Q\+String text)
+\begin{DoxyCompactList}\small\item\em диалоговое окно ввод \end{DoxyCompactList}\item 
+void \hyperlink{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a}{output\+Dialog} (Q\+String str)
+\begin{DoxyCompactList}\small\item\em диалоговое окно вывод \end{DoxyCompactList}\item 
+void \hyperlink{classinterpreter_a5153712027e3e4344f72336f8b5cfa6d}{debug} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Отправка сигнала с текстом сообщения в поток G\+UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classinterpreter_a0b900e0016eab9306c6f70e93900fe09}{}\label{classinterpreter_a0b900e0016eab9306c6f70e93900fe09} 
+\hyperlink{class_computer}{Computer} $\ast$ \hyperlink{classinterpreter_a0b900e0016eab9306c6f70e93900fe09}{VM}
+\begin{DoxyCompactList}\small\item\em Объект компьютер \end{DoxyCompactList}\item 
+\hypertarget{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be}{}\label{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be} 
+Q\+String \hyperlink{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be}{Program\+Path}
+\begin{DoxyCompactList}\small\item\em Путь до файла программы \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classinterpreter_ab9eca035c1f2a85f44c28a92b53d320c}{}\label{classinterpreter_ab9eca035c1f2a85f44c28a92b53d320c} 
+class {\bfseries Computer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The interpreter class. 
+
+Запускает виртуальную машину, посредник между G\+UI и ВМ 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classinterpreter_ae7359f1d2aa18579a2797f49835c8671}{}\label{classinterpreter_ae7359f1d2aa18579a2797f49835c8671} 
+\index{interpreter@{interpreter}!interpreter@{interpreter}}
+\index{interpreter@{interpreter}!interpreter@{interpreter}}
+\subsubsection{\texorpdfstring{interpreter()}{interpreter()}}
+{\footnotesize\ttfamily interpreter\+::interpreter (\begin{DoxyParamCaption}\item[{Q\+String}]{P\+A\+TH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+interpreter -\/ Конструктор класса 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em P\+A\+TH} & -\/ Путь до временного файла программы для запуска \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+25 : \hyperlink{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be}{ProgramPath}(PATH)\{\}
+\end{DoxyCode}
+
+
+\subsection{Методы}
+\hypertarget{classinterpreter_a5153712027e3e4344f72336f8b5cfa6d}{}\label{classinterpreter_a5153712027e3e4344f72336f8b5cfa6d} 
+\index{interpreter@{interpreter}!debug@{debug}}
+\index{debug@{debug}!interpreter@{interpreter}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void interpreter\+::debug (\begin{DoxyParamCaption}\item[{Q\+String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправка сигнала с текстом сообщения в поток G\+UI. 
+
+\hyperlink{classinterpreter_a5153712027e3e4344f72336f8b5cfa6d}{interpreter\+::debug} -\/ Запрос на вывод сообщения от программы у G\+UI
+
+
+\begin{DoxyParams}{Аргументы}
+{\em msg} & -\/ сообщение \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+61 \{
+62     emit \hyperlink{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458}{debugMSG}(\textcolor{stringliteral}{"Программа#: "} + msg);
+63 \}
+\end{DoxyCode}
+\hypertarget{classinterpreter_a30d9b904383c7b73adceeca002461431}{}\label{classinterpreter_a30d9b904383c7b73adceeca002461431} 
+\index{interpreter@{interpreter}!input\+Dialog@{input\+Dialog}}
+\index{input\+Dialog@{input\+Dialog}!interpreter@{interpreter}}
+\subsubsection{\texorpdfstring{input\+Dialog()}{inputDialog()}}
+{\footnotesize\ttfamily Q\+String interpreter\+::input\+Dialog (\begin{DoxyParamCaption}\item[{Q\+String}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+диалоговое окно ввод 
+
+\hyperlink{classinterpreter_a30d9b904383c7b73adceeca002461431}{interpreter\+::input\+Dialog} -\/ запрос на вывод диалогового окна для ввода значения
+
+
+\begin{DoxyParams}{Аргументы}
+{\em text} & -\/ Текст сообшения для пользователя \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Возвращает введённую пользователем строку
+\end{DoxyReturn}
+Запрос на вывод диалогового окна для ввода у G\+UI. 
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordtype}{bool} bOk;
+34     QString str = QInputDialog::getText( 0, text, \textcolor{stringliteral}{"Значение"},
+35                                          QLineEdit::Normal,
+36                                          \textcolor{stringliteral}{""}, &bOk );
+37     \textcolor{keywordflow}{if} (bOk) \{
+38         \textcolor{keywordflow}{return} str;
+39     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{classinterpreter_a30d9b904383c7b73adceeca002461431}{inputDialog}(text);
+40 \}
+\end{DoxyCode}
+\hypertarget{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a}{}\label{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a} 
+\index{interpreter@{interpreter}!output\+Dialog@{output\+Dialog}}
+\index{output\+Dialog@{output\+Dialog}!interpreter@{interpreter}}
+\subsubsection{\texorpdfstring{output\+Dialog()}{outputDialog()}}
+{\footnotesize\ttfamily void interpreter\+::output\+Dialog (\begin{DoxyParamCaption}\item[{Q\+String}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+диалоговое окно вывод 
+
+\hyperlink{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a}{interpreter\+::output\+Dialog} -\/ запрос на вывод диалогового окна для вывода сообщения
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & -\/ текст сообщения\\
+\hline
+\end{DoxyParams}
+Запрос на вывод диалогового окна с сообщением для пользователя из G\+UI 
+\begin{DoxyCode}
+49 \{
+50     QMessageBox message;
+51     message.setWindowTitle(\textcolor{stringliteral}{"Сообщение"});
+52     message.setText(str);
+53     message.exec();
+54 \}
+\end{DoxyCode}
+\hypertarget{classinterpreter_af9ed8afd864c69cfd1ec1e849b2d1542}{}\label{classinterpreter_af9ed8afd864c69cfd1ec1e849b2d1542} 
+\index{interpreter@{interpreter}!start\+VM@{start\+VM}}
+\index{start\+VM@{start\+VM}!interpreter@{interpreter}}
+\subsubsection{\texorpdfstring{start\+V\+M()}{startVM()}}
+{\footnotesize\ttfamily void interpreter\+::start\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Интерфейс запуска интерпретатора 
+
+\hyperlink{classinterpreter_af9ed8afd864c69cfd1ec1e849b2d1542}{interpreter\+::start\+VM} -\/ Запуск интерпретатора
+
+Отправка отладочных ссобщений. Инициализация и запуск вртуальной машины. 
+\begin{DoxyCode}
+14 \{
+15      \hyperlink{classinterpreter_a0b900e0016eab9306c6f70e93900fe09}{VM} = \textcolor{keyword}{new} \hyperlink{class_computer}{Computer}(\hyperlink{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be}{ProgramPath},\textcolor{keyword}{this});
+16      emit \hyperlink{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458}{debugMSG}(\textcolor{stringliteral}{"Запуск программы "} + \hyperlink{classinterpreter_acafdc7a0e329a4ed0f79930ed33f52be}{ProgramPath});
+17      \textcolor{keywordtype}{int} result = \hyperlink{classinterpreter_a0b900e0016eab9306c6f70e93900fe09}{VM}->\hyperlink{class_computer_a4303af6a549fc8f792de0d2d18a9e05f}{execute}();
+18 
+19      emit \hyperlink{classinterpreter_a60e0781065c7ae88bdcaaa22729dc458}{debugMSG}(\textcolor{stringliteral}{"Программа завершилась с кодом "} +
+20                    QString::number(result) + \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});
+21      \textcolor{keyword}{delete} \textcolor{keyword}{this};
+22 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/interpreter.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/interpreter.\+cpp\end{DoxyCompactItemize}

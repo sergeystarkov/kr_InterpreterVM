@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CW_InterpreterVM: Структура Computer::command</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CW_InterpreterVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Поиск');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="class_computer.html">Computer</a></li><li class="navelem"><a class="el" href="struct_computer_1_1command.html">command</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="struct_computer_1_1command-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Структура Computer::command</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>command struct - структура команды для выполнения. 3 байта.  
+ <a href="struct_computer_1_1command.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:abab9a57c8c7fcd2f70c6a3e082e29032"><td class="memItemLeft" ><a id="abab9a57c8c7fcd2f70c6a3e082e29032"></a>
+union {</td></tr>
+<tr class="memitem:ada3d4d2e7d181435dccd417b172ac0bf"><td class="memItemLeft" >
+&#160;&#160;&#160;byte&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Cmd</a></td></tr>
+<tr class="memdesc:ada3d4d2e7d181435dccd417b172ac0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">код операции 1 байт в флагом адресации на старшем бите <br /></td></tr>
+<tr class="separator:ada3d4d2e7d181435dccd417b172ac0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80c892093be4d5b8271cb0ea2275b90"><td class="memItemLeft" ><a id="ab80c892093be4d5b8271cb0ea2275b90"></a>
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a5e13590176fde30a46f267dedb066cb0"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;bit&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#a2714eda12dcfba46770769c7ed9c7f0a">OP</a>:7</td></tr>
+<tr class="memdesc:a5e13590176fde30a46f267dedb066cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Код операции <br /></td></tr>
+<tr class="separator:a5e13590176fde30a46f267dedb066cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab37ec7a05ed60f3912a9269ecf8159"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;bit&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#a3e0d1e527de9f60594023a362b08a7de">B</a>:1</td></tr>
+<tr class="memdesc:afab37ec7a05ed60f3912a9269ecf8159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг адресации <br /></td></tr>
+<tr class="separator:afab37ec7a05ed60f3912a9269ecf8159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80c892093be4d5b8271cb0ea2275b90"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ab80c892093be4d5b8271cb0ea2275b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab9a57c8c7fcd2f70c6a3e082e29032"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:abab9a57c8c7fcd2f70c6a3e082e29032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8343f26b8cf44fe3f684579bca1a12"><td class="memItemLeft" ><a id="aea8343f26b8cf44fe3f684579bca1a12"></a>
+union {</td></tr>
+<tr class="memitem:af51c067a3b56b89001700154b6fc5a71"><td class="memItemLeft" >
+&#160;&#160;&#160;address&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Addr</a></td></tr>
+<tr class="memdesc:af51c067a3b56b89001700154b6fc5a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Адрес аргумента <br /></td></tr>
+<tr class="separator:af51c067a3b56b89001700154b6fc5a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb09ec420e7388614fefa31fb49e6320"><td class="memItemLeft" ><a id="adb09ec420e7388614fefa31fb49e6320"></a>
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a28aaa03636c8e3774e4d692def5c7ad4"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;byte&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#a840bf646fc591a80cd94f253bb8cae02">H_Addr</a></td></tr>
+<tr class="memdesc:a28aaa03636c8e3774e4d692def5c7ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Старший байт <br /></td></tr>
+<tr class="separator:a28aaa03636c8e3774e4d692def5c7ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af082bc97700c69861be5a9759c098908"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;byte&#160;&#160;&#160;<a class="el" href="struct_computer_1_1command.html#afe8e3496cc61746a889f53f91ed66d45">L_Addr</a></td></tr>
+<tr class="memdesc:af082bc97700c69861be5a9759c098908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Младший байт <br /></td></tr>
+<tr class="separator:af082bc97700c69861be5a9759c098908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb09ec420e7388614fefa31fb49e6320"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:adb09ec420e7388614fefa31fb49e6320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8343f26b8cf44fe3f684579bca1a12"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aea8343f26b8cf44fe3f684579bca1a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>command struct - структура команды для выполнения. 3 байта. </p>
+<p>Структура команды процессора. 3 байта. </p>
+</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/<a class="el" href="computer_8h_source.html">computer.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

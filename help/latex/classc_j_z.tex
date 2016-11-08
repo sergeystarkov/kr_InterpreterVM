@@ -1,0 +1,71 @@
+\hypertarget{classc_j_z}{}\section{Класс c\+JZ}
+\label{classc_j_z}\index{c\+JZ@{c\+JZ}}
+
+
+переход, если ноль (равны)  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+JZ\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_j_z}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_j_z_a0887b556d4e1f573e21b2b26588c75e8}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+J\+Z\+::operator () -\/ Переход если равно \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+переход, если ноль (равны) 
+
+\subsection{Методы}
+\hypertarget{classc_j_z_a0887b556d4e1f573e21b2b26588c75e8}{}\label{classc_j_z_a0887b556d4e1f573e21b2b26588c75e8} 
+\index{c\+JZ@{c\+JZ}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+JZ@{c\+JZ}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+J\+Z\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+J\+Z\+::operator () -\/ Переход если равно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Если по результатам сравнения Icmp или Rcmp операнды были равны, изменяет значение указателя на инструкцию по абсолютному значению адреса ОЗУ, либо отступа от текущего значения. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+350 \{
+351     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} != 1) \textcolor{keywordflow}{return} 1;
+352     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B} == 0) \textcolor{comment}{//Абсолютная адресация}
+353         COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+354     \textcolor{keywordflow}{else} \textcolor{comment}{//Относит адресация}
+355         COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} += COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+356 
+357     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Операнды равны. Переход по адресу "} + QString::number(COMP->
+      \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP}));
+358     \textcolor{keywordflow}{return} 1;
+359 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

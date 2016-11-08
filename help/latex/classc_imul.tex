@@ -1,0 +1,69 @@
+\hypertarget{classc_imul}{}\section{Класс c\+Imul}
+\label{classc_imul}\index{c\+Imul@{c\+Imul}}
+
+
+Умножение целых чисел  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Imul\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_imul}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_imul_a2bdd2bb819f2a86d34de28a4c0764398}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Imul\+::operator () -\/ Целочисленное произведение \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Умножение целых чисел 
+
+\subsection{Методы}
+\hypertarget{classc_imul_a2bdd2bb819f2a86d34de28a4c0764398}{}\label{classc_imul_a2bdd2bb819f2a86d34de28a4c0764398} 
+\index{c\+Imul@{c\+Imul}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Imul@{c\+Imul}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Imul\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Imul\+::operator () -\/ Целочисленное произведение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр по адресу. Умножает сумматор на внутренний регистр Ставит флаги операции. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+85 \{
+86     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+87     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} *= COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I};
+88     COMP->\hyperlink{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{flagI}(); \textcolor{comment}{//Установка флага результата}
+89 
+90     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Целочисленное умножение. Сумматор = "} + QString::number(COMP->
+      \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I}));
+91     \textcolor{keywordflow}{return} 1;
+92 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{classc_iadd}{}\section{Класс c\+Iadd}
+\label{classc_iadd}\index{c\+Iadd@{c\+Iadd}}
+
+
+Сложение целых чисел  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Iadd\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_iadd}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_iadd_a05d46274b9bf1fd3f3d292210dcbd99c}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Iadd\+::operator () -\/ Целочисленное сложение \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classc_iadd_ab9eca035c1f2a85f44c28a92b53d320c}{}\label{classc_iadd_ab9eca035c1f2a85f44c28a92b53d320c} 
+class {\bfseries Computer}
+\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Сложение целых чисел 
+
+\subsection{Методы}
+\hypertarget{classc_iadd_a05d46274b9bf1fd3f3d292210dcbd99c}{}\label{classc_iadd_a05d46274b9bf1fd3f3d292210dcbd99c} 
+\index{c\+Iadd@{c\+Iadd}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Iadd@{c\+Iadd}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Iadd\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Iadd\+::operator () -\/ Целочисленное сложение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр по адресу. Складывает сумматор с внутренним регистром. Ставит флаги операции. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+49     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} += COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I};
+50     COMP->\hyperlink{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{flagI}(); \textcolor{comment}{//Установка флага результата}
+51 
+52     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Целочисленное сложение. Сумматор = "} + QString::number(COMP->
+      \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I}));
+53     \textcolor{keywordflow}{return} 1;
+54 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

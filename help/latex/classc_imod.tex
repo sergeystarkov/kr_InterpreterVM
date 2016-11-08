@@ -1,0 +1,69 @@
+\hypertarget{classc_imod}{}\section{Класс c\+Imod}
+\label{classc_imod}\index{c\+Imod@{c\+Imod}}
+
+
+Остаток от деления целых чисел  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Imod\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_imod}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_imod_a2a46c860bd31b90c26081e8e450532e5}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Imod\+::operator () -\/ Целочисленный остаток от деления \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Остаток от деления целых чисел 
+
+\subsection{Методы}
+\hypertarget{classc_imod_a2a46c860bd31b90c26081e8e450532e5}{}\label{classc_imod_a2a46c860bd31b90c26081e8e450532e5} 
+\index{c\+Imod@{c\+Imod}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Imod@{c\+Imod}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Imod\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Imod\+::operator () -\/ Целочисленный остаток от деления 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр по адресу. Записывает в сумматор остаток от деления сумматоран на значение внутреннего регистра. Ставит флаги операции. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+123 \{
+124     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+125     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} %= COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I};
+126     COMP->\hyperlink{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{flagI}(); \textcolor{comment}{//Установка флага результата}
+127 
+128     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Целочисленный остаток от деления. Сумматор = "} + QString::number(COMP->
+      \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I}));
+129     \textcolor{keywordflow}{return} 1;
+130 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CW_InterpreterVM: Класс Command</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CW_InterpreterVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Поиск');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="class_command-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Command<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Базовый абстрактный класс для паттерна "Комманда".  
+ <a href="class_command.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="command_8h_source.html">command.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Command:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_command.png" usemap="#Command_map" alt=""/>
+  <map id="Command_map" name="Command_map">
+<area href="classc_iadd.html" title="Сложение целых чисел " alt="cIadd" shape="rect" coords="77,56,144,80"/>
+<area href="classc_icmp.html" title="Сравнение целых " alt="cIcmp" shape="rect" coords="77,112,144,136"/>
+<area href="classc_idiv.html" title="Деление целых чисел " alt="cIdiv" shape="rect" coords="77,168,144,192"/>
+<area href="classc_iin.html" title="Ввод целого " alt="cIin" shape="rect" coords="77,224,144,248"/>
+<area href="classc_imod.html" title="Остаток от деления целых чисел " alt="cImod" shape="rect" coords="77,280,144,304"/>
+<area href="classc_imul.html" title="Умножение целых чисел " alt="cImul" shape="rect" coords="77,336,144,360"/>
+<area href="classc_iout.html" title="вывод целого " alt="cIout" shape="rect" coords="77,392,144,416"/>
+<area href="classc_isub.html" title="Вычитание целых чисел " alt="cIsub" shape="rect" coords="77,448,144,472"/>
+<area href="classc_j_g.html" title="переход, если больше " alt="cJG" shape="rect" coords="77,504,144,528"/>
+<area href="classc_j_l.html" title="переход, если меньше " alt="cJL" shape="rect" coords="77,560,144,584"/>
+<area href="classc_jmp.html" title="Безусловный переход " alt="cJmp" shape="rect" coords="77,616,144,640"/>
+<area href="classc_j_z.html" title="переход, если ноль (равны) " alt="cJZ" shape="rect" coords="77,672,144,696"/>
+<area href="classc_load.html" title="Загрузка сумматора " alt="cLoad" shape="rect" coords="77,728,144,752"/>
+<area href="classc_radd.html" title="Сложение дробных чисел " alt="cRadd" shape="rect" coords="77,784,144,808"/>
+<area href="classc_radr.html" title="Загрузка адрессного регистра " alt="cRadr" shape="rect" coords="77,840,144,864"/>
+<area href="classc_rcmp.html" title="Сравнение вещественных " alt="cRcmp" shape="rect" coords="77,896,144,920"/>
+<area href="classc_rdiv.html" title="Деление дробных чисел " alt="cRdiv" shape="rect" coords="77,952,144,976"/>
+<area href="classc_rin.html" title="Ввод вещественного " alt="cRin" shape="rect" coords="77,1008,144,1032"/>
+<area href="classc_rmul.html" title="Умножение дробных чисел " alt="cRmul" shape="rect" coords="77,1064,144,1088"/>
+<area href="classc_rout.html" title="Вывод вещественного " alt="cRout" shape="rect" coords="77,1120,144,1144"/>
+<area href="classc_rsub.html" title="Вычитание дробных чисел " alt="cRsub" shape="rect" coords="77,1176,144,1200"/>
+<area href="classc_s_t_o_p.html" title="СТОП " alt="cSTOP" shape="rect" coords="77,1232,144,1256"/>
+<area href="classc_store.html" title="Выгрузка сумматора " alt="cStore" shape="rect" coords="77,1288,144,1312"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a79939b66f3de892e91d7710844294716"><td class="memItemLeft" align="right" valign="top"><a id="a79939b66f3de892e91d7710844294716"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command.html#a79939b66f3de892e91d7710844294716">operator()</a> (<a class="el" href="class_computer.html">Computer</a> *)=0</td></tr>
+<tr class="memdesc:a79939b66f3de892e91d7710844294716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перегрузка оператора () <br /></td></tr>
+<tr class="separator:a79939b66f3de892e91d7710844294716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:aac6f368e7c9dbb357b3f00627d5dabfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command.html#aac6f368e7c9dbb357b3f00627d5dabfc">loadRegister</a> (<a class="el" href="class_computer.html">Computer</a> *COMP)</td></tr>
+<tr class="memdesc:aac6f368e7c9dbb357b3f00627d5dabfc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_command.html#aac6f368e7c9dbb357b3f00627d5dabfc" title="Command::loadRegister - загрузка внутреннего регистра ">Command::loadRegister</a> - загрузка внутреннего регистра  <a href="#aac6f368e7c9dbb357b3f00627d5dabfc">Подробнее...</a><br /></td></tr>
+<tr class="separator:aac6f368e7c9dbb357b3f00627d5dabfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Базовый абстрактный класс для паттерна "Комманда". </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="aac6f368e7c9dbb357b3f00627d5dabfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6f368e7c9dbb357b3f00627d5dabfc">&sect;&nbsp;</a></span>loadRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Command::loadRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_computer.html">Computer</a> *&#160;</td>
+          <td class="paramname"><em>COMP</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_command.html#aac6f368e7c9dbb357b3f00627d5dabfc" title="Command::loadRegister - загрузка внутреннего регистра ">Command::loadRegister</a> - загрузка внутреннего регистра </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">COMP</td><td>- указатель на объект компьютер</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Загружает внутренний регистр из адреса по абсолютной или относительной адресации. Функция вызывается только из потомков <a class="el" href="class_command.html" title="Базовый абстрактный класс для паттерна &quot;Комманда&quot;. ">Command</a>. </p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ptr;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(COMP-&gt;<a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a3e0d1e527de9f60594023a362b08a7de">B</a> == 0) <span class="comment">//Абсолютная адресация</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        ptr = COMP-&gt;<a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Addr</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">else</span> <span class="comment">//Относительная адресация</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        ptr = COMP-&gt;<a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Addr</a> + COMP-&gt;<a class="code" href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">RA</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    COMP-&gt;<a class="code" href="class_computer.html#a10ca6c6b200630119201de16d7368e0f">debug</a>(<span class="stringliteral">&quot;Загрузка регистра из адреса &quot;</span> + QString::number(ptr));</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    COMP-&gt;<a class="code" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a>.<a class="code" href="union_computer_1_1data.html#a4308eb86abfec2d52028212c599a093b">b1</a> = COMP-&gt;<a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ptr++];</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    COMP-&gt;<a class="code" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a>.<a class="code" href="union_computer_1_1data.html#a87252409c780b1c387883eb027065709">b2</a> = COMP-&gt;<a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ptr++];</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    COMP-&gt;<a class="code" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a>.<a class="code" href="union_computer_1_1data.html#af9265f845319a83f5877590e7ab2a497">b3</a> = COMP-&gt;<a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ptr++];</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    COMP-&gt;<a class="code" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a>.<a class="code" href="union_computer_1_1data.html#aca2c60d7da9da79750a6d3a237dae93c">b4</a> = COMP-&gt;<a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ptr++];    </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="ttc" id="struct_computer_1_1command_html_a3e0d1e527de9f60594023a362b08a7de"><div class="ttname"><a href="struct_computer_1_1command.html#a3e0d1e527de9f60594023a362b08a7de">Computer::command::B</a></div><div class="ttdeci">bit B</div><div class="ttdoc">Флаг адресации </div><div class="ttdef"><b>Definition:</b> computer.h:103</div></div>
+<div class="ttc" id="class_computer_html_adcd1bd438b7ad95f043db2acbbd864ae"><div class="ttname"><a href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">Computer::MEM</a></div><div class="ttdeci">byte * MEM</div><div class="ttdoc">MEM - Оперативная память </div><div class="ttdef"><b>Definition:</b> computer.h:152</div></div>
+<div class="ttc" id="union_computer_1_1data_html_a4308eb86abfec2d52028212c599a093b"><div class="ttname"><a href="union_computer_1_1data.html#a4308eb86abfec2d52028212c599a093b">Computer::data::b1</a></div><div class="ttdeci">byte b1</div><div class="ttdoc">Первый байт </div><div class="ttdef"><b>Definition:</b> computer.h:122</div></div>
+<div class="ttc" id="class_computer_html_a499d0b2c857c2977dd5702906705f79e"><div class="ttname"><a href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">Computer::RA</a></div><div class="ttdeci">address RA</div><div class="ttdoc">Адресный регистр 2 байта </div><div class="ttdef"><b>Definition:</b> computer.h:144</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_a0e07591012953413797506f7bc3cb1a7"><div class="ttname"><a href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Computer::command::Addr</a></div><div class="ttdeci">address Addr</div><div class="ttdoc">Адрес аргумента </div><div class="ttdef"><b>Definition:</b> computer.h:107</div></div>
+<div class="ttc" id="union_computer_1_1data_html_a87252409c780b1c387883eb027065709"><div class="ttname"><a href="union_computer_1_1data.html#a87252409c780b1c387883eb027065709">Computer::data::b2</a></div><div class="ttdeci">byte b2</div><div class="ttdoc">Второй байт </div><div class="ttdef"><b>Definition:</b> computer.h:123</div></div>
+<div class="ttc" id="union_computer_1_1data_html_af9265f845319a83f5877590e7ab2a497"><div class="ttname"><a href="union_computer_1_1data.html#af9265f845319a83f5877590e7ab2a497">Computer::data::b3</a></div><div class="ttdeci">byte b3</div><div class="ttdoc">Третий байт </div><div class="ttdef"><b>Definition:</b> computer.h:124</div></div>
+<div class="ttc" id="class_computer_html_a8423168f7cc356b4dd36977603798caf"><div class="ttname"><a href="class_computer.html#a8423168f7cc356b4dd36977603798caf">Computer::CMD</a></div><div class="ttdeci">struct Computer::command CMD</div><div class="ttdoc">Объект структуры команды </div></div>
+<div class="ttc" id="class_computer_html_a0fbf84599b7db9d634a92afed443ee73"><div class="ttname"><a href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">Computer::R1</a></div><div class="ttdeci">data R1</div><div class="ttdoc">Внутренний регистр </div><div class="ttdef"><b>Definition:</b> computer.h:145</div></div>
+<div class="ttc" id="union_computer_1_1data_html_aca2c60d7da9da79750a6d3a237dae93c"><div class="ttname"><a href="union_computer_1_1data.html#aca2c60d7da9da79750a6d3a237dae93c">Computer::data::b4</a></div><div class="ttdeci">byte b4</div><div class="ttdoc">Четвёртый байт </div><div class="ttdef"><b>Definition:</b> computer.h:125</div></div>
+<div class="ttc" id="class_computer_html_a10ca6c6b200630119201de16d7368e0f"><div class="ttname"><a href="class_computer.html#a10ca6c6b200630119201de16d7368e0f">Computer::debug</a></div><div class="ttdeci">void debug(QString)</div><div class="ttdoc">Передача сообщения для последующего вывода в лог </div><div class="ttdef"><b>Definition:</b> computer.cpp:221</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/<a class="el" href="command_8h_source.html">command.h</a></li>
+<li>C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/command.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

@@ -1,0 +1,484 @@
+\hypertarget{class_computer}{}\section{Класс Computer}
+\label{class_computer}\index{Computer@{Computer}}
+
+
+Класс \hyperlink{class_computer}{Computer} реализует архитектуру компьютера  
+
+
+
+
+{\ttfamily \#include $<$computer.\+h$>$}
+
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_computer_1_1bits}{bits}
+\begin{DoxyCompactList}\small\item\em P\+SW (Cостояние процессора) \end{DoxyCompactList}\item 
+struct \hyperlink{struct_computer_1_1command}{command}
+\begin{DoxyCompactList}\small\item\em command struct -\/ структура команды для выполнения. 3 байта. \end{DoxyCompactList}\item 
+union \hyperlink{union_computer_1_1data}{data}
+\begin{DoxyCompactList}\small\item\em data union -\/ структура данных 4 байта \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_computer_ae13c32fa07ad956f0c229608dab5e332}{Computer} (Q\+String P\+A\+TH, \hyperlink{classinterpreter}{interpreter} $\ast$I\+N\+T\+ER)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_computer_ae13c32fa07ad956f0c229608dab5e332}{Computer\+::\+Computer} -\/ конструктор \end{DoxyCompactList}\item 
+int \hyperlink{class_computer_a4303af6a549fc8f792de0d2d18a9e05f}{execute} ()
+\begin{DoxyCompactList}\small\item\em Запуск выполнения программы \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_computer_aa57b0ed2f3a9b168c2924174ec524bd4}{interrupt} (int interrupt\+Code)
+\begin{DoxyCompactList}\small\item\em Обработчик прерываний \end{DoxyCompactList}\item 
+void \hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Передача сообщения для последующего вывода в лог \end{DoxyCompactList}\item 
+void \hyperlink{class_computer_aeab90cbacbef385685717c249a07929d}{reset} ()
+\begin{DoxyCompactList}\small\item\em сброс регистров \end{DoxyCompactList}\item 
+bool \hyperlink{class_computer_adeb4bbeee2b9c13616dc8c4ef52cbe60}{load} ()
+\begin{DoxyCompactList}\small\item\em Загрузка программы \end{DoxyCompactList}\item 
+int \hyperlink{class_computer_af337e329e3bc6d80bbd7070e25ce5731}{run} ()
+\begin{DoxyCompactList}\small\item\em Основной цикл процессора \end{DoxyCompactList}\item 
+void \hyperlink{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{flagI} ()
+\begin{DoxyCompactList}\small\item\em Установка флагов для целого числа \end{DoxyCompactList}\item 
+void \hyperlink{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{flagR} ()
+\begin{DoxyCompactList}\small\item\em Установка флагов для вещественного числа \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterpreter}{interpreter} $\ast$ \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}
+\begin{DoxyCompactList}\small\item\em Interpreter -\/ Указатель на родителя \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a05fb0474bddcf52789780fd6457cefac}{}\label{class_computer_a05fb0474bddcf52789780fd6457cefac} 
+Q\+String \hyperlink{class_computer_a05fb0474bddcf52789780fd6457cefac}{program\+Path}
+\begin{DoxyCompactList}\small\item\em program\+Path -\/ Путь до файла с программой, которую нужно выполнить \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a8423168f7cc356b4dd36977603798caf}{}\label{class_computer_a8423168f7cc356b4dd36977603798caf} 
+struct \hyperlink{struct_computer_1_1command}{Computer\+::command} \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{C\+MD}
+\begin{DoxyCompactList}\small\item\em Объект структуры команды \end{DoxyCompactList}\item 
+\hypertarget{class_computer_adb154047da2156e4419af3b3a4a766b7}{}\label{class_computer_adb154047da2156e4419af3b3a4a766b7} 
+union \hyperlink{union_computer_1_1data}{Computer\+::data} \hyperlink{class_computer_adb154047da2156e4419af3b3a4a766b7}{D\+A\+TA}
+\begin{DoxyCompactList}\small\item\em Объект структуры данных \end{DoxyCompactList}\item 
+\hypertarget{class_computer_aada011a29d87bb979835371a5f09805e}{}\label{class_computer_aada011a29d87bb979835371a5f09805e} 
+struct \hyperlink{struct_computer_1_1bits}{Computer\+::bits} \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{P\+SW}
+\begin{DoxyCompactList}\small\item\em Объект структуры состояния процессора \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a297a9b79381a9f2005c574f09ea73d70}{}\label{class_computer_a297a9b79381a9f2005c574f09ea73d70} 
+\hyperlink{class_command}{Command} $\ast$ \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{p\+C\+MD} \mbox{[}128\mbox{]} = \{nullptr\}
+\begin{DoxyCompactList}\small\item\em набор команд процессора, инициализируется в конструкторе \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a874503110664b3cf821118d2ce9c2b96}{}\label{class_computer_a874503110664b3cf821118d2ce9c2b96} 
+\hyperlink{union_computer_1_1data}{data} \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}
+\begin{DoxyCompactList}\small\item\em Сумматор 4 байта \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a499d0b2c857c2977dd5702906705f79e}{}\label{class_computer_a499d0b2c857c2977dd5702906705f79e} 
+address \hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA}
+\begin{DoxyCompactList}\small\item\em Адресный регистр 2 байта \end{DoxyCompactList}\item 
+\hypertarget{class_computer_a0fbf84599b7db9d634a92afed443ee73}{}\label{class_computer_a0fbf84599b7db9d634a92afed443ee73} 
+\hyperlink{union_computer_1_1data}{data} \hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}
+\begin{DoxyCompactList}\small\item\em Внутренний регистр \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{M\+EM} = new byte\mbox{[}0xffff\mbox{]}
+\begin{DoxyCompactList}\small\item\em M\+EM -\/ Оперативная память \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_computer_a62a7fc89f0ee4604e3ccab9b6b6a343f}{}\label{class_computer_a62a7fc89f0ee4604e3ccab9b6b6a343f} 
+class {\bfseries Command}
+\item 
+\hypertarget{class_computer_af5200c1b25e6d6c70149aeb43469862d}{}\label{class_computer_af5200c1b25e6d6c70149aeb43469862d} 
+class {\bfseries c\+Iadd}
+\item 
+\hypertarget{class_computer_a34690541a879c55084846d0cc959f663}{}\label{class_computer_a34690541a879c55084846d0cc959f663} 
+class {\bfseries c\+Radd}
+\item 
+\hypertarget{class_computer_acb4f2916d54a02a5aa6916c3dde9b9ad}{}\label{class_computer_acb4f2916d54a02a5aa6916c3dde9b9ad} 
+class {\bfseries c\+Isub}
+\item 
+\hypertarget{class_computer_a8a74408651dfcb80351e8a528cc7e313}{}\label{class_computer_a8a74408651dfcb80351e8a528cc7e313} 
+class {\bfseries c\+Rsub}
+\item 
+\hypertarget{class_computer_a403b0571c72075bde36e9a03510eff49}{}\label{class_computer_a403b0571c72075bde36e9a03510eff49} 
+class {\bfseries c\+Imul}
+\item 
+\hypertarget{class_computer_a92e22a42f3315bfac267253edcd011e6}{}\label{class_computer_a92e22a42f3315bfac267253edcd011e6} 
+class {\bfseries c\+Rmul}
+\item 
+\hypertarget{class_computer_a8eccf947fdd09a055e4f096329babc93}{}\label{class_computer_a8eccf947fdd09a055e4f096329babc93} 
+class {\bfseries c\+Idiv}
+\item 
+\hypertarget{class_computer_a5783b61b2e06d3ae070dec6726528dca}{}\label{class_computer_a5783b61b2e06d3ae070dec6726528dca} 
+class {\bfseries c\+Rdiv}
+\item 
+\hypertarget{class_computer_a58a26d915580e452f8ebf5f5c35ec102}{}\label{class_computer_a58a26d915580e452f8ebf5f5c35ec102} 
+class {\bfseries c\+Imod}
+\item 
+\hypertarget{class_computer_add13bd38b4e1ceb581c8aafdd18d6a38}{}\label{class_computer_add13bd38b4e1ceb581c8aafdd18d6a38} 
+class {\bfseries c\+Radr}
+\item 
+\hypertarget{class_computer_a06f50956cd4489638e7658659729566b}{}\label{class_computer_a06f50956cd4489638e7658659729566b} 
+class {\bfseries c\+Load}
+\item 
+\hypertarget{class_computer_ae67eb3dc4175713f1a79f74bd1d03eed}{}\label{class_computer_ae67eb3dc4175713f1a79f74bd1d03eed} 
+class {\bfseries c\+Store}
+\item 
+\hypertarget{class_computer_accaf41340be465f8a862e40429ba9cfb}{}\label{class_computer_accaf41340be465f8a862e40429ba9cfb} 
+class {\bfseries c\+Jmp}
+\item 
+\hypertarget{class_computer_af7af8f966cd39d199ce18113ecdd2ecb}{}\label{class_computer_af7af8f966cd39d199ce18113ecdd2ecb} 
+class {\bfseries c\+Icmp}
+\item 
+\hypertarget{class_computer_a7c711c41af5fcddc63bc8e8c41f620f4}{}\label{class_computer_a7c711c41af5fcddc63bc8e8c41f620f4} 
+class {\bfseries c\+Rcmp}
+\item 
+\hypertarget{class_computer_a784d5ff4da579d46119d42608ee66334}{}\label{class_computer_a784d5ff4da579d46119d42608ee66334} 
+class {\bfseries c\+JZ}
+\item 
+\hypertarget{class_computer_a3adfd5a9699d8611e902f47cbdfc34d1}{}\label{class_computer_a3adfd5a9699d8611e902f47cbdfc34d1} 
+class {\bfseries c\+JG}
+\item 
+\hypertarget{class_computer_a69be74228435ed08e42c04d34abd383a}{}\label{class_computer_a69be74228435ed08e42c04d34abd383a} 
+class {\bfseries c\+JL}
+\item 
+\hypertarget{class_computer_a0b86d0871da7c7632d6c45491faae5ab}{}\label{class_computer_a0b86d0871da7c7632d6c45491faae5ab} 
+class {\bfseries c\+Iin}
+\item 
+\hypertarget{class_computer_a02eb85182aba14840a06c5d5f9c4a4e4}{}\label{class_computer_a02eb85182aba14840a06c5d5f9c4a4e4} 
+class {\bfseries c\+Iout}
+\item 
+\hypertarget{class_computer_a047a81456a9fc5a1160d96ac296fd762}{}\label{class_computer_a047a81456a9fc5a1160d96ac296fd762} 
+class {\bfseries c\+Rin}
+\item 
+\hypertarget{class_computer_ad68469c232d5ffab3e425a9f058b9168}{}\label{class_computer_ad68469c232d5ffab3e425a9f058b9168} 
+class {\bfseries c\+Rout}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс \hyperlink{class_computer}{Computer} реализует архитектуру компьютера 
+
+Содержит в себе реализацию регистров, памяти, и т.\+д. 
+
+\subsection{Конструктор(ы)}
+\hypertarget{class_computer_ae13c32fa07ad956f0c229608dab5e332}{}\label{class_computer_ae13c32fa07ad956f0c229608dab5e332} 
+\index{Computer@{Computer}!Computer@{Computer}}
+\index{Computer@{Computer}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{Computer()}{Computer()}}
+{\footnotesize\ttfamily Computer\+::\+Computer (\begin{DoxyParamCaption}\item[{Q\+String}]{P\+A\+TH,  }\item[{\hyperlink{classinterpreter}{interpreter} $\ast$}]{I\+N\+T\+ER }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_computer_ae13c32fa07ad956f0c229608dab5e332}{Computer\+::\+Computer} -\/ конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em P\+A\+TH} & -\/ путь до файла программы \\
+\hline
+{\em I\+N\+T\+ER} & -\/ указатель на объект родитель\\
+\hline
+\end{DoxyParams}
+Инициализирует массив команд процессора, и переменные. 
+\begin{DoxyCode}
+13 \{
+14     \hyperlink{class_computer_a05fb0474bddcf52789780fd6457cefac}{programPath} = PATH;     \textcolor{comment}{//Путь до программы}
+15     \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter} = INTER;    \textcolor{comment}{//Указатель на родителя}
+16 
+17     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[STOP]  =   \textcolor{keyword}{new} \hyperlink{classc_s_t_o_p}{cSTOP}();    \textcolor{comment}{//Остановка}
+18 
+19     \textcolor{comment}{//Целая арифметика}
+20     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Iadd]  =   \textcolor{keyword}{new} \hyperlink{classc_iadd}{cIadd}();    \textcolor{comment}{//Целочисленное сложение}
+21     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Isub]  =   \textcolor{keyword}{new} \hyperlink{classc_isub}{cIsub}();    \textcolor{comment}{//Целочисленное вычитание}
+22     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Imul]  =   \textcolor{keyword}{new} \hyperlink{classc_imul}{cImul}();    \textcolor{comment}{//Целочисленное умножение}
+23     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Idiv]  =   \textcolor{keyword}{new} \hyperlink{classc_idiv}{cIdiv}();    \textcolor{comment}{//Целочисленное деление}
+24     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Imod]  =   \textcolor{keyword}{new} \hyperlink{classc_imod}{cImod}();    \textcolor{comment}{//Целочисл. остаток от деления}
+25     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Iin]   =   \textcolor{keyword}{new} \hyperlink{classc_iin}{cIin}();     \textcolor{comment}{//Ввод целого числа}
+26     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Iout]  =   \textcolor{keyword}{new} \hyperlink{classc_iout}{cIout}();    \textcolor{comment}{//Вывод целого числа}
+27 
+28     \textcolor{comment}{//Дробная арифметика}
+29     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Radd]  =   \textcolor{keyword}{new} \hyperlink{classc_radd}{cRadd}();    \textcolor{comment}{//Вещественное сложение}
+30     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rsub]  =   \textcolor{keyword}{new} \hyperlink{classc_rsub}{cRsub}();    \textcolor{comment}{//Вещественное вычитание}
+31     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rmul]  =   \textcolor{keyword}{new} \hyperlink{classc_rmul}{cRmul}();    \textcolor{comment}{//Вещественное умножение}
+32     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rdiv]  =   \textcolor{keyword}{new} \hyperlink{classc_rdiv}{cRdiv}();    \textcolor{comment}{//Вещественное деление}
+33     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rin]   =   \textcolor{keyword}{new} \hyperlink{classc_rin}{cRin}();     \textcolor{comment}{//Ввод вещественного числа}
+34     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rout]  =   \textcolor{keyword}{new} \hyperlink{classc_rout}{cRout}();    \textcolor{comment}{//Вывод вещественного числа}
+35 
+36     \textcolor{comment}{//Операции с сумматором}
+37     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Load]  =   \textcolor{keyword}{new} \hyperlink{classc_load}{cLoad}();    \textcolor{comment}{//Загрузка сумматора}
+38     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Store] =   \textcolor{keyword}{new} \hyperlink{classc_store}{cStore}();   \textcolor{comment}{//Сохранение сумматора}
+39 
+40     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Radr]  =   \textcolor{keyword}{new} \hyperlink{classc_radr}{cRadr}();    \textcolor{comment}{//Загрузка адресного регистра константой}
+41 
+42     \textcolor{comment}{//прыжки}
+43     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Jmp]   =   \textcolor{keyword}{new} \hyperlink{classc_jmp}{cJmp}();     \textcolor{comment}{//Безусловный переход}
+44     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[JZ]    =   \textcolor{keyword}{new} \hyperlink{classc_j_z}{cJZ}();      \textcolor{comment}{// ==}
+45     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[JG]    =   \textcolor{keyword}{new} \hyperlink{classc_j_g}{cJG}();      \textcolor{comment}{// >}
+46     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[JL]    =   \textcolor{keyword}{new} \hyperlink{classc_j_l}{cJL}();      \textcolor{comment}{// <}
+47 
+48     \textcolor{comment}{//сравнение cIcmp}
+49     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Icmp]  =   \textcolor{keyword}{new} \hyperlink{classc_icmp}{cIcmp}();    \textcolor{comment}{//Целочисленное сравнение}
+50     \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[Rcmp]  =   \textcolor{keyword}{new} \hyperlink{classc_rcmp}{cRcmp}();    \textcolor{comment}{//Вещественное сравнение}
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Методы}
+\hypertarget{class_computer_a10ca6c6b200630119201de16d7368e0f}{}\label{class_computer_a10ca6c6b200630119201de16d7368e0f} 
+\index{Computer@{Computer}!debug@{debug}}
+\index{debug@{debug}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void Computer\+::debug (\begin{DoxyParamCaption}\item[{Q\+String}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Передача сообщения для последующего вывода в лог 
+
+\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{Computer\+::debug} -\/ Отладочное сообщение
+
+
+\begin{DoxyParams}{Аргументы}
+{\em msg} & -\/ Текст сообщения\\
+\hline
+\end{DoxyParams}
+Отправляет текст отладочного сообщения интерпретатору 
+\begin{DoxyCode}
+222 \{
+223     \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}->\hyperlink{classinterpreter_a5153712027e3e4344f72336f8b5cfa6d}{debug}(msg);
+224 \}
+\end{DoxyCode}
+\hypertarget{class_computer_a4303af6a549fc8f792de0d2d18a9e05f}{}\label{class_computer_a4303af6a549fc8f792de0d2d18a9e05f} 
+\index{Computer@{Computer}!execute@{execute}}
+\index{execute@{execute}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int Computer\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Запуск выполнения программы 
+
+\hyperlink{class_computer_a4303af6a549fc8f792de0d2d18a9e05f}{Computer\+::execute} -\/ алгоритм запуска программы
+
+\begin{DoxyReturn}{Возвращает}
+Код завершения выполнения программы
+\end{DoxyReturn}
+Сбрасывает регистры. Загружает программу в память. Запускает прцессор. 
+\begin{DoxyCode}
+175 \{
+176     this->\hyperlink{class_computer_aeab90cbacbef385685717c249a07929d}{reset}();
+177     \textcolor{keywordflow}{if}(!this->\hyperlink{class_computer_adeb4bbeee2b9c13616dc8c4ef52cbe60}{load}())
+178     \{
+179         \textcolor{keywordflow}{return} 2;
+180     \}
+181     \textcolor{keywordflow}{return} this->\hyperlink{class_computer_af337e329e3bc6d80bbd7070e25ce5731}{run}();
+182 \}
+\end{DoxyCode}
+\hypertarget{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{}\label{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e} 
+\index{Computer@{Computer}!flagI@{flagI}}
+\index{flagI@{flagI}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{flag\+I()}{flagI()}}
+{\footnotesize\ttfamily void Computer\+::flagI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Установка флагов для целого числа 
+
+\hyperlink{class_computer_aae4a76a8a03a6c9fb1c12968d629be3e}{Computer\+::flagI} -\/ Установка флага для целых чисел
+
+Устанавливает флаги для целочисленного сумматора 
+\begin{DoxyCode}
+146 \{
+147     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} = 0;
+148     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} = 0;
+149     \textcolor{keywordflow}{if}(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} == 0) \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} = 1;
+150     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} > 0) \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} = 1;
+151 \}
+\end{DoxyCode}
+\hypertarget{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{}\label{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9} 
+\index{Computer@{Computer}!flagR@{flagR}}
+\index{flagR@{flagR}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{flag\+R()}{flagR()}}
+{\footnotesize\ttfamily void Computer\+::flagR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Установка флагов для вещественного числа 
+
+\hyperlink{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{Computer\+::flagR} -\/ Установка флага для вещественных чисел
+
+Устанавливает флаги для вещественного сумматора 
+\begin{DoxyCode}
+159 \{
+160     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} = 0;
+161     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} = 0;
+162     \textcolor{keywordflow}{if}(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} == 0) \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} = 1;
+163     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} > 0) \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} = 1;
+164 \}
+\end{DoxyCode}
+\hypertarget{class_computer_aa57b0ed2f3a9b168c2924174ec524bd4}{}\label{class_computer_aa57b0ed2f3a9b168c2924174ec524bd4} 
+\index{Computer@{Computer}!interrupt@{interrupt}}
+\index{interrupt@{interrupt}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{interrupt()}{interrupt()}}
+{\footnotesize\ttfamily void Computer\+::interrupt (\begin{DoxyParamCaption}\item[{int}]{interrupt\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обработчик прерываний 
+
+\hyperlink{class_computer_aa57b0ed2f3a9b168c2924174ec524bd4}{Computer\+::interrupt} -\/ Обработчик прерываний
+
+
+\begin{DoxyParams}{Аргументы}
+{\em interrupt\+Code} & Обрабатывает 4 прерывания -\/ ввод/вывод целого/вещественного числа \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+192 \{
+193     \textcolor{keywordflow}{switch} (interruptCode)\{
+194     \textcolor{keywordflow}{case} hIin: \{\textcolor{comment}{//Ввод целого значения сумматора}
+195         \hyperlink{class_computer_adb154047da2156e4419af3b3a4a766b7}{DATA}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} = \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}->\hyperlink{classinterpreter_a30d9b904383c7b73adceeca002461431}{inputDialog}(\textcolor{stringliteral}{"Введите целое число"}).toInt();
+196         \textcolor{keywordflow}{break};
+197     \}
+198     \textcolor{keywordflow}{case} hRin: \{\textcolor{comment}{//Ввод вещественного значения сумматора}
+199         \hyperlink{class_computer_adb154047da2156e4419af3b3a4a766b7}{DATA}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} = \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}->\hyperlink{classinterpreter_a30d9b904383c7b73adceeca002461431}{inputDialog}(\textcolor{stringliteral}{"Введите вещественное число"}).toFloat(
+      );
+200         \textcolor{keywordflow}{break};
+201     \}
+202     \textcolor{keywordflow}{case} hIout:\{\textcolor{comment}{//Вывод целого значения сумматора на экран}
+203         QString str = QString::number(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I});
+204         \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}->\hyperlink{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a}{outputDialog}(str);
+205         \textcolor{keywordflow}{break};
+206     \}
+207     \textcolor{keywordflow}{case} hRout: \{\textcolor{comment}{//Вывод вещественного значения сумматора на экран}
+208         QString str = QString::number(\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R},\textcolor{charliteral}{'f'},2);
+209         \hyperlink{class_computer_aa58d6e565412d6705657c0418b1e59fe}{Interpreter}->\hyperlink{classinterpreter_a5d3ba23a48b814586dabbe2e3507b93a}{outputDialog}(str);
+210         \textcolor{keywordflow}{break};
+211     \}
+212     \}
+213 \}
+\end{DoxyCode}
+\hypertarget{class_computer_adeb4bbeee2b9c13616dc8c4ef52cbe60}{}\label{class_computer_adeb4bbeee2b9c13616dc8c4ef52cbe60} 
+\index{Computer@{Computer}!load@{load}}
+\index{load@{load}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Computer\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Загрузка программы 
+
+\hyperlink{class_computer_adeb4bbeee2b9c13616dc8c4ef52cbe60}{Computer\+::load}.
+
+\begin{DoxyReturn}{Возвращает}
+true в случае успешной загрузки
+\end{DoxyReturn}
+Загружает файл программы в оперативную память. Производит простой синтаксический анализ. В случае синтаксической ошибки возвращает false 
+\begin{DoxyCode}
+71 \{
+72     QFile file(\hyperlink{class_computer_a05fb0474bddcf52789780fd6457cefac}{programPath});
+73     \textcolor{keywordflow}{if}(file.open(QIODevice::ReadOnly | QIODevice::Text))\{
+74         \textcolor{keywordtype}{int} curByte = 0;
+75         \textcolor{keywordflow}{while}(!file.atEnd())\{
+76             \textcolor{keywordflow}{if}(curByte >= 0xfffd) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{//Защита от переполнения ОЗУ}
+77             QStringList strline = QString(file.readLine()).simplified().split(\textcolor{charliteral}{' '});
+78             \textcolor{keywordflow}{if}(strline.count() <= 0) \textcolor{keywordflow}{break};
+79 
+80             \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_afd02c65efae303e5c528aab2eaa17556}{Cmd} = (byte)strline[0].toUInt();
+81 
+82             \textcolor{keywordflow}{if}(strline.count() >= 2)
+83                 \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr} = (address)strline[1].toUInt();
+84             \textcolor{keywordflow}{else} \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr} = 0;
+85 
+86             \textcolor{comment}{//Загрузка программы в ОЗУ}
+87             \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[curByte++] = \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_afd02c65efae303e5c528aab2eaa17556}{Cmd};
+88             \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[curByte++] = \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a840bf646fc591a80cd94f253bb8cae02}{H\_Addr};
+89             \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[curByte++] = \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_afe8e3496cc61746a889f53f91ed66d45}{L\_Addr};
+90 
+91         \}
+92         \hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA} += curByte; \textcolor{comment}{//Адресный регистр для данных после программы}
+93     \}\textcolor{keywordflow}{else} \{
+94         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+95     \}
+96     \textcolor{keywordflow}{if}(file.isOpen()) file.close();
+97     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+98 \}
+\end{DoxyCode}
+\hypertarget{class_computer_aeab90cbacbef385685717c249a07929d}{}\label{class_computer_aeab90cbacbef385685717c249a07929d} 
+\index{Computer@{Computer}!reset@{reset}}
+\index{reset@{reset}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Computer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+сброс регистров 
+
+\hyperlink{class_computer_aeab90cbacbef385685717c249a07929d}{Computer\+::reset} Сброс регистров
+
+Инициализация и сброс регистров компьютера до исходных значений. 
+\begin{DoxyCode}
+106 \{
+107     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} = 0x0000;
+108     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_aaec5be5e3ab9ea9aa4b1672af9e26312}{OF} = 0;
+109     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} = 0;
+110     \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a5307edeadd212f1fc19e9f6f5346df39}{ZF} = 0;
+111     \hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA} = 0x0000;
+112     \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} = 0;
+113     \hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a6e51de6e0351adc4e50b336a092bc4bb}{I} = 0;
+114 \}
+\end{DoxyCode}
+\hypertarget{class_computer_af337e329e3bc6d80bbd7070e25ce5731}{}\label{class_computer_af337e329e3bc6d80bbd7070e25ce5731} 
+\index{Computer@{Computer}!run@{run}}
+\index{run@{run}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int Computer\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Основной цикл процессора 
+
+\hyperlink{class_computer_af337e329e3bc6d80bbd7070e25ce5731}{Computer\+::run} -\/ цикл процессора
+
+\begin{DoxyReturn}{Возвращает}
+Код завершения выполнения программы
+\end{DoxyReturn}
+Поочерёдно выполняет машинные инструкции из ОЗУ. 
+\begin{DoxyCode}
+123 \{
+124     \textcolor{keywordflow}{while}(\textcolor{keyword}{true})
+125     \{
+126         \textcolor{keywordflow}{if}(\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} >= 0xFFFC) \textcolor{keywordflow}{return} 2;
+127         \textcolor{comment}{//Загрузка команды в структуру}
+128         \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_afd02c65efae303e5c528aab2eaa17556}{Cmd}     =   \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP}++ ];   \textcolor{comment}{//Формируем структуру 3 байта из памяти}
+129         \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a840bf646fc591a80cd94f253bb8cae02}{H\_Addr}  =   \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP}++ ];
+130         \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_afe8e3496cc61746a889f53f91ed66d45}{L\_Addr}  =   \hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP}++ ];
+131         \textcolor{comment}{//*************************************}
+132         \textcolor{keywordflow}{if}(\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a2714eda12dcfba46770769c7ed9c7f0a}{OP} > 256) \textcolor{keywordflow}{continue};  \textcolor{comment}{//Защита от некорректной команды}
+133         \textcolor{keywordflow}{if}(\hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a2714eda12dcfba46770769c7ed9c7f0a}{OP}] == NULL) \textcolor{keywordflow}{return} 3;  \textcolor{comment}{//Защита от неизвестной команды}
+134         \textcolor{keywordtype}{int} execResult = \hyperlink{class_computer_a297a9b79381a9f2005c574f09ea73d70}{pCMD}[ \hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a2714eda12dcfba46770769c7ed9c7f0a}{OP} ]->operator ()(\textcolor{keyword}{this});     \textcolor{comment}{//Выполнение}
+135         \textcolor{keywordflow}{if}( execResult != 1) \textcolor{keywordflow}{return} execResult;                 \textcolor{comment}{//Результат выполнения}
+136     \}
+137     \textcolor{keywordflow}{return} 0;
+138 \}
+\end{DoxyCode}
+
+
+\subsection{Данные класса}
+\hypertarget{class_computer_aa58d6e565412d6705657c0418b1e59fe}{}\label{class_computer_aa58d6e565412d6705657c0418b1e59fe} 
+\index{Computer@{Computer}!Interpreter@{Interpreter}}
+\index{Interpreter@{Interpreter}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{Interpreter}{Interpreter}}
+{\footnotesize\ttfamily \hyperlink{classinterpreter}{interpreter}$\ast$ Computer\+::\+Interpreter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Interpreter -\/ Указатель на родителя 
+
+Указатель на объект родитель, передающийся классу в качестве параметра. Используется для доступа к членам класса interprerer \hypertarget{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{}\label{class_computer_adcd1bd438b7ad95f043db2acbbd864ae} 
+\index{Computer@{Computer}!M\+EM@{M\+EM}}
+\index{M\+EM@{M\+EM}!Computer@{Computer}}
+\subsubsection{\texorpdfstring{M\+EM}{MEM}}
+{\footnotesize\ttfamily byte$\ast$ Computer\+::\+M\+EM = new byte\mbox{[}0xffff\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+M\+EM -\/ Оперативная память 
+
+Адресное пространство 16 бит. Байтовая. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/computer.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/computer.\+cpp\end{DoxyCompactItemize}

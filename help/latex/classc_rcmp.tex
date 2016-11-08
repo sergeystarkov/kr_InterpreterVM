@@ -1,0 +1,70 @@
+\hypertarget{classc_rcmp}{}\section{Класс c\+Rcmp}
+\label{classc_rcmp}\index{c\+Rcmp@{c\+Rcmp}}
+
+
+Сравнение вещественных  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Rcmp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_rcmp}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_rcmp_a4053dd11e7f5f61ac61df639c425cf08}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Rcmp\+::operator () -\/ Сравнение вещественных чисел \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Сравнение вещественных 
+
+\subsection{Методы}
+\hypertarget{classc_rcmp_a4053dd11e7f5f61ac61df639c425cf08}{}\label{classc_rcmp_a4053dd11e7f5f61ac61df639c425cf08} 
+\index{c\+Rcmp@{c\+Rcmp}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Rcmp@{c\+Rcmp}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Rcmp\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Rcmp\+::operator () -\/ Сравнение вещественных чисел 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр из памяти. Сравнивает вещественное значение сумматора с вещественным значением внутреннего регистра. Результаты записываются в флаги P\+SW. Значение сумматора не изменяется. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+312 \{
+313     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+314     COMP->\hyperlink{class_computer_adb154047da2156e4419af3b3a4a766b7}{DATA}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} = COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R};
+315     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} -= COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R};
+316     COMP->\hyperlink{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{flagR}(); \textcolor{comment}{//Установка флага результата}
+317     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} = COMP->\hyperlink{class_computer_adb154047da2156e4419af3b3a4a766b7}{DATA}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R};
+318 
+319     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Вещественное сравнение"});
+320     \textcolor{keywordflow}{return} 1;
+321 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

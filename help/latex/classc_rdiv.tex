@@ -1,0 +1,69 @@
+\hypertarget{classc_rdiv}{}\section{Класс c\+Rdiv}
+\label{classc_rdiv}\index{c\+Rdiv@{c\+Rdiv}}
+
+
+Деление дробных чисел  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Rdiv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_rdiv}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_rdiv_a2ce07afa960d74895bcfc2028220e51b}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Rdiv\+::operator () -\/ вещественное деление \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Деление дробных чисел 
+
+\subsection{Методы}
+\hypertarget{classc_rdiv_a2ce07afa960d74895bcfc2028220e51b}{}\label{classc_rdiv_a2ce07afa960d74895bcfc2028220e51b} 
+\index{c\+Rdiv@{c\+Rdiv}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Rdiv@{c\+Rdiv}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Rdiv\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Rdiv\+::operator () -\/ вещественное деление 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает внутренний регистр по адресу. Делит сумматор на значение внутреннего регистра. Ставит флаги операции. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+199 \{
+200     \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{loadRegister}(COMP);
+201     COMP->\hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R} /= COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R};
+202     COMP->\hyperlink{class_computer_aae860bb217270ec88e8ebf6fe2c2adc9}{flagR}(); \textcolor{comment}{//Установка флага результата}
+203 
+204     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Вещественное деление. Сумматор = "} + QString::number(COMP->
+      \hyperlink{class_computer_a874503110664b3cf821118d2ce9c2b96}{RS}.\hyperlink{union_computer_1_1data_acbf8c96e22bd094bcbb4014818e3570d}{R}));
+205     \textcolor{keywordflow}{return} 1;
+206 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\hypertarget{classc_j_g}{}\section{Класс c\+JG}
+\label{classc_j_g}\index{c\+JG@{c\+JG}}
+
+
+переход, если больше  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+JG\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_j_g}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_j_g_a3e2f3b6fc18af11c937a81e83b065ede}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+J\+G\+::operator () -\/ Переход если больше \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+переход, если больше 
+
+\subsection{Методы}
+\hypertarget{classc_j_g_a3e2f3b6fc18af11c937a81e83b065ede}{}\label{classc_j_g_a3e2f3b6fc18af11c937a81e83b065ede} 
+\index{c\+JG@{c\+JG}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+JG@{c\+JG}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+J\+G\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+J\+G\+::operator () -\/ Переход если больше 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Если по результатам сравнения Icmp или Rcmp сумматор был больше адресного регистра, изменяет значение указателя на инструкцию по абсолютному значению адреса ОЗУ, либо отступа от текущего значения. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+370 \{
+371     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a74cfe87f17ba348db37c74bbd5e56828}{SF} != 1) \textcolor{keywordflow}{return} 1;
+372     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B} == 0) \textcolor{comment}{//Абсолютная адресация}
+373         COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+374     \textcolor{keywordflow}{else} \textcolor{comment}{//Относит адресация}
+375         COMP->\hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP} += COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+376 
+377     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Сумматор больше. Переход по адресу "} + QString::number(COMP->
+      \hyperlink{class_computer_aada011a29d87bb979835371a5f09805e}{PSW}.\hyperlink{struct_computer_1_1bits_a7781883b446209714ad687e2a4f77526}{IP}));
+378     \textcolor{keywordflow}{return} 1;
+379 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

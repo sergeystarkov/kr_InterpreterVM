@@ -1,0 +1,71 @@
+\hypertarget{class_command}{}\section{Класс Command}
+\label{class_command}\index{Command@{Command}}
+
+
+Базовый абстрактный класс для паттерна \char`\"{}Комманда\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_command}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_command_a79939b66f3de892e91d7710844294716}{}\label{class_command_a79939b66f3de892e91d7710844294716} 
+virtual int \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{operator()} (\hyperlink{class_computer}{Computer} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора () \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{load\+Register} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{Command\+::load\+Register} -\/ загрузка внутреннего регистра \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Базовый абстрактный класс для паттерна \char`\"{}Комманда\char`\"{}. 
+
+\subsection{Методы}
+\hypertarget{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{}\label{class_command_aac6f368e7c9dbb357b3f00627d5dabfc} 
+\index{Command@{Command}!load\+Register@{load\+Register}}
+\index{load\+Register@{load\+Register}!Command@{Command}}
+\subsubsection{\texorpdfstring{load\+Register()}{loadRegister()}}
+{\footnotesize\ttfamily void Command\+::load\+Register (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_command_aac6f368e7c9dbb357b3f00627d5dabfc}{Command\+::load\+Register} -\/ загрузка внутреннего регистра 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер\\
+\hline
+\end{DoxyParams}
+Загружает внутренний регистр из адреса по абсолютной или относительной адресации. Функция вызывается только из потомков \hyperlink{class_command}{Command}. 
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ptr;
+14     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B} == 0) \textcolor{comment}{//Абсолютная адресация}
+15         ptr = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+16     \textcolor{keywordflow}{else} \textcolor{comment}{//Относительная адресация}
+17         ptr = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr} + COMP->\hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA};
+18     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Загрузка регистра из адреса "} + QString::number(ptr));
+19 
+20     COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a4308eb86abfec2d52028212c599a093b}{b1} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+21     COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_a87252409c780b1c387883eb027065709}{b2} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+22     COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_af9265f845319a83f5877590e7ab2a497}{b3} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];
+23     COMP->\hyperlink{class_computer_a0fbf84599b7db9d634a92afed443ee73}{R1}.\hyperlink{union_computer_1_1data_aca2c60d7da9da79750a6d3a237dae93c}{b4} = COMP->\hyperlink{class_computer_adcd1bd438b7ad95f043db2acbbd864ae}{MEM}[ptr++];    
+24 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{struct_computer_1_1command}{}\section{Структура Computer\+:\+:command}
+\label{struct_computer_1_1command}\index{Computer\+::command@{Computer\+::command}}
+
+
+command struct -\/ структура команды для выполнения. 3 байта.  
+
+
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_computer_1_1command_abab9a57c8c7fcd2f70c6a3e082e29032}{}\label{struct_computer_1_1command_abab9a57c8c7fcd2f70c6a3e082e29032} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>byte \hyperlink{struct_computer_1_1command_afd02c65efae303e5c528aab2eaa17556}{Cmd}\\
+\>\>{\em код операции 1 байт в флагом адресации на старшем бите }\\
+\hypertarget{union_computer_1_1command_1_1_0D0_ab80c892093be4d5b8271cb0ea2275b90}{}\label{union_computer_1_1command_1_1_0D0_ab80c892093be4d5b8271cb0ea2275b90} 
+\>struct \{\\
+\>\>bit \hyperlink{struct_computer_1_1command_a2714eda12dcfba46770769c7ed9c7f0a}{OP}:7\\
+\>\>\>{\em Код операции }\\
+\>\>bit \hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B}:1\\
+\>\>\>{\em Флаг адресации }\\
+\>\} \\
+\}; \\
+
+\end{tabbing}\item 
+\hypertarget{struct_computer_1_1command_aea8343f26b8cf44fe3f684579bca1a12}{}\label{struct_computer_1_1command_aea8343f26b8cf44fe3f684579bca1a12} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>address \hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr}\\
+\>\>{\em Адрес аргумента }\\
+\hypertarget{union_computer_1_1command_1_1_0D2_adb09ec420e7388614fefa31fb49e6320}{}\label{union_computer_1_1command_1_1_0D2_adb09ec420e7388614fefa31fb49e6320} 
+\>struct \{\\
+\>\>byte \hyperlink{struct_computer_1_1command_a840bf646fc591a80cd94f253bb8cae02}{H\_Addr}\\
+\>\>\>{\em Старший байт }\\
+\>\>byte \hyperlink{struct_computer_1_1command_afe8e3496cc61746a889f53f91ed66d45}{L\_Addr}\\
+\>\>\>{\em Младший байт }\\
+\>\} \\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+command struct -\/ структура команды для выполнения. 3 байта. 
+
+Структура команды процессора. 3 байта. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/computer.\+h\end{DoxyCompactItemize}

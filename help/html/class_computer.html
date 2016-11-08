@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CW_InterpreterVM: Класс Computer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CW_InterpreterVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Поиск');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="class_computer-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Computer</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс <a class="el" href="class_computer.html" title="Класс Computer реализует архитектуру компьютера ">Computer</a> реализует архитектуру компьютера  
+ <a href="class_computer.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="computer_8h_source.html">computer.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computer_1_1bits.html">bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PSW (Cостояние процессора)  <a href="struct_computer_1_1bits.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computer_1_1command.html">command</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">command struct - структура команды для выполнения. 3 байта.  <a href="struct_computer_1_1command.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_computer_1_1data.html">data</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">data union - структура данных 4 байта  <a href="union_computer_1_1data.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae13c32fa07ad956f0c229608dab5e332"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#ae13c32fa07ad956f0c229608dab5e332">Computer</a> (QString PATH, <a class="el" href="classinterpreter.html">interpreter</a> *INTER)</td></tr>
+<tr class="memdesc:ae13c32fa07ad956f0c229608dab5e332"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_computer.html#ae13c32fa07ad956f0c229608dab5e332" title="Computer::Computer - конструктор ">Computer::Computer</a> - конструктор  <a href="#ae13c32fa07ad956f0c229608dab5e332">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae13c32fa07ad956f0c229608dab5e332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4303af6a549fc8f792de0d2d18a9e05f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a4303af6a549fc8f792de0d2d18a9e05f">execute</a> ()</td></tr>
+<tr class="memdesc:a4303af6a549fc8f792de0d2d18a9e05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запуск выполнения программы  <a href="#a4303af6a549fc8f792de0d2d18a9e05f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4303af6a549fc8f792de0d2d18a9e05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:aa57b0ed2f3a9b168c2924174ec524bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aa57b0ed2f3a9b168c2924174ec524bd4">interrupt</a> (int interruptCode)</td></tr>
+<tr class="memdesc:aa57b0ed2f3a9b168c2924174ec524bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик прерываний  <a href="#aa57b0ed2f3a9b168c2924174ec524bd4">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa57b0ed2f3a9b168c2924174ec524bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ca6c6b200630119201de16d7368e0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a10ca6c6b200630119201de16d7368e0f">debug</a> (QString)</td></tr>
+<tr class="memdesc:a10ca6c6b200630119201de16d7368e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передача сообщения для последующего вывода в лог  <a href="#a10ca6c6b200630119201de16d7368e0f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a10ca6c6b200630119201de16d7368e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab90cbacbef385685717c249a07929d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aeab90cbacbef385685717c249a07929d">reset</a> ()</td></tr>
+<tr class="memdesc:aeab90cbacbef385685717c249a07929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">сброс регистров  <a href="#aeab90cbacbef385685717c249a07929d">Подробнее...</a><br /></td></tr>
+<tr class="separator:aeab90cbacbef385685717c249a07929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb4bbeee2b9c13616dc8c4ef52cbe60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#adeb4bbeee2b9c13616dc8c4ef52cbe60">load</a> ()</td></tr>
+<tr class="memdesc:adeb4bbeee2b9c13616dc8c4ef52cbe60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загрузка программы  <a href="#adeb4bbeee2b9c13616dc8c4ef52cbe60">Подробнее...</a><br /></td></tr>
+<tr class="separator:adeb4bbeee2b9c13616dc8c4ef52cbe60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af337e329e3bc6d80bbd7070e25ce5731"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#af337e329e3bc6d80bbd7070e25ce5731">run</a> ()</td></tr>
+<tr class="memdesc:af337e329e3bc6d80bbd7070e25ce5731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основной цикл процессора  <a href="#af337e329e3bc6d80bbd7070e25ce5731">Подробнее...</a><br /></td></tr>
+<tr class="separator:af337e329e3bc6d80bbd7070e25ce5731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4a76a8a03a6c9fb1c12968d629be3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aae4a76a8a03a6c9fb1c12968d629be3e">flagI</a> ()</td></tr>
+<tr class="memdesc:aae4a76a8a03a6c9fb1c12968d629be3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка флагов для целого числа  <a href="#aae4a76a8a03a6c9fb1c12968d629be3e">Подробнее...</a><br /></td></tr>
+<tr class="separator:aae4a76a8a03a6c9fb1c12968d629be3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae860bb217270ec88e8ebf6fe2c2adc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aae860bb217270ec88e8ebf6fe2c2adc9">flagR</a> ()</td></tr>
+<tr class="memdesc:aae860bb217270ec88e8ebf6fe2c2adc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка флагов для вещественного числа  <a href="#aae860bb217270ec88e8ebf6fe2c2adc9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aae860bb217270ec88e8ebf6fe2c2adc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:aa58d6e565412d6705657c0418b1e59fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classinterpreter.html">interpreter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a></td></tr>
+<tr class="memdesc:aa58d6e565412d6705657c0418b1e59fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpreter - Указатель на родителя  <a href="#aa58d6e565412d6705657c0418b1e59fe">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa58d6e565412d6705657c0418b1e59fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fb0474bddcf52789780fd6457cefac"><td class="memItemLeft" align="right" valign="top"><a id="a05fb0474bddcf52789780fd6457cefac"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a05fb0474bddcf52789780fd6457cefac">programPath</a></td></tr>
+<tr class="memdesc:a05fb0474bddcf52789780fd6457cefac"><td class="mdescLeft">&#160;</td><td class="mdescRight">programPath - Путь до файла с программой, которую нужно выполнить <br /></td></tr>
+<tr class="separator:a05fb0474bddcf52789780fd6457cefac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8423168f7cc356b4dd36977603798caf"><td class="memItemLeft" align="right" valign="top"><a id="a8423168f7cc356b4dd36977603798caf"></a>
+struct <a class="el" href="struct_computer_1_1command.html">Computer::command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a></td></tr>
+<tr class="memdesc:a8423168f7cc356b4dd36977603798caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект структуры команды <br /></td></tr>
+<tr class="separator:a8423168f7cc356b4dd36977603798caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb154047da2156e4419af3b3a4a766b7"><td class="memItemLeft" align="right" valign="top"><a id="adb154047da2156e4419af3b3a4a766b7"></a>
+union <a class="el" href="union_computer_1_1data.html">Computer::data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#adb154047da2156e4419af3b3a4a766b7">DATA</a></td></tr>
+<tr class="memdesc:adb154047da2156e4419af3b3a4a766b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект структуры данных <br /></td></tr>
+<tr class="separator:adb154047da2156e4419af3b3a4a766b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada011a29d87bb979835371a5f09805e"><td class="memItemLeft" align="right" valign="top"><a id="aada011a29d87bb979835371a5f09805e"></a>
+struct <a class="el" href="struct_computer_1_1bits.html">Computer::bits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a></td></tr>
+<tr class="memdesc:aada011a29d87bb979835371a5f09805e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект структуры состояния процессора <br /></td></tr>
+<tr class="separator:aada011a29d87bb979835371a5f09805e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297a9b79381a9f2005c574f09ea73d70"><td class="memItemLeft" align="right" valign="top"><a id="a297a9b79381a9f2005c574f09ea73d70"></a>
+<a class="el" href="class_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a> [128] = {nullptr}</td></tr>
+<tr class="memdesc:a297a9b79381a9f2005c574f09ea73d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">набор команд процессора, инициализируется в конструкторе <br /></td></tr>
+<tr class="separator:a297a9b79381a9f2005c574f09ea73d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874503110664b3cf821118d2ce9c2b96"><td class="memItemLeft" align="right" valign="top"><a id="a874503110664b3cf821118d2ce9c2b96"></a>
+<a class="el" href="union_computer_1_1data.html">data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a></td></tr>
+<tr class="memdesc:a874503110664b3cf821118d2ce9c2b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сумматор 4 байта <br /></td></tr>
+<tr class="separator:a874503110664b3cf821118d2ce9c2b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a499d0b2c857c2977dd5702906705f79e"><td class="memItemLeft" align="right" valign="top"><a id="a499d0b2c857c2977dd5702906705f79e"></a>
+address&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">RA</a></td></tr>
+<tr class="memdesc:a499d0b2c857c2977dd5702906705f79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Адресный регистр 2 байта <br /></td></tr>
+<tr class="separator:a499d0b2c857c2977dd5702906705f79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbf84599b7db9d634a92afed443ee73"><td class="memItemLeft" align="right" valign="top"><a id="a0fbf84599b7db9d634a92afed443ee73"></a>
+<a class="el" href="union_computer_1_1data.html">data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a></td></tr>
+<tr class="memdesc:a0fbf84599b7db9d634a92afed443ee73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Внутренний регистр <br /></td></tr>
+<tr class="separator:a0fbf84599b7db9d634a92afed443ee73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd1bd438b7ad95f043db2acbbd864ae"><td class="memItemLeft" align="right" valign="top">byte *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a> = new byte[0xffff]</td></tr>
+<tr class="memdesc:adcd1bd438b7ad95f043db2acbbd864ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">MEM - Оперативная память  <a href="#adcd1bd438b7ad95f043db2acbbd864ae">Подробнее...</a><br /></td></tr>
+<tr class="separator:adcd1bd438b7ad95f043db2acbbd864ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a62a7fc89f0ee4604e3ccab9b6b6a343f"><td class="memItemLeft" align="right" valign="top"><a id="a62a7fc89f0ee4604e3ccab9b6b6a343f"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b></td></tr>
+<tr class="separator:a62a7fc89f0ee4604e3ccab9b6b6a343f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5200c1b25e6d6c70149aeb43469862d"><td class="memItemLeft" align="right" valign="top"><a id="af5200c1b25e6d6c70149aeb43469862d"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIadd</b></td></tr>
+<tr class="separator:af5200c1b25e6d6c70149aeb43469862d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34690541a879c55084846d0cc959f663"><td class="memItemLeft" align="right" valign="top"><a id="a34690541a879c55084846d0cc959f663"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRadd</b></td></tr>
+<tr class="separator:a34690541a879c55084846d0cc959f663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4f2916d54a02a5aa6916c3dde9b9ad"><td class="memItemLeft" align="right" valign="top"><a id="acb4f2916d54a02a5aa6916c3dde9b9ad"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIsub</b></td></tr>
+<tr class="separator:acb4f2916d54a02a5aa6916c3dde9b9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a74408651dfcb80351e8a528cc7e313"><td class="memItemLeft" align="right" valign="top"><a id="a8a74408651dfcb80351e8a528cc7e313"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRsub</b></td></tr>
+<tr class="separator:a8a74408651dfcb80351e8a528cc7e313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403b0571c72075bde36e9a03510eff49"><td class="memItemLeft" align="right" valign="top"><a id="a403b0571c72075bde36e9a03510eff49"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cImul</b></td></tr>
+<tr class="separator:a403b0571c72075bde36e9a03510eff49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e22a42f3315bfac267253edcd011e6"><td class="memItemLeft" align="right" valign="top"><a id="a92e22a42f3315bfac267253edcd011e6"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRmul</b></td></tr>
+<tr class="separator:a92e22a42f3315bfac267253edcd011e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eccf947fdd09a055e4f096329babc93"><td class="memItemLeft" align="right" valign="top"><a id="a8eccf947fdd09a055e4f096329babc93"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIdiv</b></td></tr>
+<tr class="separator:a8eccf947fdd09a055e4f096329babc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5783b61b2e06d3ae070dec6726528dca"><td class="memItemLeft" align="right" valign="top"><a id="a5783b61b2e06d3ae070dec6726528dca"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRdiv</b></td></tr>
+<tr class="separator:a5783b61b2e06d3ae070dec6726528dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a26d915580e452f8ebf5f5c35ec102"><td class="memItemLeft" align="right" valign="top"><a id="a58a26d915580e452f8ebf5f5c35ec102"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cImod</b></td></tr>
+<tr class="separator:a58a26d915580e452f8ebf5f5c35ec102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add13bd38b4e1ceb581c8aafdd18d6a38"><td class="memItemLeft" align="right" valign="top"><a id="add13bd38b4e1ceb581c8aafdd18d6a38"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRadr</b></td></tr>
+<tr class="separator:add13bd38b4e1ceb581c8aafdd18d6a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f50956cd4489638e7658659729566b"><td class="memItemLeft" align="right" valign="top"><a id="a06f50956cd4489638e7658659729566b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cLoad</b></td></tr>
+<tr class="separator:a06f50956cd4489638e7658659729566b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67eb3dc4175713f1a79f74bd1d03eed"><td class="memItemLeft" align="right" valign="top"><a id="ae67eb3dc4175713f1a79f74bd1d03eed"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cStore</b></td></tr>
+<tr class="separator:ae67eb3dc4175713f1a79f74bd1d03eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accaf41340be465f8a862e40429ba9cfb"><td class="memItemLeft" align="right" valign="top"><a id="accaf41340be465f8a862e40429ba9cfb"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cJmp</b></td></tr>
+<tr class="separator:accaf41340be465f8a862e40429ba9cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7af8f966cd39d199ce18113ecdd2ecb"><td class="memItemLeft" align="right" valign="top"><a id="af7af8f966cd39d199ce18113ecdd2ecb"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIcmp</b></td></tr>
+<tr class="separator:af7af8f966cd39d199ce18113ecdd2ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c711c41af5fcddc63bc8e8c41f620f4"><td class="memItemLeft" align="right" valign="top"><a id="a7c711c41af5fcddc63bc8e8c41f620f4"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRcmp</b></td></tr>
+<tr class="separator:a7c711c41af5fcddc63bc8e8c41f620f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784d5ff4da579d46119d42608ee66334"><td class="memItemLeft" align="right" valign="top"><a id="a784d5ff4da579d46119d42608ee66334"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cJZ</b></td></tr>
+<tr class="separator:a784d5ff4da579d46119d42608ee66334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adfd5a9699d8611e902f47cbdfc34d1"><td class="memItemLeft" align="right" valign="top"><a id="a3adfd5a9699d8611e902f47cbdfc34d1"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cJG</b></td></tr>
+<tr class="separator:a3adfd5a9699d8611e902f47cbdfc34d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69be74228435ed08e42c04d34abd383a"><td class="memItemLeft" align="right" valign="top"><a id="a69be74228435ed08e42c04d34abd383a"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cJL</b></td></tr>
+<tr class="separator:a69be74228435ed08e42c04d34abd383a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b86d0871da7c7632d6c45491faae5ab"><td class="memItemLeft" align="right" valign="top"><a id="a0b86d0871da7c7632d6c45491faae5ab"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIin</b></td></tr>
+<tr class="separator:a0b86d0871da7c7632d6c45491faae5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02eb85182aba14840a06c5d5f9c4a4e4"><td class="memItemLeft" align="right" valign="top"><a id="a02eb85182aba14840a06c5d5f9c4a4e4"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cIout</b></td></tr>
+<tr class="separator:a02eb85182aba14840a06c5d5f9c4a4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a047a81456a9fc5a1160d96ac296fd762"><td class="memItemLeft" align="right" valign="top"><a id="a047a81456a9fc5a1160d96ac296fd762"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRin</b></td></tr>
+<tr class="separator:a047a81456a9fc5a1160d96ac296fd762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68469c232d5ffab3e425a9f058b9168"><td class="memItemLeft" align="right" valign="top"><a id="ad68469c232d5ffab3e425a9f058b9168"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>cRout</b></td></tr>
+<tr class="separator:ad68469c232d5ffab3e425a9f058b9168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс <a class="el" href="class_computer.html" title="Класс Computer реализует архитектуру компьютера ">Computer</a> реализует архитектуру компьютера </p>
+<p>Содержит в себе реализацию регистров, памяти, и т.д. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ae13c32fa07ad956f0c229608dab5e332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13c32fa07ad956f0c229608dab5e332">&sect;&nbsp;</a></span>Computer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Computer::Computer </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>PATH</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classinterpreter.html">interpreter</a> *&#160;</td>
+          <td class="paramname"><em>INTER</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_computer.html#ae13c32fa07ad956f0c229608dab5e332" title="Computer::Computer - конструктор ">Computer::Computer</a> - конструктор </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PATH</td><td>- путь до файла программы </td></tr>
+    <tr><td class="paramname">INTER</td><td>- указатель на объект родитель</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Инициализирует массив команд процессора, и переменные. </p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_computer.html#a05fb0474bddcf52789780fd6457cefac">programPath</a> = PATH;     <span class="comment">//Путь до программы</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a> = INTER;    <span class="comment">//Указатель на родителя</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[STOP]  =   <span class="keyword">new</span> <a class="code" href="classc_s_t_o_p.html">cSTOP</a>();    <span class="comment">//Остановка</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//Целая арифметика</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Iadd]  =   <span class="keyword">new</span> <a class="code" href="classc_iadd.html">cIadd</a>();    <span class="comment">//Целочисленное сложение</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Isub]  =   <span class="keyword">new</span> <a class="code" href="classc_isub.html">cIsub</a>();    <span class="comment">//Целочисленное вычитание</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Imul]  =   <span class="keyword">new</span> <a class="code" href="classc_imul.html">cImul</a>();    <span class="comment">//Целочисленное умножение</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Idiv]  =   <span class="keyword">new</span> <a class="code" href="classc_idiv.html">cIdiv</a>();    <span class="comment">//Целочисленное деление</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Imod]  =   <span class="keyword">new</span> <a class="code" href="classc_imod.html">cImod</a>();    <span class="comment">//Целочисл. остаток от деления</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Iin]   =   <span class="keyword">new</span> <a class="code" href="classc_iin.html">cIin</a>();     <span class="comment">//Ввод целого числа</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Iout]  =   <span class="keyword">new</span> <a class="code" href="classc_iout.html">cIout</a>();    <span class="comment">//Вывод целого числа</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//Дробная арифметика</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Radd]  =   <span class="keyword">new</span> <a class="code" href="classc_radd.html">cRadd</a>();    <span class="comment">//Вещественное сложение</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rsub]  =   <span class="keyword">new</span> <a class="code" href="classc_rsub.html">cRsub</a>();    <span class="comment">//Вещественное вычитание</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rmul]  =   <span class="keyword">new</span> <a class="code" href="classc_rmul.html">cRmul</a>();    <span class="comment">//Вещественное умножение</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rdiv]  =   <span class="keyword">new</span> <a class="code" href="classc_rdiv.html">cRdiv</a>();    <span class="comment">//Вещественное деление</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rin]   =   <span class="keyword">new</span> <a class="code" href="classc_rin.html">cRin</a>();     <span class="comment">//Ввод вещественного числа</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rout]  =   <span class="keyword">new</span> <a class="code" href="classc_rout.html">cRout</a>();    <span class="comment">//Вывод вещественного числа</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//Операции с сумматором</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Load]  =   <span class="keyword">new</span> <a class="code" href="classc_load.html">cLoad</a>();    <span class="comment">//Загрузка сумматора</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Store] =   <span class="keyword">new</span> <a class="code" href="classc_store.html">cStore</a>();   <span class="comment">//Сохранение сумматора</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Radr]  =   <span class="keyword">new</span> <a class="code" href="classc_radr.html">cRadr</a>();    <span class="comment">//Загрузка адресного регистра константой</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//прыжки</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Jmp]   =   <span class="keyword">new</span> <a class="code" href="classc_jmp.html">cJmp</a>();     <span class="comment">//Безусловный переход</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[JZ]    =   <span class="keyword">new</span> <a class="code" href="classc_j_z.html">cJZ</a>();      <span class="comment">// ==</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[JG]    =   <span class="keyword">new</span> <a class="code" href="classc_j_g.html">cJG</a>();      <span class="comment">// &gt;</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[JL]    =   <span class="keyword">new</span> <a class="code" href="classc_j_l.html">cJL</a>();      <span class="comment">// &lt;</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//сравнение cIcmp</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Icmp]  =   <span class="keyword">new</span> <a class="code" href="classc_icmp.html">cIcmp</a>();    <span class="comment">//Целочисленное сравнение</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[Rcmp]  =   <span class="keyword">new</span> <a class="code" href="classc_rcmp.html">cRcmp</a>();    <span class="comment">//Вещественное сравнение</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div><div class="ttc" id="classc_rin_html"><div class="ttname"><a href="classc_rin.html">cRin</a></div><div class="ttdoc">Ввод вещественного </div><div class="ttdef"><b>Definition:</b> command.h:142</div></div>
+<div class="ttc" id="classc_s_t_o_p_html"><div class="ttname"><a href="classc_s_t_o_p.html">cSTOP</a></div><div class="ttdoc">СТОП </div><div class="ttdef"><b>Definition:</b> command.h:21</div></div>
+<div class="ttc" id="classc_radr_html"><div class="ttname"><a href="classc_radr.html">cRadr</a></div><div class="ttdoc">Загрузка адрессного регистра </div><div class="ttdef"><b>Definition:</b> command.h:94</div></div>
+<div class="ttc" id="classc_rsub_html"><div class="ttname"><a href="classc_rsub.html">cRsub</a></div><div class="ttdoc">Вычитание дробных чисел </div><div class="ttdef"><b>Definition:</b> command.h:64</div></div>
+<div class="ttc" id="classc_j_z_html"><div class="ttname"><a href="classc_j_z.html">cJZ</a></div><div class="ttdoc">переход, если ноль (равны) </div><div class="ttdef"><b>Definition:</b> command.h:118</div></div>
+<div class="ttc" id="classc_store_html"><div class="ttname"><a href="classc_store.html">cStore</a></div><div class="ttdoc">Выгрузка сумматора </div><div class="ttdef"><b>Definition:</b> command.h:88</div></div>
+<div class="ttc" id="classc_j_g_html"><div class="ttname"><a href="classc_j_g.html">cJG</a></div><div class="ttdoc">переход, если больше </div><div class="ttdef"><b>Definition:</b> command.h:124</div></div>
+<div class="ttc" id="classc_load_html"><div class="ttname"><a href="classc_load.html">cLoad</a></div><div class="ttdoc">Загрузка сумматора </div><div class="ttdef"><b>Definition:</b> command.h:82</div></div>
+<div class="ttc" id="classc_iadd_html"><div class="ttname"><a href="classc_iadd.html">cIadd</a></div><div class="ttdoc">Сложение целых чисел </div><div class="ttdef"><b>Definition:</b> command.h:27</div></div>
+<div class="ttc" id="classc_idiv_html"><div class="ttname"><a href="classc_idiv.html">cIdiv</a></div><div class="ttdoc">Деление целых чисел </div><div class="ttdef"><b>Definition:</b> command.h:46</div></div>
+<div class="ttc" id="classc_radd_html"><div class="ttname"><a href="classc_radd.html">cRadd</a></div><div class="ttdoc">Сложение дробных чисел </div><div class="ttdef"><b>Definition:</b> command.h:58</div></div>
+<div class="ttc" id="classc_icmp_html"><div class="ttname"><a href="classc_icmp.html">cIcmp</a></div><div class="ttdoc">Сравнение целых </div><div class="ttdef"><b>Definition:</b> command.h:100</div></div>
+<div class="ttc" id="classc_rdiv_html"><div class="ttname"><a href="classc_rdiv.html">cRdiv</a></div><div class="ttdoc">Деление дробных чисел </div><div class="ttdef"><b>Definition:</b> command.h:76</div></div>
+<div class="ttc" id="classc_rcmp_html"><div class="ttname"><a href="classc_rcmp.html">cRcmp</a></div><div class="ttdoc">Сравнение вещественных </div><div class="ttdef"><b>Definition:</b> command.h:106</div></div>
+<div class="ttc" id="classc_isub_html"><div class="ttname"><a href="classc_isub.html">cIsub</a></div><div class="ttdoc">Вычитание целых чисел </div><div class="ttdef"><b>Definition:</b> command.h:34</div></div>
+<div class="ttc" id="classc_imod_html"><div class="ttname"><a href="classc_imod.html">cImod</a></div><div class="ttdoc">Остаток от деления целых чисел </div><div class="ttdef"><b>Definition:</b> command.h:52</div></div>
+<div class="ttc" id="class_computer_html_aa58d6e565412d6705657c0418b1e59fe"><div class="ttname"><a href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Computer::Interpreter</a></div><div class="ttdeci">interpreter * Interpreter</div><div class="ttdoc">Interpreter - Указатель на родителя </div><div class="ttdef"><b>Definition:</b> computer.h:63</div></div>
+<div class="ttc" id="class_computer_html_a297a9b79381a9f2005c574f09ea73d70"><div class="ttname"><a href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">Computer::pCMD</a></div><div class="ttdeci">Command * pCMD[128]</div><div class="ttdoc">набор команд процессора, инициализируется в конструкторе </div><div class="ttdef"><b>Definition:</b> computer.h:141</div></div>
+<div class="ttc" id="classc_iout_html"><div class="ttname"><a href="classc_iout.html">cIout</a></div><div class="ttdoc">вывод целого </div><div class="ttdef"><b>Definition:</b> command.h:148</div></div>
+<div class="ttc" id="classc_jmp_html"><div class="ttname"><a href="classc_jmp.html">cJmp</a></div><div class="ttdoc">Безусловный переход </div><div class="ttdef"><b>Definition:</b> command.h:112</div></div>
+<div class="ttc" id="classc_imul_html"><div class="ttname"><a href="classc_imul.html">cImul</a></div><div class="ttdoc">Умножение целых чисел </div><div class="ttdef"><b>Definition:</b> command.h:40</div></div>
+<div class="ttc" id="classc_j_l_html"><div class="ttname"><a href="classc_j_l.html">cJL</a></div><div class="ttdoc">переход, если меньше </div><div class="ttdef"><b>Definition:</b> command.h:130</div></div>
+<div class="ttc" id="classc_rout_html"><div class="ttname"><a href="classc_rout.html">cRout</a></div><div class="ttdoc">Вывод вещественного </div><div class="ttdef"><b>Definition:</b> command.h:154</div></div>
+<div class="ttc" id="classc_rmul_html"><div class="ttname"><a href="classc_rmul.html">cRmul</a></div><div class="ttdoc">Умножение дробных чисел </div><div class="ttdef"><b>Definition:</b> command.h:70</div></div>
+<div class="ttc" id="class_computer_html_a05fb0474bddcf52789780fd6457cefac"><div class="ttname"><a href="class_computer.html#a05fb0474bddcf52789780fd6457cefac">Computer::programPath</a></div><div class="ttdeci">QString programPath</div><div class="ttdoc">programPath - Путь до файла с программой, которую нужно выполнить </div><div class="ttdef"><b>Definition:</b> computer.h:68</div></div>
+<div class="ttc" id="classc_iin_html"><div class="ttname"><a href="classc_iin.html">cIin</a></div><div class="ttdoc">Ввод целого </div><div class="ttdef"><b>Definition:</b> command.h:136</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a10ca6c6b200630119201de16d7368e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ca6c6b200630119201de16d7368e0f">&sect;&nbsp;</a></span>debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Computer::debug </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Передача сообщения для последующего вывода в лог </p>
+<p><a class="el" href="class_computer.html#a10ca6c6b200630119201de16d7368e0f" title="Передача сообщения для последующего вывода в лог ">Computer::debug</a> - Отладочное сообщение</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>- Текст сообщения</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Отправляет текст отладочного сообщения интерпретатору </p>
+<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a>-&gt;<a class="code" href="classinterpreter.html#a5153712027e3e4344f72336f8b5cfa6d">debug</a>(msg);</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div><div class="ttc" id="class_computer_html_aa58d6e565412d6705657c0418b1e59fe"><div class="ttname"><a href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Computer::Interpreter</a></div><div class="ttdeci">interpreter * Interpreter</div><div class="ttdoc">Interpreter - Указатель на родителя </div><div class="ttdef"><b>Definition:</b> computer.h:63</div></div>
+<div class="ttc" id="classinterpreter_html_a5153712027e3e4344f72336f8b5cfa6d"><div class="ttname"><a href="classinterpreter.html#a5153712027e3e4344f72336f8b5cfa6d">interpreter::debug</a></div><div class="ttdeci">void debug(QString)</div><div class="ttdoc">Отправка сигнала с текстом сообщения в поток GUI. </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:60</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4303af6a549fc8f792de0d2d18a9e05f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4303af6a549fc8f792de0d2d18a9e05f">&sect;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Computer::execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запуск выполнения программы </p>
+<p><a class="el" href="class_computer.html#a4303af6a549fc8f792de0d2d18a9e05f" title="Запуск выполнения программы ">Computer::execute</a> - алгоритм запуска программы</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Код завершения выполнения программы</dd></dl>
+<p>Сбрасывает регистры. Загружает программу в память. Запускает прцессор. </p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    this-&gt;<a class="code" href="class_computer.html#aeab90cbacbef385685717c249a07929d">reset</a>();</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span>(!this-&gt;<a class="code" href="class_computer.html#adeb4bbeee2b9c13616dc8c4ef52cbe60">load</a>())</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> 2;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_computer.html#af337e329e3bc6d80bbd7070e25ce5731">run</a>();</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div><div class="ttc" id="class_computer_html_adeb4bbeee2b9c13616dc8c4ef52cbe60"><div class="ttname"><a href="class_computer.html#adeb4bbeee2b9c13616dc8c4ef52cbe60">Computer::load</a></div><div class="ttdeci">bool load()</div><div class="ttdoc">Загрузка программы </div><div class="ttdef"><b>Definition:</b> computer.cpp:70</div></div>
+<div class="ttc" id="class_computer_html_aeab90cbacbef385685717c249a07929d"><div class="ttname"><a href="class_computer.html#aeab90cbacbef385685717c249a07929d">Computer::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">сброс регистров </div><div class="ttdef"><b>Definition:</b> computer.cpp:105</div></div>
+<div class="ttc" id="class_computer_html_af337e329e3bc6d80bbd7070e25ce5731"><div class="ttname"><a href="class_computer.html#af337e329e3bc6d80bbd7070e25ce5731">Computer::run</a></div><div class="ttdeci">int run()</div><div class="ttdoc">Основной цикл процессора </div><div class="ttdef"><b>Definition:</b> computer.cpp:122</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aae4a76a8a03a6c9fb1c12968d629be3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4a76a8a03a6c9fb1c12968d629be3e">&sect;&nbsp;</a></span>flagI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Computer::flagI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка флагов для целого числа </p>
+<p><a class="el" href="class_computer.html#aae4a76a8a03a6c9fb1c12968d629be3e" title="Установка флагов для целого числа ">Computer::flagI</a> - Установка флага для целых чисел</p>
+<p>Устанавливает флаги для целочисленного сумматора </p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">ZF</a> = 0;</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">SF</a> = 0;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a> == 0) <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">ZF</a> = 1;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a> &gt; 0) <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">SF</a> = 1;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div><div class="ttc" id="struct_computer_1_1bits_html_a74cfe87f17ba348db37c74bbd5e56828"><div class="ttname"><a href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">Computer::bits::SF</a></div><div class="ttdeci">bit SF</div><div class="ttdoc">Sign flag результат положительный - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:133</div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_a5307edeadd212f1fc19e9f6f5346df39"><div class="ttname"><a href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">Computer::bits::ZF</a></div><div class="ttdeci">bit ZF</div><div class="ttdoc">Zero flag Резульат равен нулю - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:134</div></div>
+<div class="ttc" id="union_computer_1_1data_html_a6e51de6e0351adc4e50b336a092bc4bb"><div class="ttname"><a href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">Computer::data::I</a></div><div class="ttdeci">int I</div><div class="ttdoc">Либо целые </div><div class="ttdef"><b>Definition:</b> computer.h:119</div></div>
+<div class="ttc" id="class_computer_html_a874503110664b3cf821118d2ce9c2b96"><div class="ttname"><a href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">Computer::RS</a></div><div class="ttdeci">data RS</div><div class="ttdoc">Сумматор 4 байта </div><div class="ttdef"><b>Definition:</b> computer.h:143</div></div>
+<div class="ttc" id="class_computer_html_aada011a29d87bb979835371a5f09805e"><div class="ttname"><a href="class_computer.html#aada011a29d87bb979835371a5f09805e">Computer::PSW</a></div><div class="ttdeci">struct Computer::bits PSW</div><div class="ttdoc">Объект структуры состояния процессора </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aae860bb217270ec88e8ebf6fe2c2adc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae860bb217270ec88e8ebf6fe2c2adc9">&sect;&nbsp;</a></span>flagR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Computer::flagR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка флагов для вещественного числа </p>
+<p><a class="el" href="class_computer.html#aae860bb217270ec88e8ebf6fe2c2adc9" title="Установка флагов для вещественного числа ">Computer::flagR</a> - Установка флага для вещественных чисел</p>
+<p>Устанавливает флаги для вещественного сумматора </p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">ZF</a> = 0;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">SF</a> = 0;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">R</a> == 0) <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">ZF</a> = 1;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">R</a> &gt; 0) <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">SF</a> = 1;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div><div class="ttc" id="struct_computer_1_1bits_html_a74cfe87f17ba348db37c74bbd5e56828"><div class="ttname"><a href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">Computer::bits::SF</a></div><div class="ttdeci">bit SF</div><div class="ttdoc">Sign flag результат положительный - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:133</div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_a5307edeadd212f1fc19e9f6f5346df39"><div class="ttname"><a href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">Computer::bits::ZF</a></div><div class="ttdeci">bit ZF</div><div class="ttdoc">Zero flag Резульат равен нулю - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:134</div></div>
+<div class="ttc" id="union_computer_1_1data_html_acbf8c96e22bd094bcbb4014818e3570d"><div class="ttname"><a href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">Computer::data::R</a></div><div class="ttdeci">float R</div><div class="ttdoc">Либо вещественные </div><div class="ttdef"><b>Definition:</b> computer.h:120</div></div>
+<div class="ttc" id="class_computer_html_a874503110664b3cf821118d2ce9c2b96"><div class="ttname"><a href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">Computer::RS</a></div><div class="ttdeci">data RS</div><div class="ttdoc">Сумматор 4 байта </div><div class="ttdef"><b>Definition:</b> computer.h:143</div></div>
+<div class="ttc" id="class_computer_html_aada011a29d87bb979835371a5f09805e"><div class="ttname"><a href="class_computer.html#aada011a29d87bb979835371a5f09805e">Computer::PSW</a></div><div class="ttdeci">struct Computer::bits PSW</div><div class="ttdoc">Объект структуры состояния процессора </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa57b0ed2f3a9b168c2924174ec524bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57b0ed2f3a9b168c2924174ec524bd4">&sect;&nbsp;</a></span>interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Computer::interrupt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interruptCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик прерываний </p>
+<p><a class="el" href="class_computer.html#aa57b0ed2f3a9b168c2924174ec524bd4" title="Обработчик прерываний ">Computer::interrupt</a> - Обработчик прерываний</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interruptCode</td><td>Обрабатывает 4 прерывания - ввод/вывод целого/вещественного числа </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">switch</span> (interruptCode){</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">case</span> hIin: {<span class="comment">//Ввод целого значения сумматора</span></div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="class_computer.html#adb154047da2156e4419af3b3a4a766b7">DATA</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a> = <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a>-&gt;<a class="code" href="classinterpreter.html#a30d9b904383c7b73adceeca002461431">inputDialog</a>(<span class="stringliteral">&quot;Введите целое число&quot;</span>).toInt();</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">case</span> hRin: {<span class="comment">//Ввод вещественного значения сумматора</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="class_computer.html#adb154047da2156e4419af3b3a4a766b7">DATA</a>.<a class="code" href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">R</a> = <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a>-&gt;<a class="code" href="classinterpreter.html#a30d9b904383c7b73adceeca002461431">inputDialog</a>(<span class="stringliteral">&quot;Введите вещественное число&quot;</span>).toFloat();</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">case</span> hIout:{<span class="comment">//Вывод целого значения сумматора на экран</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        QString str = QString::number(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a>);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a>-&gt;<a class="code" href="classinterpreter.html#a5d3ba23a48b814586dabbe2e3507b93a">outputDialog</a>(str);</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">case</span> hRout: {<span class="comment">//Вывод вещественного значения сумматора на экран</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        QString str = QString::number(<a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">R</a>,<span class="charliteral">&#39;f&#39;</span>,2);</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Interpreter</a>-&gt;<a class="code" href="classinterpreter.html#a5d3ba23a48b814586dabbe2e3507b93a">outputDialog</a>(str);</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div><div class="ttc" id="classinterpreter_html_a30d9b904383c7b73adceeca002461431"><div class="ttname"><a href="classinterpreter.html#a30d9b904383c7b73adceeca002461431">interpreter::inputDialog</a></div><div class="ttdeci">QString inputDialog(QString text)</div><div class="ttdoc">диалоговое окно ввод </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:31</div></div>
+<div class="ttc" id="union_computer_1_1data_html_a6e51de6e0351adc4e50b336a092bc4bb"><div class="ttname"><a href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">Computer::data::I</a></div><div class="ttdeci">int I</div><div class="ttdoc">Либо целые </div><div class="ttdef"><b>Definition:</b> computer.h:119</div></div>
+<div class="ttc" id="class_computer_html_adb154047da2156e4419af3b3a4a766b7"><div class="ttname"><a href="class_computer.html#adb154047da2156e4419af3b3a4a766b7">Computer::DATA</a></div><div class="ttdeci">union Computer::data DATA</div><div class="ttdoc">Объект структуры данных </div></div>
+<div class="ttc" id="class_computer_html_aa58d6e565412d6705657c0418b1e59fe"><div class="ttname"><a href="class_computer.html#aa58d6e565412d6705657c0418b1e59fe">Computer::Interpreter</a></div><div class="ttdeci">interpreter * Interpreter</div><div class="ttdoc">Interpreter - Указатель на родителя </div><div class="ttdef"><b>Definition:</b> computer.h:63</div></div>
+<div class="ttc" id="union_computer_1_1data_html_acbf8c96e22bd094bcbb4014818e3570d"><div class="ttname"><a href="union_computer_1_1data.html#acbf8c96e22bd094bcbb4014818e3570d">Computer::data::R</a></div><div class="ttdeci">float R</div><div class="ttdoc">Либо вещественные </div><div class="ttdef"><b>Definition:</b> computer.h:120</div></div>
+<div class="ttc" id="class_computer_html_a874503110664b3cf821118d2ce9c2b96"><div class="ttname"><a href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">Computer::RS</a></div><div class="ttdeci">data RS</div><div class="ttdoc">Сумматор 4 байта </div><div class="ttdef"><b>Definition:</b> computer.h:143</div></div>
+<div class="ttc" id="classinterpreter_html_a5d3ba23a48b814586dabbe2e3507b93a"><div class="ttname"><a href="classinterpreter.html#a5d3ba23a48b814586dabbe2e3507b93a">interpreter::outputDialog</a></div><div class="ttdeci">void outputDialog(QString str)</div><div class="ttdoc">диалоговое окно вывод </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:48</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adeb4bbeee2b9c13616dc8c4ef52cbe60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb4bbeee2b9c13616dc8c4ef52cbe60">&sect;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Computer::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загрузка программы </p>
+<p><a class="el" href="class_computer.html#adeb4bbeee2b9c13616dc8c4ef52cbe60" title="Загрузка программы ">Computer::load</a>.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успешной загрузки</dd></dl>
+<p>Загружает файл программы в оперативную память. Производит простой синтаксический анализ. В случае синтаксической ошибки возвращает false </p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QFile file(<a class="code" href="class_computer.html#a05fb0474bddcf52789780fd6457cefac">programPath</a>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(file.open(QIODevice::ReadOnly | QIODevice::Text)){</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">int</span> curByte = 0;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">while</span>(!file.atEnd()){</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span>(curByte &gt;= 0xfffd) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//Защита от переполнения ОЗУ</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            QStringList strline = QString(file.readLine()).simplified().split(<span class="charliteral">&#39; &#39;</span>);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span>(strline.count() &lt;= 0) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Cmd</a> = (byte)strline[0].toUInt();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span>(strline.count() &gt;= 2)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Addr</a> = (address)strline[1].toUInt();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">else</span> <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Addr</a> = 0;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">//Загрузка программы в ОЗУ</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[curByte++] = <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Cmd</a>;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[curByte++] = <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a840bf646fc591a80cd94f253bb8cae02">H_Addr</a>;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[curByte++] = <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#afe8e3496cc61746a889f53f91ed66d45">L_Addr</a>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">RA</a> += curByte; <span class="comment">//Адресный регистр для данных после программы</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span>(file.isOpen()) file.close();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div><div class="ttc" id="struct_computer_1_1command_html_afd02c65efae303e5c528aab2eaa17556"><div class="ttname"><a href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Computer::command::Cmd</a></div><div class="ttdeci">byte Cmd</div><div class="ttdoc">код операции 1 байт в флагом адресации на старшем бите </div><div class="ttdef"><b>Definition:</b> computer.h:100</div></div>
+<div class="ttc" id="class_computer_html_adcd1bd438b7ad95f043db2acbbd864ae"><div class="ttname"><a href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">Computer::MEM</a></div><div class="ttdeci">byte * MEM</div><div class="ttdoc">MEM - Оперативная память </div><div class="ttdef"><b>Definition:</b> computer.h:152</div></div>
+<div class="ttc" id="class_computer_html_a499d0b2c857c2977dd5702906705f79e"><div class="ttname"><a href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">Computer::RA</a></div><div class="ttdeci">address RA</div><div class="ttdoc">Адресный регистр 2 байта </div><div class="ttdef"><b>Definition:</b> computer.h:144</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_a0e07591012953413797506f7bc3cb1a7"><div class="ttname"><a href="struct_computer_1_1command.html#a0e07591012953413797506f7bc3cb1a7">Computer::command::Addr</a></div><div class="ttdeci">address Addr</div><div class="ttdoc">Адрес аргумента </div><div class="ttdef"><b>Definition:</b> computer.h:107</div></div>
+<div class="ttc" id="class_computer_html_a8423168f7cc356b4dd36977603798caf"><div class="ttname"><a href="class_computer.html#a8423168f7cc356b4dd36977603798caf">Computer::CMD</a></div><div class="ttdeci">struct Computer::command CMD</div><div class="ttdoc">Объект структуры команды </div></div>
+<div class="ttc" id="struct_computer_1_1command_html_afe8e3496cc61746a889f53f91ed66d45"><div class="ttname"><a href="struct_computer_1_1command.html#afe8e3496cc61746a889f53f91ed66d45">Computer::command::L_Addr</a></div><div class="ttdeci">byte L_Addr</div><div class="ttdoc">Младший байт </div><div class="ttdef"><b>Definition:</b> computer.h:110</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_a840bf646fc591a80cd94f253bb8cae02"><div class="ttname"><a href="struct_computer_1_1command.html#a840bf646fc591a80cd94f253bb8cae02">Computer::command::H_Addr</a></div><div class="ttdeci">byte H_Addr</div><div class="ttdoc">Старший байт </div><div class="ttdef"><b>Definition:</b> computer.h:109</div></div>
+<div class="ttc" id="class_computer_html_a05fb0474bddcf52789780fd6457cefac"><div class="ttname"><a href="class_computer.html#a05fb0474bddcf52789780fd6457cefac">Computer::programPath</a></div><div class="ttdeci">QString programPath</div><div class="ttdoc">programPath - Путь до файла с программой, которую нужно выполнить </div><div class="ttdef"><b>Definition:</b> computer.h:68</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeab90cbacbef385685717c249a07929d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab90cbacbef385685717c249a07929d">&sect;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Computer::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>сброс регистров </p>
+<p><a class="el" href="class_computer.html#aeab90cbacbef385685717c249a07929d" title="сброс регистров ">Computer::reset</a> Сброс регистров</p>
+<p>Инициализация и сброс регистров компьютера до исходных значений. </p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">IP</a> = 0x0000;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#aaec5be5e3ab9ea9aa4b1672af9e26312">OF</a> = 0;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">SF</a> = 0;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">ZF</a> = 0;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">RA</a> = 0x0000;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">RS</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a> = 0;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">R1</a>.<a class="code" href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">I</a> = 0;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="ttc" id="struct_computer_1_1bits_html_a74cfe87f17ba348db37c74bbd5e56828"><div class="ttname"><a href="struct_computer_1_1bits.html#a74cfe87f17ba348db37c74bbd5e56828">Computer::bits::SF</a></div><div class="ttdeci">bit SF</div><div class="ttdoc">Sign flag результат положительный - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:133</div></div>
+<div class="ttc" id="class_computer_html_a499d0b2c857c2977dd5702906705f79e"><div class="ttname"><a href="class_computer.html#a499d0b2c857c2977dd5702906705f79e">Computer::RA</a></div><div class="ttdeci">address RA</div><div class="ttdoc">Адресный регистр 2 байта </div><div class="ttdef"><b>Definition:</b> computer.h:144</div></div>
+<div class="ttc" id="class_computer_html_a0fbf84599b7db9d634a92afed443ee73"><div class="ttname"><a href="class_computer.html#a0fbf84599b7db9d634a92afed443ee73">Computer::R1</a></div><div class="ttdeci">data R1</div><div class="ttdoc">Внутренний регистр </div><div class="ttdef"><b>Definition:</b> computer.h:145</div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_a5307edeadd212f1fc19e9f6f5346df39"><div class="ttname"><a href="struct_computer_1_1bits.html#a5307edeadd212f1fc19e9f6f5346df39">Computer::bits::ZF</a></div><div class="ttdeci">bit ZF</div><div class="ttdoc">Zero flag Резульат равен нулю - 1. </div><div class="ttdef"><b>Definition:</b> computer.h:134</div></div>
+<div class="ttc" id="union_computer_1_1data_html_a6e51de6e0351adc4e50b336a092bc4bb"><div class="ttname"><a href="union_computer_1_1data.html#a6e51de6e0351adc4e50b336a092bc4bb">Computer::data::I</a></div><div class="ttdeci">int I</div><div class="ttdoc">Либо целые </div><div class="ttdef"><b>Definition:</b> computer.h:119</div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_a7781883b446209714ad687e2a4f77526"><div class="ttname"><a href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">Computer::bits::IP</a></div><div class="ttdeci">address IP</div><div class="ttdoc">Instruction Pointer. </div><div class="ttdef"><b>Definition:</b> computer.h:132</div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_aaec5be5e3ab9ea9aa4b1672af9e26312"><div class="ttname"><a href="struct_computer_1_1bits.html#aaec5be5e3ab9ea9aa4b1672af9e26312">Computer::bits::OF</a></div><div class="ttdeci">bit OF</div><div class="ttdoc">Overflow flag переполнение </div><div class="ttdef"><b>Definition:</b> computer.h:135</div></div>
+<div class="ttc" id="class_computer_html_a874503110664b3cf821118d2ce9c2b96"><div class="ttname"><a href="class_computer.html#a874503110664b3cf821118d2ce9c2b96">Computer::RS</a></div><div class="ttdeci">data RS</div><div class="ttdoc">Сумматор 4 байта </div><div class="ttdef"><b>Definition:</b> computer.h:143</div></div>
+<div class="ttc" id="class_computer_html_aada011a29d87bb979835371a5f09805e"><div class="ttname"><a href="class_computer.html#aada011a29d87bb979835371a5f09805e">Computer::PSW</a></div><div class="ttdeci">struct Computer::bits PSW</div><div class="ttdoc">Объект структуры состояния процессора </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af337e329e3bc6d80bbd7070e25ce5731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af337e329e3bc6d80bbd7070e25ce5731">&sect;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Computer::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Основной цикл процессора </p>
+<p><a class="el" href="class_computer.html#af337e329e3bc6d80bbd7070e25ce5731" title="Основной цикл процессора ">Computer::run</a> - цикл процессора</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Код завершения выполнения программы</dd></dl>
+<p>Поочерёдно выполняет машинные инструкции из ОЗУ. </p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">IP</a> &gt;= 0xFFFC) <span class="keywordflow">return</span> 2;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">//Загрузка команды в структуру</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Cmd</a>     =   <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">IP</a>++ ];   <span class="comment">//Формируем структуру 3 байта из памяти</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a840bf646fc591a80cd94f253bb8cae02">H_Addr</a>  =   <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">IP</a>++ ];</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#afe8e3496cc61746a889f53f91ed66d45">L_Addr</a>  =   <a class="code" href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">MEM</a>[ <a class="code" href="class_computer.html#aada011a29d87bb979835371a5f09805e">PSW</a>.<a class="code" href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">IP</a>++ ];</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment">//*************************************</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a2714eda12dcfba46770769c7ed9c7f0a">OP</a> &gt; 256) <span class="keywordflow">continue</span>;  <span class="comment">//Защита от некорректной команды</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[<a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a2714eda12dcfba46770769c7ed9c7f0a">OP</a>] == NULL) <span class="keywordflow">return</span> 3;  <span class="comment">//Защита от неизвестной команды</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordtype">int</span> execResult = <a class="code" href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">pCMD</a>[ <a class="code" href="class_computer.html#a8423168f7cc356b4dd36977603798caf">CMD</a>.<a class="code" href="struct_computer_1_1command.html#a2714eda12dcfba46770769c7ed9c7f0a">OP</a> ]-&gt;operator ()(<span class="keyword">this</span>);     <span class="comment">//Выполнение</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span>( execResult != 1) <span class="keywordflow">return</span> execResult;                 <span class="comment">//Результат выполнения</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div><div class="ttc" id="struct_computer_1_1command_html_a2714eda12dcfba46770769c7ed9c7f0a"><div class="ttname"><a href="struct_computer_1_1command.html#a2714eda12dcfba46770769c7ed9c7f0a">Computer::command::OP</a></div><div class="ttdeci">bit OP</div><div class="ttdoc">Код операции </div><div class="ttdef"><b>Definition:</b> computer.h:102</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_afd02c65efae303e5c528aab2eaa17556"><div class="ttname"><a href="struct_computer_1_1command.html#afd02c65efae303e5c528aab2eaa17556">Computer::command::Cmd</a></div><div class="ttdeci">byte Cmd</div><div class="ttdoc">код операции 1 байт в флагом адресации на старшем бите </div><div class="ttdef"><b>Definition:</b> computer.h:100</div></div>
+<div class="ttc" id="class_computer_html_adcd1bd438b7ad95f043db2acbbd864ae"><div class="ttname"><a href="class_computer.html#adcd1bd438b7ad95f043db2acbbd864ae">Computer::MEM</a></div><div class="ttdeci">byte * MEM</div><div class="ttdoc">MEM - Оперативная память </div><div class="ttdef"><b>Definition:</b> computer.h:152</div></div>
+<div class="ttc" id="class_computer_html_a8423168f7cc356b4dd36977603798caf"><div class="ttname"><a href="class_computer.html#a8423168f7cc356b4dd36977603798caf">Computer::CMD</a></div><div class="ttdeci">struct Computer::command CMD</div><div class="ttdoc">Объект структуры команды </div></div>
+<div class="ttc" id="struct_computer_1_1bits_html_a7781883b446209714ad687e2a4f77526"><div class="ttname"><a href="struct_computer_1_1bits.html#a7781883b446209714ad687e2a4f77526">Computer::bits::IP</a></div><div class="ttdeci">address IP</div><div class="ttdoc">Instruction Pointer. </div><div class="ttdef"><b>Definition:</b> computer.h:132</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_afe8e3496cc61746a889f53f91ed66d45"><div class="ttname"><a href="struct_computer_1_1command.html#afe8e3496cc61746a889f53f91ed66d45">Computer::command::L_Addr</a></div><div class="ttdeci">byte L_Addr</div><div class="ttdoc">Младший байт </div><div class="ttdef"><b>Definition:</b> computer.h:110</div></div>
+<div class="ttc" id="class_computer_html_a297a9b79381a9f2005c574f09ea73d70"><div class="ttname"><a href="class_computer.html#a297a9b79381a9f2005c574f09ea73d70">Computer::pCMD</a></div><div class="ttdeci">Command * pCMD[128]</div><div class="ttdoc">набор команд процессора, инициализируется в конструкторе </div><div class="ttdef"><b>Definition:</b> computer.h:141</div></div>
+<div class="ttc" id="struct_computer_1_1command_html_a840bf646fc591a80cd94f253bb8cae02"><div class="ttname"><a href="struct_computer_1_1command.html#a840bf646fc591a80cd94f253bb8cae02">Computer::command::H_Addr</a></div><div class="ttdeci">byte H_Addr</div><div class="ttdoc">Старший байт </div><div class="ttdef"><b>Definition:</b> computer.h:109</div></div>
+<div class="ttc" id="class_computer_html_aada011a29d87bb979835371a5f09805e"><div class="ttname"><a href="class_computer.html#aada011a29d87bb979835371a5f09805e">Computer::PSW</a></div><div class="ttdeci">struct Computer::bits PSW</div><div class="ttdoc">Объект структуры состояния процессора </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="aa58d6e565412d6705657c0418b1e59fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58d6e565412d6705657c0418b1e59fe">&sect;&nbsp;</a></span>Interpreter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classinterpreter.html">interpreter</a>* Computer::Interpreter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interpreter - Указатель на родителя </p>
+<p>Указатель на объект родитель, передающийся классу в качестве параметра. Используется для доступа к членам класса interprerer </p>
+
+</div>
+</div>
+<a id="adcd1bd438b7ad95f043db2acbbd864ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd1bd438b7ad95f043db2acbbd864ae">&sect;&nbsp;</a></span>MEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte* Computer::MEM = new byte[0xffff]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MEM - Оперативная память </p>
+<p>Адресное пространство 16 бит. Байтовая. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/<a class="el" href="computer_8h_source.html">computer.h</a></li>
+<li>C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/computer.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

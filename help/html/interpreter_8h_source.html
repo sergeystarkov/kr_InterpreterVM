@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CW_InterpreterVM: Исходный файл C:/Users/sstarkov/Documents/kr_InterpreterVM/sources/interpreter.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CW_InterpreterVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.12 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Поиск');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_08d237fc27d4ecd563f71c5d52f2fecc.html">sources</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">interpreter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INTERPRETER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INTERPRETER_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QInputDialog&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;computer.h&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;operation.h&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classinterpreter.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classinterpreter.html">interpreter</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_computer.html">Computer</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classinterpreter.html#ae7359f1d2aa18579a2797f49835c8671">   25</a></span>&#160;    <a class="code" href="classinterpreter.html#ae7359f1d2aa18579a2797f49835c8671">interpreter</a>(QString PATH) : <a class="code" href="classinterpreter.html#acafdc7a0e329a4ed0f79930ed33f52be">ProgramPath</a>(PATH){}</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="classinterpreter.html">interpreter</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classinterpreter.html#af9ed8afd864c69cfd1ec1e849b2d1542">startVM</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;signals:</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classinterpreter.html#a60e0781065c7ae88bdcaaa22729dc458">debugMSG</a>(QString);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classinterpreter.html#a0b900e0016eab9306c6f70e93900fe09">   34</a></span>&#160;    <a class="code" href="class_computer.html">Computer</a> *<a class="code" href="classinterpreter.html#a0b900e0016eab9306c6f70e93900fe09">VM</a>;           </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QString <a class="code" href="classinterpreter.html#a30d9b904383c7b73adceeca002461431">inputDialog</a>(QString text);   </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classinterpreter.html#a5d3ba23a48b814586dabbe2e3507b93a">outputDialog</a>(QString str);      </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classinterpreter.html#acafdc7a0e329a4ed0f79930ed33f52be">   37</a></span>&#160;    QString <a class="code" href="classinterpreter.html#acafdc7a0e329a4ed0f79930ed33f52be">ProgramPath</a>;    </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classinterpreter.html#a5153712027e3e4344f72336f8b5cfa6d">debug</a>(QString);    </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // INTERPRETER_H</span></div><div class="ttc" id="classinterpreter_html_a0b900e0016eab9306c6f70e93900fe09"><div class="ttname"><a href="classinterpreter.html#a0b900e0016eab9306c6f70e93900fe09">interpreter::VM</a></div><div class="ttdeci">Computer * VM</div><div class="ttdoc">Объект компьютер </div><div class="ttdef"><b>Definition:</b> interpreter.h:34</div></div>
+<div class="ttc" id="class_computer_html"><div class="ttname"><a href="class_computer.html">Computer</a></div><div class="ttdoc">Класс Computer реализует архитектуру компьютера </div><div class="ttdef"><b>Definition:</b> computer.h:20</div></div>
+<div class="ttc" id="classinterpreter_html_a30d9b904383c7b73adceeca002461431"><div class="ttname"><a href="classinterpreter.html#a30d9b904383c7b73adceeca002461431">interpreter::inputDialog</a></div><div class="ttdeci">QString inputDialog(QString text)</div><div class="ttdoc">диалоговое окно ввод </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:31</div></div>
+<div class="ttc" id="classinterpreter_html_acafdc7a0e329a4ed0f79930ed33f52be"><div class="ttname"><a href="classinterpreter.html#acafdc7a0e329a4ed0f79930ed33f52be">interpreter::ProgramPath</a></div><div class="ttdeci">QString ProgramPath</div><div class="ttdoc">Путь до файла программы </div><div class="ttdef"><b>Definition:</b> interpreter.h:37</div></div>
+<div class="ttc" id="classinterpreter_html_af9ed8afd864c69cfd1ec1e849b2d1542"><div class="ttname"><a href="classinterpreter.html#af9ed8afd864c69cfd1ec1e849b2d1542">interpreter::startVM</a></div><div class="ttdeci">void startVM()</div><div class="ttdoc">Интерфейс запуска интерпретатора </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:13</div></div>
+<div class="ttc" id="classinterpreter_html_ae7359f1d2aa18579a2797f49835c8671"><div class="ttname"><a href="classinterpreter.html#ae7359f1d2aa18579a2797f49835c8671">interpreter::interpreter</a></div><div class="ttdeci">interpreter(QString PATH)</div><div class="ttdoc">interpreter - Конструктор класса </div><div class="ttdef"><b>Definition:</b> interpreter.h:25</div></div>
+<div class="ttc" id="classinterpreter_html_a60e0781065c7ae88bdcaaa22729dc458"><div class="ttname"><a href="classinterpreter.html#a60e0781065c7ae88bdcaaa22729dc458">interpreter::debugMSG</a></div><div class="ttdeci">void debugMSG(QString)</div><div class="ttdoc">Сигнал для отправки сообщения в поток GUI. </div></div>
+<div class="ttc" id="classinterpreter_html_a5d3ba23a48b814586dabbe2e3507b93a"><div class="ttname"><a href="classinterpreter.html#a5d3ba23a48b814586dabbe2e3507b93a">interpreter::outputDialog</a></div><div class="ttdeci">void outputDialog(QString str)</div><div class="ttdoc">диалоговое окно вывод </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:48</div></div>
+<div class="ttc" id="classinterpreter_html"><div class="ttname"><a href="classinterpreter.html">interpreter</a></div><div class="ttdoc">The interpreter class. </div><div class="ttdef"><b>Definition:</b> interpreter.h:16</div></div>
+<div class="ttc" id="classinterpreter_html_a5153712027e3e4344f72336f8b5cfa6d"><div class="ttname"><a href="classinterpreter.html#a5153712027e3e4344f72336f8b5cfa6d">interpreter::debug</a></div><div class="ttdeci">void debug(QString)</div><div class="ttdoc">Отправка сигнала с текстом сообщения в поток GUI. </div><div class="ttdef"><b>Definition:</b> interpreter.cpp:60</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

@@ -1,0 +1,70 @@
+\hypertarget{classc_radr}{}\section{Класс c\+Radr}
+\label{classc_radr}\index{c\+Radr@{c\+Radr}}
+
+
+Загрузка адрессного регистра  
+
+
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+Граф наследования\+:c\+Radr\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classc_radr}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classc_radr_af849046fb73e625b8c2c6380a70116f6}{operator()} (\hyperlink{class_computer}{Computer} $\ast$C\+O\+MP)
+\begin{DoxyCompactList}\small\item\em c\+Radr\+::operator () -\/ Загрузка адресного регистра \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Дополнительные унаследованные члены}
+
+
+\subsection{Подробное описание}
+Загрузка адрессного регистра 
+
+\subsection{Методы}
+\hypertarget{classc_radr_af849046fb73e625b8c2c6380a70116f6}{}\label{classc_radr_af849046fb73e625b8c2c6380a70116f6} 
+\index{c\+Radr@{c\+Radr}!operator()@{operator()}}
+\index{operator()@{operator()}!c\+Radr@{c\+Radr}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily int c\+Radr\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{class_computer}{Computer} $\ast$}]{C\+O\+MP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+c\+Radr\+::operator () -\/ Загрузка адресного регистра 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em C\+O\+MP} & -\/ указатель на объект компьютер \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1
+\end{DoxyReturn}
+Загружает в адресный регистр константу. Константа либо абсолютный адрес в ОЗУ, либо отступ от текущего значения адресного регистра. 
+
+Замещает \hyperlink{class_command_a79939b66f3de892e91d7710844294716}{Command}.
+
+
+\begin{DoxyCode}
+269 \{
+270     \textcolor{keywordflow}{if}(COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a3e0d1e527de9f60594023a362b08a7de}{B} == 0) \textcolor{comment}{//Абсолютная адресация}
+271         COMP->\hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA} = COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+272     \textcolor{keywordflow}{else} \textcolor{comment}{//Относит адресация}
+273         COMP->\hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA} += COMP->\hyperlink{class_computer_a8423168f7cc356b4dd36977603798caf}{CMD}.\hyperlink{struct_computer_1_1command_a0e07591012953413797506f7bc3cb1a7}{Addr};
+274 
+275     COMP->\hyperlink{class_computer_a10ca6c6b200630119201de16d7368e0f}{debug}(\textcolor{stringliteral}{"Установка адресного регистра на "} + QString::number(COMP->
+      \hyperlink{class_computer_a499d0b2c857c2977dd5702906705f79e}{RA}));
+276     \textcolor{keywordflow}{return} 1;
+277 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+h\item 
+C\+:/\+Users/sstarkov/\+Documents/kr\+\_\+\+Interpreter\+V\+M/sources/command.\+cpp\end{DoxyCompactItemize}
